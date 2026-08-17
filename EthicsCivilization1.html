@@ -1,0 +1,2176 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="description" content="خريطة دراسة اخلاق وحضارة 1">
+    <meta property="og:url" content="https://bashar1x.github.io/bash">
+    <link rel="icon" type="image/jpeg" href="https://f.top4top.io/p_3881c1zvy1.jpg">
+    <meta property="og:image" content="https://f.top4top.io/p_3881c1zvy1.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <title>رحلة دراسة اخلاق وحضارة • baash.dev</title>
+    <style>
+        /* ==============================================================
+           التصميم النهاري الدافئ
+           ============================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(145deg, #fcf9f7 0%, #f0edea 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            transition: all 0.4s ease;
+        }
+
+        /* ====== وضع ملء الشاشة النقي - إخفاء البدي بالكامل ====== */
+        body.fullscreen-pure-mode {
+            padding: 0 !important;
+            margin: 0 !important;
+            background: #fcf9f7 !important;
+            overflow: hidden !important;
+            /* إزالة السكرول من البدي */
+        }
+
+        /* إخفاء شريط التمرير في وضع ملء الشاشة */
+        body.fullscreen-pure-mode::-webkit-scrollbar {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+        }
+
+        body.fullscreen-pure-mode {
+            -ms-overflow-style: none !important;
+            /* IE و Edge */
+            scrollbar-width: none !important;
+            /* Firefox */
+        }
+
+        .app-container {
+            background: rgba(255, 252, 250, 0.75);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 40px;
+            padding: 30px;
+            max-width: 1100px;
+            width: 100%;
+            border: 1px solid rgba(184, 115, 26, 0.12);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.02),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        /* ====== إخفاء التطبيق بالكامل في وضع ملء الشاشة ====== */
+        body.fullscreen-pure-mode .app-container {
+            display: none !important;
+        }
+
+        .app-container::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -30%;
+            width: 160%;
+            height: 160%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(184, 115, 26, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(184, 115, 26, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.02) 0%, transparent 60%);
+            animation: float-bg 20s ease-in-out infinite alternate;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes float-bg {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(20px, -20px) rotate(3deg);
+            }
+        }
+
+        .app-container>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .app-header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(184, 115, 26, 0.10);
+            margin-bottom: 25px;
+        }
+
+        .app-header h1 {
+            font-size: 2.5rem;
+            color: #2c2a2e;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .app-header h1 .highlight {
+            background: linear-gradient(135deg, #b8731a, #d4a04a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .app-header .subtitle {
+            color: #6b5f55;
+            font-size: 0.95rem;
+            margin-top: 5px;
+            font-weight: 400;
+        }
+
+        .progress-bar-container {
+            background: rgba(255, 252, 250, 0.6);
+            border-radius: 16px;
+            padding: 12px 20px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            border: 1px solid rgba(184, 115, 26, 0.08);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .progress-bar-container .label {
+            color: #4a4038;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .progress-bar-container .label .emoji {
+            font-size: 1.2rem;
+        }
+
+        .progress-track {
+            flex: 1;
+            min-width: 120px;
+            height: 8px;
+            background: rgba(184, 115, 26, 0.08);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.03);
+        }
+
+        .progress-track .fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #b8731a, #d4a04a, #e8c77a);
+            border-radius: 10px;
+            transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .progress-track .fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: progress-shine 2s infinite;
+        }
+
+        @keyframes progress-shine {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .progress-text {
+            color: #b8731a;
+            font-weight: 700;
+            font-size: 0.95rem;
+            min-width: 60px;
+            text-align: left;
+        }
+
+        .map-container {
+            position: relative;
+            padding: 30px 10px 40px 10px;
+            min-height: 350px;
+            background: rgba(255, 252, 250, 0.25);
+            border-radius: 28px;
+            border: 1px solid rgba(184, 115, 26, 0.04);
+        }
+
+        .map-grid {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            gap: 8px;
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+        }
+
+        .map-node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            min-width: 80px;
+            max-width: 130px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .map-node .node-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 252, 250, 0.5);
+            border: 2.5px solid rgba(44, 42, 46, 0.08);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            margin-bottom: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .map-node .node-circle .icon {
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        .map-node .node-circle .number {
+            font-size: 0.6rem;
+            color: #8a7a6a;
+            margin-top: 2px;
+            font-weight: 600;
+        }
+
+        .map-node .node-circle .lock-icon {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            font-size: 0.9rem;
+            background: rgba(255, 252, 250, 0.85);
+            border-radius: 50%;
+            padding: 2px;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .map-node.locked .node-circle {
+            opacity: 0.5;
+            filter: grayscale(0.6);
+            cursor: not-allowed;
+            border-color: rgba(44, 42, 46, 0.04);
+        }
+
+        .map-node.locked .node-label {
+            color: #b0a89e;
+        }
+
+        .map-node.available .node-circle {
+            border-color: #b8731a;
+            background: rgba(184, 115, 26, 0.06);
+            box-shadow: 0 4px 20px rgba(184, 115, 26, 0.08);
+            cursor: pointer;
+        }
+
+        .map-node.available .node-circle:hover {
+            transform: scale(1.1) translateY(-6px);
+            box-shadow: 0 8px 35px rgba(184, 115, 26, 0.15);
+            background: rgba(184, 115, 26, 0.10);
+        }
+
+        .map-node.completed .node-circle {
+            border-color: #2d8f5c;
+            background: rgba(45, 143, 92, 0.06);
+            box-shadow: 0 4px 20px rgba(45, 143, 92, 0.06);
+        }
+
+        .map-node.completed .node-circle:hover {
+            transform: scale(1.05);
+        }
+
+        .map-node.current .node-circle {
+            border-color: #d4a04a;
+            background: rgba(212, 160, 74, 0.08);
+            box-shadow: 0 0 0 4px rgba(212, 160, 74, 0.08), 0 8px 30px rgba(212, 160, 74, 0.10);
+            animation: pulse-node 1.8s ease-in-out infinite;
+        }
+
+        @keyframes pulse-node {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 4px rgba(212, 160, 74, 0.08), 0 8px 30px rgba(212, 160, 74, 0.10);
+            }
+
+            50% {
+                transform: scale(1.06);
+                box-shadow: 0 0 0 8px rgba(212, 160, 74, 0.02), 0 8px 40px rgba(212, 160, 74, 0.15);
+            }
+        }
+
+        .map-node .node-label {
+            color: #4a4038;
+            font-size: 0.7rem;
+            text-align: center;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .map-node .node-keys {
+            font-size: 0.6rem;
+            color: #8a7a6a;
+            margin-top: 3px;
+        }
+
+        .map-node .node-keys .gold {
+            color: #b8731a;
+            font-weight: 700;
+        }
+
+        .map-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: rgba(44, 42, 46, 0.08);
+            flex-shrink: 0;
+            padding: 0 5px;
+            min-width: 30px;
+            transition: all 0.5s ease;
+        }
+
+        .map-arrow.active {
+            color: #b8731a;
+        }
+
+        .map-arrow.completed {
+            color: #2d8f5c;
+        }
+
+        /* ====== نافذة المحاضرة ====== */
+        .lecture-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 42, 46, 0.20);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            transition: all 0.4s ease;
+        }
+
+        .lecture-modal.active {
+            display: flex;
+        }
+
+        .lecture-modal .modal-content {
+            background: rgba(255, 252, 250, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border: 1px solid rgba(184, 115, 26, 0.08);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+            animation: modal-slide 0.4s ease;
+            transition: all 0.4s ease;
+        }
+
+        .modal-content::-webkit-scrollbar {
+            display: none;
+        }
+
+        @keyframes modal-slide {
+            from {
+                transform: translateY(30px) scale(0.97);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .lecture-modal .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+            transition: all 0.4s ease;
+        }
+
+        .lecture-modal .modal-header h2 {
+            color: #2c2a2e;
+            font-size: 1.3rem;
+            font-weight: 700;
+            flex: 1;
+            transition: all 0.4s ease;
+        }
+
+        .lecture-modal .modal-header .header-actions {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+            transition: all 0.4s ease;
+        }
+
+        .lecture-modal .modal-header .header-actions button {
+            background: rgba(44, 42, 46, 0.04);
+            border: 1px solid rgba(44, 42, 46, 0.04);
+            color: #6b5f55;
+            font-size: 1.1rem;
+            cursor: pointer;
+            padding: 6px 14px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+        }
+
+        .lecture-modal .modal-header .header-actions button:hover {
+            background: rgba(184, 115, 26, 0.06);
+            border-color: rgba(184, 115, 26, 0.15);
+            color: #b8731a;
+        }
+
+        .lecture-modal .modal-header .header-actions .close-btn:hover {
+            background: rgba(192, 57, 43, 0.06);
+            border-color: rgba(192, 57, 43, 0.15);
+            color: #c0392b;
+        }
+
+        .lecture-modal .modal-body {
+            color: #3a3538;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            max-height: 400px;
+            overflow-y: auto;
+            padding-left: 5px;
+            transition: all 0.4s ease;
+        }
+
+        .lecture-modal .modal-body::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .lecture-modal .modal-body::-webkit-scrollbar-thumb {
+            background: #b8731a;
+            border-radius: 10px;
+        }
+
+        .lecture-modal .modal-body::-webkit-scrollbar-track {
+            background: rgba(184, 115, 26, 0.04);
+            border-radius: 10px;
+        }
+
+        .lecture-modal .modal-body h3 {
+            color: #b8731a;
+            margin: 20px 0 10px 0;
+            font-weight: 700;
+        }
+
+        .lecture-modal .modal-body h4 {
+            color: #8a6a3a;
+            margin: 15px 0 8px 0;
+            font-weight: 600;
+        }
+
+        .lecture-modal .modal-body p {
+            color: #3a3538;
+        }
+
+        .lecture-modal .modal-body ul {
+            padding-right: 25px;
+            margin: 8px 0;
+        }
+
+        .lecture-modal .modal-body ul li {
+            margin: 4px 0;
+            color: #3a3538;
+        }
+
+        /* ====== المفاتيح ====== */
+        .keys-section-modal {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(184, 115, 26, 0.06);
+            transition: all 0.4s ease;
+        }
+
+        .keys-section-modal .keys-title {
+            color: #4a4038;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .keys-section-modal .keys-title .count {
+            color: #b8731a;
+            font-weight: 700;
+        }
+
+        .keys-grid-modal {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+            gap: 8px;
+            max-width: 500px;
+        }
+
+        .key-item-modal {
+            aspect-ratio: 1/1;
+            border-radius: 12px;
+            border: 2px solid rgba(44, 42, 46, 0.04);
+            background: rgba(255, 252, 250, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #8a7a6a;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .key-item-modal.unlocked {
+            background: rgba(45, 143, 92, 0.06);
+            border-color: #2d8f5c;
+            color: #2d8f5c;
+            cursor: default;
+        }
+
+        .key-item-modal.locked-key {
+            cursor: pointer;
+            color: #4a4038;
+        }
+
+        .key-item-modal.locked-key:hover {
+            background: rgba(184, 115, 26, 0.06);
+            border-color: #b8731a;
+            transform: scale(1.05);
+        }
+
+        /* ================================================================
+           وضع ملء الشاشة النقي 100% - إخفاء كل شيء
+           ================================================================ */
+
+        /* إخفاء نافذة المحاضرة بالكامل ونظهر فقط المحتوى */
+        body.fullscreen-pure-mode .lecture-modal {
+            background: #fcf9f7 !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            z-index: 9999 !important;
+        }
+
+        body.fullscreen-pure-mode .lecture-modal .modal-content {
+            max-width: 100% !important;
+            max-height: 100vh !important;
+            border-radius: 0 !important;
+            padding: 40px 60px !important;
+            background: #fcf9f7 !important;
+            animation: none !important;
+            border: none !important;
+            box-shadow: none !important;
+            max-height: 100vh !important;
+            overflow-y: auto !important;
+            margin: 0 !important;
+        }
+
+        /* إخفاء الهيدر والمفاتيح */
+        body.fullscreen-pure-mode .lecture-modal .modal-header {
+            display: none !important;
+        }
+
+        body.fullscreen-pure-mode .lecture-modal .keys-section-modal {
+            display: none !important;
+        }
+
+        /* تكبير المحتوى وتحسين القراءة */
+        body.fullscreen-pure-mode .lecture-modal .modal-body {
+            max-height: 100vh !important;
+            font-size: 1.2rem !important;
+            line-height: 2.2 !important;
+            padding: 0 !important;
+            overflow-y: auto !important;
+        }
+
+        /* إخفاء شريط التمرير في المحتوى أثناء ملء الشاشة */
+        body.fullscreen-pure-mode .lecture-modal .modal-body::-webkit-scrollbar {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+        }
+
+        body.fullscreen-pure-mode .lecture-modal .modal-body {
+            -ms-overflow-style: none !important;
+            scrollbar-width: none !important;
+        }
+
+        body.fullscreen-pure-mode .lecture-modal .modal-body h3 {
+            font-size: 1.8rem !important;
+            color: #b8731a !important;
+        }
+
+        body.fullscreen-pure-mode .lecture-modal .modal-body h4 {
+            font-size: 1.4rem !important;
+            color: #8a6a3a !important;
+        }
+
+        body.fullscreen-pure-mode .lecture-modal .modal-body p {
+            font-size: 1.15rem !important;
+            color: #2c2a2e !important;
+            font-weight: 500;
+        }
+
+        body.fullscreen-pure-mode .lecture-modal .modal-body ul li {
+            font-size: 1.15rem !important;
+            color: #2c2a2e !important;
+            margin: 6px 0 !important;
+        }
+
+        /* ====== زر الخروج من ملء الشاشة (عائم) ====== */
+        .exit-fullscreen-float {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 99999 !important;
+            background: rgba(44, 42, 46, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: #fff;
+            border: none;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .exit-fullscreen-float:hover {
+            background: rgba(184, 115, 26, 0.95);
+            transform: translateX(-50%) scale(1.05);
+        }
+
+        .exit-fullscreen-float.show {
+            
+            
+        }
+
+        @keyframes float-up {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        /* ====== نافذة السؤال ====== */
+        .question-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 42, 46, 0.25);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .question-modal.active {
+            display: flex;
+        }
+
+        .question-box {
+            background: rgba(255, 252, 250, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 35px;
+            max-width: 550px;
+            width: 100%;
+            border: 1px solid rgba(184, 115, 26, 0.08);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+            animation: modal-slide 0.3s ease;
+        }
+
+        .question-box .q-number {
+            color: #b8731a;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .question-box .q-text {
+            color: #2c2a2e;
+            font-size: 1.1rem;
+            margin: 15px 0 20px 0;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .question-box .q-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .question-box .q-options button {
+            background: rgba(255, 252, 250, 0.3);
+            border: 1.5px solid rgba(44, 42, 46, 0.04);
+            border-radius: 12px;
+            padding: 12px 18px;
+            color: #2c2a2e;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: right;
+            font-weight: 500;
+        }
+
+        .question-box .q-options button:hover:not(:disabled) {
+            background: rgba(184, 115, 26, 0.06);
+            border-color: #b8731a;
+        }
+
+        .question-box .q-options button.correct {
+            background: rgba(45, 143, 92, 0.08);
+            border-color: #2d8f5c;
+            color: #2d8f5c;
+        }
+
+        .question-box .q-options button.wrong {
+            background: rgba(192, 57, 43, 0.08);
+            border-color: #c0392b;
+            color: #c0392b;
+        }
+
+        .question-box .q-options button:disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .question-box .q-feedback {
+            margin-top: 15px;
+            padding: 10px 15px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            display: none;
+            font-weight: 500;
+        }
+
+        .question-box .q-feedback.show {
+            display: block;
+        }
+
+        .question-box .q-feedback.success {
+            background: rgba(45, 143, 92, 0.06);
+            color: #2d8f5c;
+            border: 1px solid rgba(45, 143, 92, 0.12);
+        }
+
+        .question-box .q-feedback.error {
+            background: rgba(192, 57, 43, 0.06);
+            color: #c0392b;
+            border: 1px solid rgba(192, 57, 43, 0.12);
+        }
+
+        .question-box .close-modal-btn {
+            margin-top: 18px;
+            padding: 10px 35px;
+            background: #b8731a;
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+            display: none;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .question-box .close-modal-btn:hover {
+            background: #d4a04a;
+            transform: scale(1.02);
+            box-shadow: 0 4px 20px rgba(184, 115, 26, 0.15);
+        }
+
+        .question-box .close-modal-btn.show {
+            display: inline-block;
+        }
+
+        .footer-info {
+            text-align: center;
+            color: #b0a89e;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            border-top: 2px solid rgba(184, 115, 26, 0.04);
+            padding-top: 15px;
+            font-weight: 400;
+        }
+
+        .footer-info .highlight-text {
+            color: #b8731a;
+            font-weight: 500;
+        }
+
+        /* ====== استجابة ====== */
+        @media (max-width: 768px) {
+            .app-container {
+                padding: 15px;
+                border-radius: 28px;
+            }
+
+            .app-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .map-container {
+                padding: 20px 5px 30px 5px;
+            }
+
+            .map-grid {
+                gap: 4px;
+            }
+
+            .map-node .node-circle {
+                width: 60px;
+                height: 60px;
+            }
+
+            .map-node .node-circle .icon {
+                font-size: 1.5rem;
+                color: #00C477;
+            }
+
+            .map-node .node-label {
+                font-size: 0.6rem;
+            }
+
+            .map-arrow {
+                font-size: 1rem;
+                min-width: 20px;
+            }
+
+            .lecture-modal .modal-content {
+                padding: 20px;
+                margin: 10px;
+                border-radius: 24px;
+            }
+
+            body.fullscreen-pure-mode .lecture-modal .modal-content {
+                padding: 25px 30px !important;
+                border-radius: 0 !important;
+                margin: 0 !important;
+            }
+
+            body.fullscreen-pure-mode .lecture-modal .modal-body {
+                font-size: 1rem !important;
+            }
+
+            body.fullscreen-pure-mode .lecture-modal .modal-body h3 {
+                font-size: 1.5rem !important;
+            }
+
+            body.fullscreen-pure-mode .lecture-modal .modal-body h4 {
+                font-size: 1.2rem !important;
+            }
+
+            .lecture-modal .modal-header h2 {
+                font-size: 1.1rem;
+            }
+
+            .lecture-modal .modal-header .header-actions button {
+                font-size: 0.85rem;
+                padding: 4px 10px;
+            }
+
+            .question-box {
+                padding: 25px;
+                margin: 10px;
+                border-radius: 24px;
+            }
+
+            .keys-grid-modal {
+                grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+            }
+
+            .exit-fullscreen-float {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+                bottom: 20px;
+                
+            }
+        }
+
+        @media (max-width: 480px) {
+            .map-node .node-circle {
+                width: 50px;
+                height: 50px;
+            }
+
+            .map-node .node-circle .icon {
+                font-size: 1.2rem;
+            }
+
+            .map-node .node-circle .number {
+                font-size: 0.5rem;
+            }
+
+            .map-arrow {
+                font-size: 0.8rem;
+                min-width: 15px;
+            }
+
+            .app-header h1 {
+                font-size: 1.5rem;
+            }
+
+            body.fullscreen-pure-mode .lecture-modal .modal-content {
+                padding: 20px !important;
+            }
+
+            body.fullscreen-pure-mode .lecture-modal .modal-body {
+                font-size: 0.9rem !important;
+                font-weight: 500;
+            }
+        }
+           .credit-link {
+                font-style: italic;
+                font-size: 13px;
+                color: #777;
+                text-decoration-color: #FFD700;
+                }
+    </style>
+</head>
+
+<body>
+
+    <!-- ====== التطبيق ====== -->
+    <div class="app-container">
+
+        <header class="app-header">
+            <h1>🏰 <span class="highlight">رحلة دراسة اخلاق وحضارة 1</span></h1>
+            <p class="subtitle">📚 محاضرات · اجمع كل المفاتيح لفتح الطريق</p>
+             <a href="https://www.instagram.com/baash.dev" target="_blank"
+                rel="noopener noreferrer" class="credit-link">
+                متابعة @baash.dev
+                </a>
+        </header>
+
+        <div class="progress-bar-container">
+            <span class="label">
+                <span class="emoji">🗺️</span> التقدم
+            </span>
+            <div class="progress-track">
+                <div class="fill" id="globalProgressFill"></div>
+            </div>
+            <span class="progress-text" id="globalProgressText">0%</span>
+        </div>
+
+        <div class="map-container">
+            <div class="map-grid" id="mapGrid"></div>
+        </div>
+
+        <div class="footer-info">
+            💡 اضغط على <span class="highlight-text">المحاضرة</span> لدراستها · 🔑 كل محاضرة فيها <span
+                class="highlight-text">10 مفاتيح</span>
+        </div>
+    </div>
+
+    <!-- ====== نافذة المحاضرة ====== -->
+    <div class="lecture-modal" id="lectureModal">
+        <div class="modal-content" id="modalContent">
+            <div class="modal-header">
+                <h2 id="modalTitle">📖 المحاضرة</h2>
+                <div class="header-actions">
+                    <button class="fullscreen-btn" id="fullscreenBtn" title="ملء الشاشة للقراءة فقط">
+                        <span class="fs-icon">⛶</span> <span id="fsText">ملء الشاشة</span>
+                    </button>
+                    <button class="close-btn" id="closeLectureModal">✕</button>
+                </div>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- المحتوى هنا -->
+            </div>
+            <div class="keys-section-modal">
+                <div class="keys-title">
+                    <span>🔑 المفاتيح</span>
+                    <span class="count" id="modalKeysCount">0 / 10</span>
+                </div>
+                <div class="keys-grid-modal" id="modalKeysGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== زر الخروج من ملء الشاشة (عائم) ====== -->
+    <button class="exit-fullscreen-float" id="exitFullscreenFloat">
+        ✕
+    </button>
+
+    <!-- ====== نافذة السؤال ====== -->
+    <div class="question-modal" id="questionModal">
+        <div class="question-box">
+            <div class="q-number" id="qNumber">السؤال 1</div>
+            <div class="q-text" id="qText">نص السؤال هنا</div>
+            <div class="q-options" id="qOptions"></div>
+            <div class="q-feedback" id="qFeedback"></div>
+            <button class="close-modal-btn" id="closeQuestionBtn">إغلاق</button>
+        </div>
+    </div>
+
+    <script>
+        // ================================================================
+        // البيانات: المحاضرات (أول محاضرتين للتجربة)
+        // ================================================================
+
+        const lecturesData =
+         [
+    {
+        "id": 0,
+        "title": "📘 الأنثروبولوجيا الأخلاقية وعلم العادات",
+        "content": "<h3>الانثروبولوجيا الأخلاقية _ علم العادات الأخلاقية:</h3>\n<p>يشير مصطلح العادات الأخلاقية إلى إيضاح نشأة القواعد والمعايير السلوكية وتحولها إلى أوامر ملزمة حقوقية واقتصادية وفي إطارها ظهرت المؤسسات التي يمثل مجموعها حضارة الإنسان ومصيرها.</p>\n<h4>من هذه العادات الأخلاقية الانثروبولوجيا التي ظهرت لدى الإنسان منذ القدم:</h4>\n<h4>1. القربان البشري والقتل:</h4>\n<p>مثل هذه العادات لا تحترم الكرامة الإنسانية، ولا تقيم وزناً للإنسان وتقضي على حقه في الحياة البيولوجية وكذلك في الحياة المعنوية كالقتل والإكراه والتعذيب والحرب والاستعمار والاستعباد، وقتل الآباء أبنائهم والأبناء آبائهم.</p>\n<p>فالقربان البشري والتضحية بالإنسان استرضاء لكائنات خارقة للطبيعة هي الآلهة وهو أساس العبادة في المجتمعات البدائية، والقربان هدية أسمى والذبيحة سواء كان بشر أم حيوانات كانت تختار بعناية لتقديمها للآلهة ويؤكد ذلك طقوس معينة تعبر عن مشاعر الإنسان للآلهة أو ليعرف بنعمها وفضلها أو ليكفر عن ذنوب اقترفت بحقها أو لاسترضاء غضبها.</p>\n<ul>\n<li>انتشر ذلك عند الهنود القدامى واليونان القديمة والإغريق وروما، كما كان الأطفال الصغار يذبحون في شمال أفريقيا قرباناً (لكوكب زحل).</li>\n<li>في الحرب كان القربان البشري لسيف المعركة كي يهب الآلهة النصر أو بعد المعركة يتم ذبح أحد الأسرى عندما يعود بهم المحاربون فيعم السلام بالبلاد واليمن.</li>\n<li>وقد يهدف القربان إلى دفع الأوبئة أو الوقاية منها فالفينيقيون كانوا يضحون بأعز الأصدقاء خلال الحرب وعند انتشار الطاعون كذلك يفعل اليونان.</li>\n<li>وفي إيطاليا كانوا يضحون بكل ولد يولد في الربيع لرد المجاعات وإنهاء النوازل.</li>\n</ul>\n<p>وكثيرا ما تراق الدماء البشرية لأغراض دنيوية، زراعية، طبيعية، صحية أو لتهدئة الأعاصير. وكان (الفيمون) يغسلون سطح المركب الجديد الذي يملكه الرئيس الأعظم بدم 10 رجال يذبحونهم لهذا الغرض، كما أن الأم في أستراليا تقتل ابنها البكر وتلتهم لحمه لتقوى على ولادات أخرى متتالية.</p>\n<p>لكن لما مضى الإنسان في درب الحضارة استعاضوا عن قتل الإنسان بفدية يسمونها (البديل) وبات يقربون القربان البشري عادة همجية لا تحترم حق الإنسان في الحياة مثل (البراجمتية، الرومانية، المستنيرون، شيشرون ....) فباتوا يقدمون مثلاً ثوراً ثميناً تتم تغذيته بشكل جيد ويفتدى به دم الإنسان، وربما تم اكتفاء بجرح الإنسان وسكب بعض دمه دون أن يؤدي ذلك لفقدانه حياته.</p>\n<p><strong>*الكتاب المقدس*</strong>: أشار كذلك إلى قرابين كثيرة كتقديم (هابيل) أبكار غنمه وافتداء إبراهيم ابنه إسماعيل عليه السلام بكبش سمين، كما أن الإيمان بصلب المسيح عليه السلام إيمان بفدية قدمها (ابن الإنسان) أي بذل نفسه فدية عن كثيرين ..... .</p>\n<p>القربان البشري قتل يكتنفه أريج القداسة، ولكن القتل اللاديني عدوان إلا في حالات الإعدام أو القصاص المشروع أو الجهاد.</p>\n<p>لكن القتل بوجه عام يبين القيمة الأخلاقية ملازمة لمعنى الكرامة الإنسانية وينفيها بالقضاء على أول مظهر من مظاهرها وهو المظهر الحيوي أو العضوي الطبيعي.</p>\n<p>فالصينيون القدامى يعاقبون من يقتل والديه أو أحدهما بأشد عقوبة (السجن) وفي كوريا يحرق قاتل أبيه حرقاً ويحكم المصريون القدامى القاتل بالجلد قبل الحرق.</p>\n<p>فقال أفلاطون أن من يقتل أحد والديه يجب أن يعدم عدة مرات لا مرة واحدة.</p>\n<p>وكان الرومان يضعون القاتل في كيس من الجلد المخيط وفي صحبته كلب وديك وأفعى وقرد ويرمى به إما في بحراً أو نهراً.</p>\n<p>كان المجتمع البدائي يأمر بقتل الطفل الغير شرعي أو يتيم الأم أو ولد مشوهاً أو عليلاً وكانوا يعتقدون أن التوأم كذلك الطفل الذي يولد بأسنان هم نذير شؤم يجب أن يقتلوهم، كما أمر أفلاطون بقتل الأطفال المشوهين وكذلك أرسطو أمر بضرورة أن لا يجاوز عدد السكان حداً معيناً لاجتناب الفقر والشرور.</p>\n<p>بالإضافة إلى قتل الجنين (الإجهاض) من قبل النساء إما لإخفاء علاقات غير شرعية أو للحفاظ على الجمال ولكن أفلاطون وأرسطو رفضا ذلك ما لم يكن لسبب حقيقي لأن ذلك يحرم الآباء الأزواج من أبنائهم.</p>\n<h4>2. الرضوخ:</h4>\n<p>للعدوان على الشخص الإنساني وجهان:</p>\n<ul>\n<li>وجه بيولوجي (عضوي)</li>\n<li>وجه معنوي</li>\n</ul>\n<p>الوجه البيولوجي وهو قتل الإنسان قرباناً أو قتله إنسان غريب أو قريب سواء كان هذا القتل ثأر أو أذى، أم إنقاذ لفضيحة أو عار.</p>\n<p>والوجه الآخر هو العدوان المعنوي أو الروحي، وهو ينال من الكرامة الإنسانية التي تمكن الإنسان من الحرية في الاختيار والتقرير والتصرف وتقضي على قناعته الذاتية التي تسمح له بتحقيق أهدافه بدون قسر أو إكراه أو إرغام.</p>\n<p>والرضوخ يسيء لكرامة الفرد والجماعة فالعدوان على الإنسان بالرق والنحاسة والاستعمار فالاستعانة على ذلك بالقهر أو الإغراء أو بالكيد المادي والثقافي و ...... .</p>\n<p>في الأسرة حسب الناس أن في وسع الأب أن يتدخل في حرية أبنائه وأن له حرية التصرف بزوجته أو زوجاته أو عبيده إن وجدوا وذلك باعتبارهم قاصرين من حيث القيمة ومن هنا نشأ واجب خضوع الأبناء للآباء والمرأة للرجل والعبد لسيده خضوعاً تاماً مطلقاً.</p>\n<p>كان يزوج الأب ابنته من غير أن يستشيرها وهي تظل تحت سلطته حتى بعد أن تتزوج وخاصة عندما يعيش الزوج والزوجة في بيت أهلها أو عشيرتها، وسلطة الأب على ابنه والتي تستمر إلى بلوغ الابن لسن البلوغ (الرشد) دون أن يسمح له بالاستقلال.</p>\n<p>فالأبناء في فلورس يرتدون زي العبيد في الحفلات العامة والمآتم طالما أبوهم على قيد الحياة.</p>\n<p>كما يترعرع الطفل الصيني على احترام الوالدين لدرجة تصل إلى عبادة الأجداد، والفتاة اليابانية متأهبة لأعمال البغاء إذا أمرها أبوها.</p>\n<p>فمن واجب المسيحي أن يطيع والديه ولكن هذه الطاعة تعد مقدمة لطاعة الله.</p>\n<p>وفي أمريكا الشمالية إن التقدم بالسن يمنح صاحبه الجاه والسلطة وأن أعلى الأشخاص منزلة وأعظمهم كرامه هم أكبرهم سناً ثم يليهم من دونهم بالسن على وجه الترتيب وعلى الأبناء أن يخضعوا لوالديهم والصغار للكبار خضوع إذعان ورضوخ.</p>\n<p>لقد أعلن أفلاطون أن النساء أدنى منزلة من الرجال في ميدان عمل الرجال ومشاغلهم ويرى أوربيد أن النساء (قاصرات على الخير بارعات في الشر) ويقول الشاعر (الفيدي) إن من العسير توجه روح المرأة في الصراط المستقيم لأن عقلها صغير.</p>\n<p>ويمثل العبرانيون المرأة على أنها ينبوع الشر ومصدر الموت والبلاء في الأرض، وكتب الرسول بولس ولست أبيح للمرأة أن تعلم ولا أن تتسلط على رجلها بل عليها أن تكون ساكنة فقد جبل آدم أولاً ثم حواء ولم يكن آدم الذي أغوي المرأة، المرأة أغوت آدم، فوقعت في التعدي، إلا أنها ستخلص بوالدة الأولاد إن استمرت على الإيمان والمحبة والقداسة مع العقل.</p>\n<p>يؤكد دوركهايم أن المرأة ذات عضوية مختلفة وذلك يتصل بالدم وخاصة دم الحيض والولادة فالرجال ليسوا وحدهم هم الذين يهربون من النساء في تلك الأحوال بل الآلهة أيضاً.</p>\n<p>فقد منعت الكنيسة النساء من الوقوف أو الجلوس مع الرجال وجعلت لهن باباً خاصاً يدخلن الكنيسة منه وطبعاً أبعدتهن عن الوظائف الدينية.</p>\n<p>لكن بدأ وضع المرأة يتغير في القرن الثامن عشر وبدأت تحصل على حقوقها في مختلف المجالات.</p>\n<h4>3. الاستغلال والرق:</h4>\n<p>ويعني ذلك استغلال فريق من الناس فريقاً آخر، استغلال السيد عبده والنحاس بضاعته الحرام بالاتجار بالرقيق الأبيض وغير الأبيض ثم استغلال شعب شعباً آخر أو شعوباً، وهذا الأخير يتدرج من التبعية العنصرية إلى الحماية السياسية فالانتداب والوصاية والاستعمار بوجهيه القديم والمعاصر.</p>\n<p>الرق: وضع الاجتماعي يلزم الرقيق بذل نشاط يفرض عليه بدون مشيئته ولعل أبرز أسبابه الحرب أو الغزو قديماً لجأ إليه البدائيون بدل قتل الأسرى أو عندما يقترف أحد جرماً أو يعجز عن الوفاء بدين ما كما كان عند الهنود وعند البابو كل من يوقد ناراً في متاع غيره يصبح هو وأسرته عبداً لصاحب ذلك المتاع وحين يسرق شخص من طبقة دنيا شخص من طبقة عليا القوم يصبح عبده وربما دفع الإملاق الشديد المرء إلى بيع نفسه بيع العبد.</p>\n<p>في الصين القديمة طبقة من العبيد وأسرى الحرب باعوا أنفسهم أو باعهم غيرهم والأطفال العبيد الذين باعهم آبائهم وقت العواص والفاقة كما أن اختطاف الأطفال يشكل ينبوعاً يغذي سوق النخاسة باستمرار.</p>\n<p>كما ملأ فراعنة الأسرتين الثامنة والتاسعة معبد آمون بالعبيد من الجنسين.</p>\n<p>كان العبد اليهودي يسترد حريته إذا دفع ثمنها.</p>\n<p>بالمقابل كان أفلاطون يحذر سامعيه من ظلم العبيد وكان أرسطو يرى بأن الصداقة أمر محال بين السيد والعبد وعنده العبيد برابرة جعلتهم الطبيعة أدنى من اليونان وليس لهم من الإنسانية إلا الشكل الخارجي.</p>\n<p>سعى البراقيون أيضاً كما أفلاطون للاعتراف بإنسانية العبيد ومحو نظام الرق كما شجعت الكنيسة على تحرير العبيد المسيحيين لتحاكي المسيح عليه السلام الذي جاء ليكسر قيد عبودية أتباعه.</p>\n<p>كان العبد في مملكة بابل الأولى يدفع بعلامة فارقة، ويباع ويشترى في عهد حمورابي بقيمة حمار.</p>\n<p>هناك من يرى بأن للمجاعات الكبرى وانتشار الأوبئة في أوروبا في القرن العاشر والحادي عشر أثر في زوال الرق ويرى آخرون أن السبب هو تحول الرق إلى خدم.</p>\n<p>أما الرق في العالم المعاصر فقد أخذ شكلاً آخر، مثال في جنوب أفريقيا اتخذ شكل تمايز عنصري يقوم على كره الملونين خاصة الزنوج الذين يحرمون من جميع حقوقهم وينظر لهم كأنهم حيوانات شرسة لا بد من ترويضها وهذه النظر تنتشر حتى اليوم في أوروبا وأمريكا.</p>\n<p>لا بد أن أي شكل من أشكال الاستغلال والرق والعبودية هي مظهر غير حضاري ويعكس العدوان على الكرامة البشرية ولا بد من العمل للتخلص منه.</p>\n<h4>4. الاستعمار:</h4>\n<p>يعتبر الاستعمار حالة خاصة من أحوال العلاقات الدولية بقوامها أن يمارس شعب على شعب آخر سلطة تستذل الشعب الأخير وتستغله والأغلب في الاستعمار أن يتم بالقوة أو بالحيلة بل بهما معاً في كثير من الأحيان.</p>\n<p>وقد تنوعت أهداف الاستعمار وطرائقه وهذا التنوع يتعلق بالفارق بين الشعب المستعمِر المتفوق في الميادين التقنية والثقافية وبين الشعب المستعمَر وهو شعب متخلف عن مقتضيات العصر.</p>\n<p>وربما قلب المستعمرون الاحتلال إلى استيطان وصار عددهم يزداد على قدر إبادتهم السكان الأصليين إن لم يستكن هؤلاء السكان لإدارة استقلال المستعمرين إياهم ولم يرضوا بأن يصبحوا عبيداً مستقرين.</p>\n\n<p>برغم المستعمرون أنهم يريدون تحقيق (المدنيّة) لهذه الشعوب التي يستعمرونها لكن نهضة الشعوب تتم فقط بوعيها وحقها تقرير مصيرها بنفسها.</p>\n<h4>5. الحرب:</h4>\n<p>تأخذ الحرب صور شتى وأشكال متفاوتة فالحرب داخل القبيلة أو الدولة الواحدة هي حرب أهلية لكنها بين القبائل والأمم والدول وتكتل الدول هي الحرب بالمعنى الحديث.</p>\n<p>للحروب في وقائعها أنواع وأهداف مختلفة فقد تهدف الدولة المحاربة إلى الاستقلال أو تهدف إلى العدوان أو الحصول على مزايا كاقتطاع إقليم أو احتلال أرض أو إملاء سياسة معينة أو فرض عقيدة دينية أو مذهب سياسي.</p>\n<p>إذا نشبت الحرب من أجل الدفاع عن حق الدولة أو الأمة إلى الدفاع عن النفس سميت حرباً دفاعية، وإذا نشبت على أرض أجنبية سميت حرباً عدوانياً أو غزواً.</p>\n<p>وقد اخترعت الحرب الوقائية التي تهاجم فيها دولة قوية دولة أخرى أو شعباً آخر آمناً بذريعة أن هذا الأخير قد يشن هجوماً عليها ذات يوم.</p>\n<p>أصبحت الحرب فاعلية شاملة تستقطب نشاط العوامل الاقتصادية والقومية والدينية والمذهبية والسياسية وصارت اليد والفكر التقنية، والعلم، الإمكانات والأهداف، كل ذلك صار يلقى لخدمة الحرب في شكل ووحشية متمدنية.</p>\n<p>امتدح الحرب كثيرون وذمها كثيرون فهناك من بذل جهود أخلاقية لمنع الحروب بين الدول فهي لا يجب أن تكون سبيلاً للعلاقات البشرية الجماعية بين تلك الدول لأن هذه الحروب القاسية تطحن الضعفاء والمغلوبين فقط أما الأقوياء فهي تضع لهم مزيداً من النقود والقوة حتى وصل الأمر بالبعض إلى القول بأن الحرب هي مؤسسة ربانية وأنها حكم الله (الملوك ممثلو الله والله هو الذي يضرب أمماً بأسرها ويبيد المدن والقرى وما الحرب إلا عصا الله بيد الأمراء).</p>\n<p>والأمثلة كثيرة على الحروب مثل الحرب العالمية الأولى والثانية، والحرب التي يمارسها العدوان الإسرائيلي على الشعب الفلسطيني.</p>\n<p>الحروب تشكل عدواناً حقيقياً على كرامة الشعوب وحقوق الإنسان لذلك حاولت العديد من المنظمات الدولية سد تشريعات وعقد اتفاقات لإيقاف الحروب واعتبرتها جرائم بحق البشرية لا بد من إنهائها وإحلال السلام والأمن بدلاً منها.</p>",
+        "questions": [
+            {
+                "q": "ماذا يوضح مصطلح العادات الأخلاقية في الانثروبولوجيا الأخلاقية؟",
+                "options": [
+                    "نشأة القواعد والمعايير السلوكية وتحولها لأوامر ملزمة",
+                    "تطور الآلات التقنية عبر التاريخ",
+                    "قوانين التجارة الدولية بين الشعوب",
+                    "أنواع العقود البحرية ورسومها"
+                ],
+                "correct": 0
+            },
+            {
+                "q": "لماذا كان الأطفال يذبحون في شمال أفريقيا قديماً كقربان بشري؟",
+                "options": [
+                    "استرضاء لكوكب المريخ",
+                    "قرباناً لكوكب زحل",
+                    "تقديساً للشمس",
+                    "وفاءً للفيضان"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "كيف كان غسل سطح المركب الجديد يتم لدى (الفيمون)؟",
+                "options": [
+                    "بماء البحر المالح",
+                    "بدم 10 رجال يذبحون لهذا الغرض",
+                    "بدم ثور ثمين",
+                    "بالخمر والزيت"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "ما العادة التي كانت تقوم بها الأم في أستراليا قديماً حسب المحاضرة؟",
+                "options": [
+                    "تقتل ابنها البكر وتلتهم لحمه لتقوى على ولادات متتالية",
+                    "تهب ابنها الأول للمعبد",
+                    "تضع ابنها في كيس جلد",
+                    "تترك ابنها عند حافة النهر"
+                ],
+                "correct": 0
+            },
+            {
+                "q": "كيف كان الصينيون القدامى يعاقبون من يقتل والديه أو أحدهما؟",
+                "options": [
+                    "بالحرق حيّاً",
+                    "بالجلد قبل الحرق",
+                    "بأشد عقوبة وهي السجن",
+                    "بوضعه في كيس من الجلد مع حيوانات"
+                ],
+                "correct": 2
+            },
+            {
+                "q": "ما العقوبة التي كان يفرضها الرومان على القاتل؟",
+                "options": [
+                    "السجن مدى الحياة",
+                    "وضعه في كيس من الجلد مع كلب وديك وأفعى وقرد ورميه في البحر أو النهر",
+                    "الحرق بعد الجلد",
+                    "الإبعاد خارج البلاد"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "ما الوجهان للعدوان على الشخص الإنساني كما ورد في المحاضرة؟",
+                "options": [
+                    "وجه سياسي ووجه اقتصادي",
+                    "وجه بيولوجي (عضوي) ووجه معنوي (روحي)",
+                    "وجه فردي ووجه دُولي",
+                    "وجه مباشر ووجه غير مباشر"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "بكم كان يباع ويشترى العبد في عهد حمورابي بمملكة بابل الأولى؟",
+                "options": [
+                    "بقيمة حصان",
+                    "بقيمة ثور",
+                    "بقيمة حمار",
+                    "بقيمة قطعة ذهب"
+                ],
+                "correct": 2
+            },
+            {
+                "q": "ما هي الحرب التي تهاجم فيها دولة قوية دولة أخرى بذريعة أن الأخيرة قد تشن هجوماً مستقبلياً؟",
+                "options": [
+                    "الحرب الأهلية",
+                    "الحرب الوقائية",
+                    "الحرب الدفاعية",
+                    "حرب الاستقلال"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "ماذا أطلق شيشرون والمستنيرون والبراجماتيون على القربان البشري عندما تطورت الحضارة؟",
+                "options": [
+                    "طرقاً مقدسة للعبادة",
+                    "عادة همجية لا تحترم حق الإنسان في الحياة واستعاضوا عنها بالفدية (البديل)",
+                    "واجبات دينية لا بد منها",
+                    "رموزاً للمواطنة الصالحة"
+                ],
+                "correct": 1
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "title": "📗 الإقناع والحضارة ومغامرة الأفكار",
+        "content": "<h3>الإقناع والحضارة</h3>\n<h4>مغامرة الأفكار وتهذيب العادات (ألفرد نورث وايتهيد):</h4>\n<ul>\n<li>حاول في كتابه (مغامرة الأفكار) أن يرسم التطور التدريجي لعوامل الإقناع في حياة البشر الاجتماعية.</li>\n<li>فالحضارة هي الحفاظ على النظام الاجتماعي بواسطة الإقناع الفطري الذي يتجسد بالاختيار الأفضل.</li>\n<li>أما استخدام القوة مهما يكن ذلك حتمياً فإنه يكشف عن إخفاق الحضارة سواء كان ذلك بالنسبة للمجتمع العام أم بالنسبة للأفراد.</li>\n<li>إن القدرة على إدراك جوانب النقص في النظام الاجتماعي وبعث قلق، والقلق دافع يسوق إلى حب الاستطلاع وإلى المغامرة (مغامرة الفكر) التي تحفز على طلب أنماط جديدة من الحضارة وقيم جديدة لتحقيق احترام الإنسان للإنسان وبهذه المغامرات الفكرية وحدها تكون الحضارة نامية ومتطورة.</li>\n<li>فالمغامرة هي البحث عن كمال جديد وهي المبادرة الخلاقة التي يجب أن تبرز في كل مجالات النشاط الإنساني وإلا زالت الحضارة واندثرت.</li>\n<li>إن الصلة بين الأفراد والجماعات تأخذ شكلين شكل القوة وشكل الإقناع وعنده تعد التجارة هي المثل العظيم على الإقناع أما الحرب والعبودية والقسر الحكومي فإنها تمثل القوة.</li>\n<li>إن الانتقال الحضاري من القوة إلى الإقناع يشترط احترام الإنسان للإنسان وهذا الاحترام احترام للأعمال والأفكار. فالحضارة لا يمكن أن تقوم على القوة الغاشمة وإنما تعتمد على الإقناع وتسعى لتحقيق المثل العليا.</li>\n</ul>\n<h4>(غاستون ريشار):</h4>\n<ul>\n<li>إن بناء وتطور الحضارة يتم وفق الانتقال من القوة إلى الإقناع ومن القوة والوحشية والعنف إلى التهذيب والإرهاف واللطف وهذا يجب أن يشمل أخلاق الأسرة والمجتمع معا.</li>\n<li>يضرب ريشار أمثلة عن ذلك سواء أكان في مضمار المجتمع المنزلي ولا سيما في مجال كرامه المرأة أم في الرق وتلاشيه أو تطور أحوال السلوك والفضائل المختلفة كذلك آداب المجاملة وقواعد التصرف المهذب. فالتهذيب بوجه عام هو الذي يتيح للبشر التعامل على المستوى الإنساني وهو الذي يجعل المناقشة والحوار ممكنين.</li>\n<li>إن العنف نقيض التهذيب والعنف يضيف عائقاً أمام تقوية التعاون الإنساني ومع أن للعنف أنصار حتى اليوم إلا أن الجهود في المجتمع لا يمكن أن تتفاعل إلا في جو من الإصغاء والمناقشة والحوار واحترام البعض للبعض الآخر حتى لو كان هذا الاحترام بالشكل فقط هذا هو التهذيب أو آداب المجاملة.</li>\n<li>للتهذيب صفة مشتركة مع أصول الاحتفال والمراسم وهي صفة الاهتمام والشكليات.</li>\n</ul>\n<h4>(هربرت سبنسر):</h4>\n<ul>\n<li>أكد سبنسر أن أصل المراسم الاجتماعية (المناسبات والاحتفالات) هو فعل الاستسلام للغالب فالناس تجلون الأقوياء ويركعون لهم ثم أخذوا بإجلال الأموات. فظهرت عبادة الأزواج التي تحولت إلى عبادة الآلهة وإلى مراسم الاحتفالات الدينية التي تكرر شعائر الإجلال تجاه ما هو أسمى وأعلى.</li>\n<li>اتسم مذهبه بالسمة الإحيائية مثل واجب مراعاة المراسم في فرنسا، كمراسم العزاء والجنازة والدفن والحداد تفرضها أصول المجاملة فالرأي العام شديد في أحكامه في مثل هذه المواقف وهو لا يرحم من يخالف الأصول.</li>\n<li>إن واجب التهذيب تجاه الأموات وأقاربهم أشد صرامة من واجب تهذيب خيال الأحياء في الظروف اليومية فما زال الموت وتصور الموت موضع الاحترام والجد.</li>\n<li>إن مراسم عبادة الأموات والأجداد تعتبر مثالاً على الخوف والاحترام ورمزاً نلجأ إليه لمداراة قوة قاهرة ذات بأس وسلطان، بما في ذلك قوة الرأي العام.</li>\n</ul>\n<h4>النمط الإنساني العام: جان رومين (Romein J.):</h4>\n<p>يبرز جان رومين أربعة أفكار رئيسية على أنها النزعة الإنسانية الجديدة:</p>\n<p><strong>1. فكرة الكرامة الإنسانية:</strong> جعل المفكرون هذه الفكرة عبر العصور نصب أعينهم وحاولوا توسيع معنى الكرامة الإنسانية على المستوى الشخصي وعلى بلدهم فجعلوه شاملاً شعوباً قاصرة مختلفة من الناحية الاجتماعية.</p>\n<p><strong>2. فكرة نسبية الحقيقة وذاتيتها:</strong> ذهب العقليون إلى أن النتيجة التي يتوصل إليها الإنسان في استدلالاته ومحاكمته هي الدليل على أن في وسعه أن يرفض كل ما لا يتفق معها ويؤكد (ليسنغ Lessing) إن فكرة السلطة قد انهارت وأن سلطة (العقل) ذاتها ليست سلطة مطلقة ولا موضوعية وإنما هي سلطة نسبية ذاتية فيقول: لا تحدد قيمة الإنسان بالحقيقة التي يملكها بل تحدد بالجد الصادق الذي يسعى إلى إدراكها. وإن التي يبلغ بها الإنسان كماله النامي لا تنمو بامتلاك الحقيقة بل (بطلبها) ويقول: لو أمسك الله بالحقيقة كلها بيده اليمنى، وأمسك بيده اليسرى بالبحث اللانهائي عنها، وقال لي اختر، لاخترت بجرأة اليد اليسرى وقلت: أعطني البحث اللانهائي لأن الحقيقة الصرف ليست لأحد سواك. وينجم عن القول بنسبية الحقيقة وذاتيتها مبدأ التسامح.</p>\n<p><strong>3. فكرة الكمال الجائز للإنسان:</strong> إن فكرة تكامل البشر انتشرت من القرن السادس عشر وانتشرت أكثر في القرن الثامن عشر وقد امتدت من المطلب الأخلاقي إلى الواقع الاجتماعي وصار الناس يؤمنون بإمكان تكامل الطبقية البشرية الفردية والاجتماعية على حد سواء.</p>\n<p><strong>4. فكرة التقدم:</strong> سادت في القرن الثامن عشر على يد (كوندرسيه) على الإنسان أن يملأ مصيره بيده وأن كرامته تحفزه على أداء رسالة جديدة هي رسالة الحضارة أو الكرامة الإنسانية رسالة المدنية الحقة وهي لا تتحقق إلا بالإيمان والنضال ضد العقائديات التي قد تعرقل حرية إبداعها وإنجازاتها.</p>\n<p>حذر (رومين) من الفوضى الذهبية أي قد لا تعترف الدولة بالنمو الإنساني الجديد لأن الماضي بعاداته وتقاليده يقف عائقاً وحائلاً دون ذلك. كما في بعض مناطق أفريقيا وآسيا وأمريكا الجنوبية والوسطى، لذلك لا بد من الواجب الإحاطة بتعقده والاستعداد لتجاوزه إذا كنا نريد تحقيق حضارة متقدمة هدفها تحقيق كرامة الإنسان في الوقت الحاضر.</p>",
+        "questions": [
+            {
+                "q": "كيف عرّف ألفرد نورث وايتهيد الحضارة في كتابه 'مغامرة الأفكار'؟",
+                "options": [
+                    "هي فرض السيطرة بواسطة القوة العسكرية",
+                    "هي الحفاظ على النظام الاجتماعي بواسطة الإقناع الفطري الذي يتجسد بالاختيار الأفضل",
+                    "هي التوسع العمراني واستغلال الموارد الطبيعية",
+                    "هي سن القوانين الصارمة للحد من حريات الأفراد"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "ما الذي يمثله استخدام القوة حسب ألفرد نورث وايتهيد؟",
+                "options": [
+                    "قمة التطور الحضاري",
+                    "إخفاق الحضارة سواء للمجتمع العام أو للأفراد",
+                    "الوسيلة الوحيدة لتحقيق العدالة",
+                    "أساس نمو التجارة بين الدول"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "ما الذي يُعد مثلاً عظيماً على الإقناع حسب وايتهيد؟",
+                "options": [
+                    "الحرب",
+                    "القسر الحكومي",
+                    "التجارة",
+                    "العبودية"
+                ],
+                "correct": 2
+            },
+            {
+                "q": "وفقاً لغاستون ريشار، كيف يتم بناء وتطور الحضارة؟",
+                "options": [
+                    "بالانتقال من القوة إلى الإقناع ومن الوحشية إلى التهذيب واللطف",
+                    "بزيادة قدرات الدولة العسكرية",
+                    "بالاعتماد المطلق على القسر والتنظيم الصارم",
+                    "بالتمسك بالتقاليد القديمة دون تعديل"
+                ],
+                "correct": 0
+            },
+            {
+                "q": "ما أصل المراسم الاجتماعية والاحتفالات حسب هربرت سبنسر؟",
+                "options": [
+                    "الاتفاقات التجارية القديمة",
+                    "فعل الاستسلام للغالب وإجلال الأقوياء والأموات",
+                    "الرغبة في التسلية والترفيه",
+                    "قوانين الجمعيات الحديثة"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "ما الفكرة التي ينجم عنها مبدأ التسامح حسب جان رومين وليسنغ؟",
+                "options": [
+                    "فكرة السلطة المطلقة للعقل",
+                    "فكرة نسبية الحقيقة وذاتيتها",
+                    "فكرة القوة القاهرة",
+                    "فكرة الفوضى الذهبية"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "ماذا قال ليسنغ (Lessing) حول املاك الحقيقة وبحث الإنسان عنها؟",
+                "options": [
+                    "قيمة الإنسان تتحدد بكمية الحقيقة المطلقة التي يمتلكها",
+                    "لو خيره الله لاختار البحث اللانهائي عن الحقيقة بجرأة",
+                    "الحقيقة المطلقة ملك لجميع المفكرين",
+                    "العقل يستطيع امتلاك الحقيقة المطلقة وسلطته موضوعية"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "على يد من سادت فكرة التقدم في القرن الثامن عشر كما ذكر جان رومين؟",
+                "options": [
+                    "ألفرد نورث وايتهيد",
+                    "غاستون ريشار",
+                    "كوندرسيه",
+                    "هربرت سبنسر"
+                ],
+                "correct": 2
+            },
+            {
+                "q": "ما المقصود بـ 'الفوضى الذهبية' التي حذر منها جان رومين؟",
+                "options": [
+                    "عدم اعتراف الدولة بالنمو الإنساني الجديد لأن الماضي بعاداته وتقاليده يقف عائقاً",
+                    "انتشار الحروب الأهلية بسبب القوة",
+                    "انهيار الاقتصاد نتيجة التجارة الحرّة",
+                    "غياب القوانين التنظيمية في الأسرة"
+                ],
+                "correct": 0
+            },
+            {
+                "q": "كم عدد الأفكار الرئيسية التي أبرزها جان رومين على أنها النزعة الإنسانية الجديدة؟",
+                "options": [
+                    "أفكار 2",
+                    "أفكار 3",
+                    "4 أفكار رئيسية",
+                    "5 أفكار رئيسية"
+                ],
+                "correct": 2
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "📙 الطبيعة الأخلاقية ونظريات الفلاسفة",
+        "content": "<h3>الطبيعة الأخلاقية</h3>\n<h4>أ. سقراط:</h4>\n<p>يعد سقراط مؤسس علم الأخلاق منطلقاً من شعار: (اعرف نفسك بنفسك)</p>\n<p>وقد قال عنه شيشرون بأنه: أنزل الفلسفة من السماء إلى الأرض. بمعنى أنه حول الاهتمام من الفلسفة التي تهتم بالبحث في الطبيعة الخارجية إلى تلك التي تعنى بالطبيعة النفيسة والحقيقية لا توجد خارج نفوسنا بل فيها.</p>\n<ul>\n<li>من يعلم الخير حقاً يجد أن من مصلحته أن يحققه ولذا لا يمكن له أن يريده ويفعله وأن من يضع الشر إنما يعود به على نفسه ويسيء إليها. ولا يرتكب الإنسان الشر إلا عن خطأ وجهل فالشرير يخدع نفسه.</li>\n<li>إن الأشياء العادلة جميلة ولا يستطيع الذين يعرفونها ترجيح شيء آخر عليها.</li>\n<li>فنحن نعلم الناس لإنقاذهم من الشر والرذيلة.</li>\n</ul>\n<h4>ب. أفلاطون:</h4>\n<p>1. قال لا بد من الاتساق والانسجام بين الطبقتان الخارجية الكونية والداخلية النفسية.</p>\n<p>2. النفس عند أفلاطون تحتوي على ثلاثة أجزاء هي:</p>\n<ul>\n<li>أ. الشهوة أو الرغبة</li>\n<li>ب. النزعة الغضبية</li>\n<li>ج. العقل</li>\n</ul>\n<p>الشهوة أو الرغبة: تضم جميع أهواء الدنيا أو النزوات.</p>\n<p>النزعة الغضبية: وهي ذات منزلة متوسطة بين الشهوة والعقل.</p>\n<p>العقل: وهو يأتي في المنزلة العليا المرموقة.</p>\n<p>3. حدد أفلاطون لكل جزء من هذه الأجزاء مركزاً في الجسم فجعل (مركز النفس الشهوانية: أسفل البطن) وجعل (مركز النفس الغضبية: الصدر أو القلب) وجعل (مركز النفس العاقلة: الرأس).</p>\n<p>4. شبه النفس بعجلة يجرها جوادان: أحدهما أسود جموح متأهب للمتردد العصيان، والآخر كريم يعدل طيش صاحبه إذا أحسنت قيادته، وإذا لم تحسن قيادته جمح أيضاً كالجواد الأسود اللئيم ولهذه العجلة حوذي وهو العقل.</p>\n<p>5. اختص كل نفس بفضيلة معينة: فالنفس الشهوانية أدنى النفوس، وفضيلتها هي العفة والاعتدال، وقوامها ضبط الشهوات هو محاربة الشطط والإسراف في الأهواء، أما فضيلة النفس الغضبية فهي الشجاعة أي تحمل المكاره في سبيل الخير، أما فضيلة النفس العاقلة فهي الحكمة ووظيفة الحكمة هي التمييز بين أنواع الخير لتحقيق أسماها. ولو لا الحكمة لفازت النفس الشهوانية وتبعتها النفس الغضبية، وصار من المحال توفير الخير لفقد الشجاعة والعفة.</p>\n<p>6. ثمة فضيلة رابعة تنشأ من خضوع النفوس الأخرى للنفس العاقلة وهي فضيلة العدالة وهي فضيلة الاتساق والانسجام الباطني الذي يحقق البر والإصلاح.</p>\n<h4>ج. أبيقور:</h4>\n<p>لجأ إلى طريقة من الاستشفاء المعنوي الذي يحرر من الألم بتحديد موقف المرء من أنواع الرغبات الأساسية وهي:</p>\n<p>1. <strong>الرغبات الطبيعية الضرورية:</strong> وهي التي يتحتم على الإنسان أن يرضيها باعتدال تحاشياً للمرض أو الموت، كإرضاء الجوع بالخبز والعطش بالماء والتعب بالنوم.</p>\n<p>2. <strong>الرغبات الطبيعية الغير ضرورية:</strong> وهي التي لا يموت الإنسان إذا امتنع عن إرضائها، مثل الرغبة الجنسية وحب تنويع الأطعمة.</p>\n<p>3. <strong>رغبات ليست طبيعية وغير ضرورية:</strong> وهي التي تنمو بتأثير البيئة الاجتماعية وتدعو المرء إلى نوال إعجاب الآخرين إما بطلب المال أو السيطرة أو الشهرة أو إصلاح الدولة والناس.</p>\n<h4>د. الحكم الأبيقوري:</h4>\n<p>لا يتحلى إلا برغبات محدودة وهو يحتقر الموت ولا يخاف من الآلهة. وحين يتوصل إلى أن يكفي ذاته بذاته، وأن ينظم أفكاره حول ما تكتفي به طبيعته يتوصل إلى امتلاك خير أعظم وهو الحرية، أو اللذة الفاضلة.</p>",
+        "questions": [
+            {
+                "q": "ما هو الشعار الذي انطلق منه سقراط باعتباره مؤسس علم الأخلاق؟",
+                "options": [
+                    "العقل السليم في الجسم السليم",
+                    "اعرف نفسك بنفسك",
+                    "المعرفة هي القوة",
+                    "الانسان معيار كل شيء"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "ماذا قال شيشرون عن سقراط؟",
+                "options": [
+                    "أنه أنزل الفلسفة من السماء إلى الأرض",
+                    "أنه أول من اكتشف أجزاء النفس",
+                    "أنه وضع قوانين الدولة الفاضلة",
+                    "أنه صنف الرغبات البشرية"
+                ],
+                "correct": 0
+            },
+            {
+                "q": "لماذا يرتكب الإنسان الشر حسب رأي سقراط؟",
+                "options": [
+                    "بسبب الرغبة في السيطرة",
+                    "عن خطأ وجهل لأن الشرير يخدع نفسه",
+                    "نتيجة الطبيعة البيولوجية",
+                    "بسبب ضعف القوانين والتشريعات"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "ما هي أجزاء النفس الثلاثة عند أفلاطون؟",
+                "options": [
+                    "الحكمة، الشجاعة، العفة",
+                    "الشهوة أو الرغبة، النزعة الغضبية، العقل",
+                    "الروح، الجسد، العقل",
+                    "العاطفة، الإرادة، المنطق"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "أين أقم أفلاطون مركز 'النفس الغضبية' في جسم الإنسان؟",
+                "options": [
+                    "أسفل البطن",
+                    "الرأس",
+                    "الصدر أو القلب",
+                    "الأطراف"
+                ],
+                "correct": 2
+            },
+            {
+                "q": "ما هي الفضيلة الخاصة بـ 'النفس الشهوانية' عند أفلاطون؟",
+                "options": [
+                    "الحكمة",
+                    "الشجاعة",
+                    "العفة والاعتدال",
+                    "العدالة"
+                ],
+                "correct": 2
+            },
+            {
+                "q": "ما هي الفضيلة الرابعة التي تنشأ من خضوع النفوس الأخرى للنفس العاقلة عند أفلاطون؟",
+                "options": [
+                    "فضيلة الشجاعة",
+                    "فضيلة العفة",
+                    "فضيلة الحكمة",
+                    "فضيلة العدالة"
+                ],
+                "correct": 3
+            },
+            {
+                "q": "كيف تصنّف 'الرغبة الجنسية وحب تنويع الأطعمة' حسب تقسيم أبيقور للرغبات؟",
+                "options": [
+                    "رغبات طبيعية ضرورية",
+                    "رغبات طبيعية غير ضرورية",
+                    "رغبات ليست طبيعية وغير ضرورية",
+                    "رغبات غير طبيعية وضرورية"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "ما هي الرغبات التي تشمل (طلب المال أو السيطرة أو الشهرة) حسب أبيقور؟",
+                "options": [
+                    "رغبات طبيعية ضرورية",
+                    "رغبات طبيعية غير ضرورية",
+                    "رغبات ليست طبيعية وغير ضرورية",
+                    "رغبات روحية ضرورية"
+                ],
+                "correct": 2
+            },
+            {
+                "q": "ما هو الخير الأعظم الذي يتوصل إليه الحكيم الأبيقوري حين يكفي ذاته بذاته؟",
+                "options": [
+                    "المال والجاه",
+                    "الحرية، أو اللذة الفاضلة",
+                    "السيطرة على الآخرين",
+                    "الخلود المعنوي"
+                ],
+                "correct": 1
+            }
+        ]
+    },
+    
+    
+    
+    
+      {
+        "id": 3,
+        "title": "📘 علاقات الشرف والتقدم الأخلاقي",
+        "content": "<h3>أخلاق وحضارة</h3>\n<h4>المحاضرة السابعة والثامنة: علاقات الشرف</h4>\n<p><strong>1. الشرف في المجالات الفردية:</strong> هو يعني الشرف في المجالات الفردية ما يتصل بسلوك المرء حيال نفسه جسداً و روحاً. فهناك سلوك شرف يتوخى تسقيف الجسد أو تسقيف الروح، أي التكامل الجسدي والتكامل المعنوي أو الأخلاقي، حيث ترتبط بالجسد خصال فيزيائية جسدية مثل الصحة والبنية السليمة والقوة و المهارة والجمال والرشاقة، أما الروح فترتبط بالإرادة و الوعي والتصميم. الشرف الفردي متصل بسعي المرء إلى تحسين ذاته وتكاملها بطريقة محاسبة النفس أي ما يسمى اليوم بالنقد الذاتي. وهذه المحاسبة يجب ان تكون صادقة ويجب الاحتراس من النرجسية ومن أوهام حب الذات. أخذاً بعين الاعتبار حكم الوجدان بالإضافة إلى مراقبة وتقدير الآخرين ورقابة الله تعالى.</p>\n<p><strong>2. الشرف في المجالات الاجتماعية:</strong> أي أن المرء عندما يحاسب نفسه يجب أن يعنى برأي الآخرين وبالحرص على تقديرهم ومراعاة ما يعرف بالسمة الطيبة فلا يمكن عزل الفرد عن المجتمع بل الجانب الاجتماعي لا يقل اهمية عن الجانب الفردي في التأثير بالأخلاق الفردية لهذا الفرد، ففي الأخلاق الإجتماعية يسود رأي الآخرين فينا ويوجه وجداننا، إلا في حالات قليلة يخرج الانسان عن الرأي الاجتماعي ولكن بشكل عام من شأن الآخرين أن يحكم على سلوكنا تجاههم وعلى قيامنا بواجباتنا الأسرية والمهنية أو الإنسانية ولهم أن يظهر رضاهم أو عدم رضاهم عنا فيما يتصل بهم.</p>\n<p><strong>3. الشرف في المجالات الاسرية:</strong> فالشرف الفردي يتحد بالشرف الأسري فالأسرة هي وسيلة تكامل متبادل كما انها وسيلة ارتقاء اجتماعي. فمثلاً إن التمجيد المثالي للجد يخلق لدى العاسقين (الأنتَ) المثالية التي تصبح في نظر الآخرين (المثل الأعلى للأنا) وكل واحد منهما يجهد ليكون جديراً بهذا الاعجاب ويصبح أهلاً بأن يكون المثل الأعلى لمن يحبه. وغير خافٍ مدى تأثير الاتفاق الزوجي والانسجام المعنوي بين الوالدين على الأطفال ما يوقع عليها مسؤولية كبرى، وهنالك أسر زائفة لا يربط الحب افرادها مع بعضهم ولكن يحترم كل من الزوجين مسؤولياته لأنه أختار الرباط المقدس (الزواج) برضاه. وتعتبر الخيانه مثلاً اختراماً لعهد الشرف الأسري سواء من قبل الزوج أو الزوجة وتشكل خطراً على استقرار الأسرة قد ينتهي بالانفصال أو الهجر أو الطلاق. فالحب الشريف هو ما يصون الأسرة والشرف الأسري، هو الزواج منبع التخلف فالزواج عقد شرف وعنوان شرف كذلك الأبوة والأمومة. ولا تقتصر الأم على واجب الأمومة في العناية بالأطفال بل تستمد وحي سلوكها من حنانها ومن الاعتزاز بأمومتها وبأطفالها.</p>\n<p><strong>4. الشرف في المجال السياسي:</strong> وهو يعني أن الواجبات أو الإلزامات المترتبة نحو الدولة تدخل في نطاق واجبات الشرف الاجتماعي والسياسي. فمن الشرف الدفاع عن الوطن كالشرف في تسديد الضرائب والإسهام في الاقتراع والمشاركة في السيادة القومية كما يسعى السياسيون بالمقابل بالاعتراف بشرف التأييد الشعبي ويسعون للاعتراف بحقوق المواطنين بحيث أن ما يقتضيه الشرف من السياسة هو اعتنائهم بالمصلحة العامة دون تجاهل أو عدوان على الكرامة الفردية أو الجماعية ملتفيتين إلى أن حقوق الإنسان مقدسة لا يمكن التنازل عنها أو نفيها وأن استرقاق الإنسان ممنوع أخلاقياً.</p>\n<p><strong>5. الشرف المهني:</strong> إن تقسيم العمل يقود إلى ضروب من الشرف المهني، وهذا الشرف ينتج عن التأثير المشترك والحياة المشتركة والاستراك في المصالح والأفكار ومن هنا ينشأ شرف جمعي أو وعي بتمايز فئوي أو طبقي، ولا يجيز الصراع الطبقي ذاته امتهان الكرامة الانسانية، فكل شرف جزئي بظل مرتبط بشرف الأمة أو بالشرف الإنساني العام. وليس في وسع منظمة مهنية أو نقابية أن تعتبر ذاتها الحكم الوحيد في شؤون شرفها وشرف الآخرين.</p>\n<h4>التقدم الأخلاقي</h4>\n<p>يتحقق التقدم الأخلاقي فيما يلي:</p>\n<ul>\n<li>توفر الحريات المدنية التي تعارض الرق والعبودية والتي تحترم الكرامة الإنسانية وتبعث شعور الشرف وهي شرط التقدم الاخلاقي.</li>\n<li>حرية الزواج التي تكفل الاصطفاء الجنسي والروحي وتغذي السلوك المستقيم.</li>\n<li>حرية العمل والتجمع والاضراب فهذه الحقوق تكفل نمو الشخصية الأخلاقية من خلال إعراب الفرد عن الآثار الفلسفية والدينية والسياسية.</li>\n<li>استخدام حق الاجتماع وحرية الصحافة والإعلام شريطة عدم الإخلال بحق الآخرين وعدم الإعتداء على شرفهم.</li>\n<li>حق التملك: هو مشتق من العمل وواجب العمل وهو يرفد كرامة الأفراد والجماعات لكن المغالاة في التملك و الثروة يميل إلى إذلال الأكثر فقراً ووضعهم تحت رحمة الأكثر غنى.</li>\n<li>احترام حق الآخرين والسعي لنجدة البائسين وغوث المضطرين والمعوزين.</li>\n<li>عدم اقتراف الأذى والايداع بالناس والإساءة إليهم في حضورهم أو غيابهم.</li>\n<li>الابتعاد عن السب والشتيمة هو الغيبة والنميمة والوشاية لأنها تمثل عدواناً على شرف الآخرين.</li>\n<li>واجب زم الرزائل وامتداح الفضائل.</li>\n<li>صدق المرء تجاه نفسه وتجاه الآخرين والابتعاد عن الكذب والخديعة وخيانة ثقة الآخرين.</li>\n<li>توجد حالات خاصه يكون مضمونها ذو معنى آخر عميق مثل الكذب على مريض لحمايته من الجزع ومراعاة طاقته المعنوية وحالته النفسية.</li>\n<li>أيضاً قد يكون الدبلوماسي خدمة لأغراض تفيد الوطن. ويتم اللجوء الى خدمة ما في الحرب ضد العدو أو التجسس على الأجنبي، فهذه وسائل من باب الدفاع عن النفس الذي قد يرقى إلى مرحلة البطولة والشرف وإنقاذ البلاد من الحرب وتجنبها إياها.</li>\n</ul>\n<p>نهاية المحاضرة</p>",
+        "questions": [
+            {
+                "q": "ماذا يسمى سعي المرء إلى تحسين ذاته وتكاملها بطريقة محاسبة النفس وفق ما ورد في المحاضرة؟",
+                "options": [
+                    "النقد الذاتي",
+                    "التكامل الجسدي",
+                    "النرجسية",
+                    "التقسيم الطبقي"
+                ],
+                "correct": 0
+            },
+            {
+                "q": "ما الخصال التي ترتبط بالروح في الشرف الفردي؟",
+                "options": [
+                    "الصحة والبنية السليمة",
+                    "الإرادة والوعي والتصميم",
+                    "الجمال والرشاقة",
+                    "القوة والمهارة"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "ما الذي يوجه وجداننا ويسود في الأخلاق الاجتماعية عادةً؟",
+                "options": [
+                    "رأي الآخرين فينا",
+                    "النرجسية الفردية",
+                    "الصراع الطبقي",
+                    "الاسترقاق"
+                ],
+                "correct": 0
+            },
+            {
+                "q": "ما الذي يعتبر اختراماً لعهد الشرف الأسري ويشكل خطراً على استقرار الأسرة؟",
+                "options": [
+                    "الاتفاق الزوجي",
+                    "الخيانه",
+                    "الانسجام المعنوي",
+                    "الاصطفاء الروحي"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "أي مما يلي يُعد من واجبات الشرف الاجتماعي والسياسي تجاه الدولة؟",
+                "options": [
+                    "استرقاق الإنسان",
+                    "الدفاع عن الوطن وتسديد الضرائب",
+                    "المغالاة في التملك",
+                    "ممارسة النميمة"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "ينتج الشرف المهني عن أي من العوامل التالية؟",
+                "options": [
+                    "امتهان الكرامة الإنسانية",
+                    "التأثير المشترك والحياة المشتركة والاشتراك في المصالح والأفكار",
+                    "الاسترقاق الفئوي",
+                    "الانعزال عن المجتمع"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "ما هو شرط التقدم الأخلاقي الأساسي الذي يعارض الرق والعبودية؟",
+                "options": [
+                    "توفر الحريات المدنية",
+                    "المغالاة في الثروة",
+                    "الانعزال الفردي",
+                    "السب والشتيمة"
+                ],
+                "correct": 0
+            },
+            {
+                "q": "ما أثر المغالاة في التملك والثروة حسب ما ورد في المحاضرة؟",
+                "options": [
+                    "تغذية السلوك المستقيم",
+                    "إذلال الأكثر فقراً ووضعهم تحت رحمة الأكثر غنى",
+                    "تحقيق النقد الذاتي",
+                    "تعزيز حرية الصحافة"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "لماذا تُعتبر الغيبة والنميمة والوشاية أموراً يجب الابتعاد عنها؟",
+                "options": [
+                    "لأنها ترشد الاستهلاك",
+                    "لأنها تمثل عدواناً على شرف الآخرين",
+                    "لأنها من واجبات الدولة",
+                    "لأنها تحقق التملك"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "متى يُعتبر الكذب جائزاً ولَهُ معنى عميق كاستثناء أخلاقي؟",
+                "options": [
+                    "لإذلال الفقراء",
+                    "عند الكذب على مريض لحمايته من الجزع ومراعاة حالته النفسية",
+                    "لخيانة ثقة الآخرين",
+                    "عند امتهان الكرامة المهنية"
+                ],
+                "correct": 1
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "📗 الاغتراب مفهوماً وأبعاداً أخلاقية وفلسفية",
+        "content": "<h3>أخلاق وحضارة</h3>\n<h4>المحاضرة التاسعة والعاشرة: الاغتراب</h4>\n<p><strong>*الاغتراب*</strong></p>\n<p>للإغتراب معاني كثيرة منها المعنى الحقوقي وهو (نقل ملكية شيء أو حق أو بيع شيء من الأشياء) والمعنى النفسي (جنون، اختلال) والمعنى الاجتماعي (انحلال الرابطة التي تشد الفرد إلى الآخرين) والمعنى الديني (انحلال ارتباط الفرد بأي إله).</p>\n<h4>الاغتراب لدى جان جاك روسو:</h4>\n<p>كان له دور إبراز المعنى الحديث لمفهوم الاغتراب حيث رأى أن تنازل المرء عن حريته الطبيعية هو فعل اغتراب قد يرضى به بقدر ما يستبدل به منافع الحرية المدنية. أي التنازل عن خير لقاء خير آخر.</p>\n<p>ـ كما تم تعريفه على أنه: انعدام السلطه والانخلاع والانفصام عن الذات والالمعيارية ولذلك اعتبر الاغتراب من أخطر الظواهر التي تواجه إنسان هذا العصر فقد بات يشكل مظهراً فيه من العناصر السلبية التخريبية.</p>\n<h4>الاغتراب لدى هيغل Hegel:</h4>\n<p>استعمل هيغل الاغتراب للدلالة على اختفاء الصفة الخارجية والموضوعية أي طريقة خلق الآخر (مثلاً عندما يبيع شخص بالتنازل عن عقاره تصبح ادارته ذاتية بالإضافة اليه، ولكنها تبدو في الوقت ذاته على أنها موضوعية \"أي يوجد في المعادلة هو نفسه + الآخر\")</p>\n<p>ورأى هيغل بأن الاغتراب يدل على غرابة الأمر، الاحتقار، انقسام الكائن على نفسه والبعد والانفصال وفقدان الذات في الكائن الآخر، وذلك لأن الكيان الاجتماعي يتجاوز خصوصية الأفراد والعالم الذي يعيش فيه الإنسان هو إلى حد كبير من ابتکار أو اختراع الإنسان نفسه وأن النظم السياسية والحضارية والاجتماعية تمثل الجوهر الإجتماعي الذي تمخض عنه هذا الدور الإنساني.</p>\n<p>ويستعمل هيغل مصطلح الاغتراب للدلالة المزدوجة على معنى التخلي أو التنازل من جهة ، وعلى معنى الانفصال عن النفس لعجز الفرد عن الاتحاد بالجوهر الاجتماعي من جهة أخرى.</p>\n<h4>الاغتراب عند كارل ماركس:</h4>\n<p>ينظر ماركس للاغتراب من زاوية الأشياء التي يتم انتاجها ، ويرى بأن العامل غريب أو مغترب عما صنع لأنه أصبح معزولاً عن امكاناته الخالقة وعن الأواصر الاجتماعية التي تهدد انسانيته من خلالها ، وانتقد ماركس الملكية الخاصة وما يواكبها من تقسيم العمل ومن النمو الحضاري الذي يزيد من اغتراب العامل ، وانخلاع الإنسان فكل ما يتصل بالملكية هو ضياع ينال من كون الكائن.</p>\n<p>ـ يقول ماركس في كتابه (الرأسمال): إن طريقة الإنتاج الرأسمالي تحدث من تلقاء ذاتها انفصال العامل عن شروط العمل ، وهي بذلك تكرر وتدين الشروط التي ترغم العامل على أن يبيع ذاته ليعيش ، كما تجعل الراسماليه في وضع شرائه حتى تغنى.</p>\n<h4>الاغتراب لدى فيورباخ Feurbach:</h4>\n<p>اهتم بإظهار أن المسيحية خاصة ، والدين بشكل عام قد حولا الإنسان عن نشاطه الحقيقي وجعاله يسقط أهدافه الشخصية على أسطورة الآمال المجردة. وهو يدعو إلى عودة الإنسان إلى ممارسة يومية عادية بمراعاة الآخرين والحياة الاجتماعية. فالإنسان في نظر فيورباخ كائن نوعي وجوهره الإعتراف بالإنسانية في ذاته ، ومن شأن الاغتراب الديني أن يكشف النقاب عن ذات الإنسان ويخفيها عن ناظريه في وقت واحد إذ ينقلها إلى مكان آخر إلى عالم الإلوهية. فالبشر تطفي ذاتها في إله تصنعه وتستسلم لهذا العرش الذي يضطهدها.</p>\n<h4>الاغتراب لدى موزيس هس Hess Moses:</h4>\n<p>وهو يطبق الصورة ذاتها على الحياة الاقتصادية قائلاً: إن الاغتراب هو (إضفاء الفعالية الإنسانية إلى خارجها وفي شيء يسترقها بالخضوع إليه ألا وهو المال. لأن المال في الحياة العملية في عالمنا المقلوب كالله في الحياة النظرية ، المال هو القيمة الإنسانية معبراً عنها بالأرقام إنه علاقة عبوديتنا)</p>\n<p>وفي قلب هذا الاغتراب يضطر الناس إلى أن يعارض بعضهم بعضاً. بل إن حالة هذا التمزق تتجلى بصفة ضرورة نسبية: ضرورة أي (حيلة عقلية) تتيح للأفراد الخروج عن عزلتهم والدخول إلى مجال العلاقات المبادلة.</p>\n<h4>الاغتراب لدى ايرك فروم Fromm:</h4>\n<p>يذهب إلى أن المجتمع الرأسمالي يجعل الفرد مغترباً بقدر ما يجعل من الصعب أن يحقق الفرد حاجاته الأساسية مثل حاجة الإبداع وإقامة علاقات اجتماعية مع الآخرين ، وحاجة الاستقرار ، وحاجة التميز ، وحاجة توجيه نفسه بنفسه.</p>\n<h4>الاغتراب لدى سيمان seeman:</h4>\n<p>حاول إضفاء الصفة الإجرائية على الاغتراب في محاولة لقياسه وتمييز أنواع و مقاديرها فوجد بأن له رأي الاغتراب خمسة أبعاد يمكن قياسها بعداً بعداً:</p>\n<ul>\n<li>شعور الذي يعيشه الفرد بعجز سلوكه عن احداث النتائج المبتغاة.</li>\n<li>الشعور الذي يعيشه الفرد بأنه لا يملك دليلاً يستطيع اعتماده في تثبيت سلوكه واعتقاده.</li>\n<li>السلوك الذي يعيشه الفرد بأنه مرغم على استعمال وسائل لا شرعية لتحقيق اغراضه.</li>\n<li>الشعور الذي يعيشه الفرد بأنه غريب عن أهداف المجتمع الثقافية.</li>\n<li>الشعور الذي يعيشه الفرد بأنه عاجز عن العثور عن أنشطة يستطيع أن يقدر بها قيمته الذاتية.</li>\n</ul>\n<h4>الاغتراب لدى فوير:</h4>\n<p>يقول فوير أن الإقتراب يظهر في جميع مناحي التجربة الإنسانية حيثما تصاب رغبة أساسية عاطفية بالحرمان ، ويكون الشخص مرغماً بسبب أوضاع إجتماعية على مخالفة طبيعته الخاصة ، فاالاغتراب هو الطنين العاطفي المواكب لكل سلوك يضطر المرء فيه لهدم ذاته.</p>\n<h4>الاغتراب بالمعنى العام:</h4>\n<p>لقد شاع مفهوم الاغتراب ليعبر عن ظاهرات يستطيع كل إنسان أن يلاحظها مثل: (تفتيت العمل ـ شعور الفرد بالعجز أمام تعقد النظم الاجتماعية ـ الاضطرابات النفسية والجسدية الناتجة عن الحياة الحديثة ـ صبر المضطهدين ـ شعور الإنسان بالعجز السياسي الذي قد يستولي على المواطن ـ ضجر العامل حيث يعمل بشكل روتيني. كذلك يستخدم مفهوم الاغتراب لوصف حال الأجير الذي يترتب عليه أن يبيع قوة عمله أو وصف بؤس شروط العمل .......) وغيرها من الأمور أو الظواهر التي تقع كلها تحت مفهوم الاغتراب.</p>\n<h4>الاغتراب أخلاقياً:</h4>\n<p>بعد أن وضحنا المعاني والدلالات المختلفة للاغتراب يجب أن نشير أن للاغتراب حكما دلالة أو جانباً أخلاقياً ، وفي هذا الجانب تحدث (دوركهايم) وهو من علماء الإجتماع المعاصرين وأبرز أفكاره في هذا المجال ما يلي:</p>\n<p><strong>1. الانتحار الأناني:</strong> وهو ينجم عن انعدام تكامل الفرد من حيث هو فرد مع المجتمع بحيث يجد المرء نفسه عاجزاً عن الاستجابة أو الخضوع لأية سلطة غير السلطة التي يصدرها هو بنفسه ، فيؤدي به الأمر إلى الانعزال عن المجتمع وفقده تأييد الجماعة له وتعذر الحياة وسط تلك الجماعة فيندفع للانتحار.</p>\n<p><strong>2. الانتحار الايثاري:</strong> الناجم عن ازدياد سطوة المجتمع المتمثلة في قوة العادات والتقاليد والأعراف وخضوع الفرد لها على نحو تنمحي فيه شخصيته فلا يكاد يتمتع بكيان مستقل متمايز و منفصل عن الجماعة التي ينتمي إليها و التي يستمد منها مقوماته. وهنا تتضاءل أهمية المرء بالنسبة لنفسه وغيره ، وربما أدى به إلى الانتحار تحت وطأة هذا الضغط.</p>\n<p><strong>3. الانتحار اللامعياري (الأنومي):</strong> هو نتيجة إخفاق الفرد في التكيف مع المجتمع ولا سيما حين يختل التكيف التقليدي بنتيجة ظروف جديدة طارئة فيصعب على المرء أحكام التكيف والملاءمة ولا يهيء المجتمع له ظروف التجاوب مع المعايير الجديدة ، فيغدوا للمجتمع في نظر الفرد مجتمعاً منحل المعايير ، او لا معيارياً ، يغدو مجتمعاً متهافتاً يتحبط فيه المرء فلا يجد للحياة معنى ، وقد ينتهي به الأمر إلى الانتحار.</p>\n<p>ـ فمن الوجهة الأخلاقية تبرز مشكلة الاغتراب في الاستغلال ، ولكن العلاج لا يكون في العزلة ولا في الجنون ولا في الانتحار ، ولكن يجب أن يثير الاغتراب في نفوس المصابين به على كسرتهم ارتكاسات أخرى وهي ارتكاسات ناشطة ايجابية هادفة تتمثل في التحرر وطلب العدل.</p>\n<h4>ريمون رويه:</h4>\n<p>يتفق مع دوركهايم بأن النمو الإجتماعي المتقدم يزيد من وعي الفرد باعتماده على المجتمع. وهذا الوعي يولد قوي ويبقي الفرد خاضع للمجتمع ، حيث يتم تربية الفرد ليكون مستعداً ذهنياً لقبول الأعباء والمجالات المحددة ، لأن الفرد في المجتمع المتمدن يولد ليواجه حقيقة تنتظره وهي أن يؤدي وظيفة في التركيب العضوي الاجتماعي. ولذلك فهو مطالب بأن يتعلم مسبقاً كيفية أداء أدواؤه. فتقسيم العمل في نظره لا يخفض من قيمة الفرد بحد ذاته في الظروف الاعتيادية عندما يحوله إلى آلة أو إدارة ما دام يسمح للفرد بأن يشعر من خلال أدائه لوظائفه بأن يخدم شيئاً ما ، هو ذلك على العكس إذ اتقود الفرد على الآفاق الواسعة والآراء الطموحة سيصعب عليه أن يقيد بعمل محدد دون أن يصير ذلك استيائه.</p>\n<p>يرى ريمون رويه بأن الاغتراب فكرة أدبية وفلسفية كثيراً ما تعلق بها المفكرون ، أما العمال فيجدون أن الاغتراب يتمثل في الاستغلال ، ففي حين أن الرأسمالي أو رب العمل لا ينتج سلعاً ناقصة إلا من أجل مصلحته ، ولكن العامل لا يعمل من أجل ذاته ولا يعمل من أجل الشيء النافع الذي يصنعه ، إنه يعمل لمصلحة الرأسمالي الذي يستغله وكأنه سلعة تشترط لوجود سلعة. والعامل مشدود من جهة أولى إلى اقتصاد الربح ، ومن جهة ثانية نجده مقيد بهذا الاقتصاد بوصفه شيئاً منتجاً ، والاغتراب عند العامل أساس مزدوج وهو لا يدخل دائرة المبادلة على أنه فاعل بل على أنه موضوع أو سلعة متبادلة.</p>\n<p>- وبما أن الاغتراب مفهوم كله دلالات اجتماعية واقتصادية وسياسية ونفسية يرى معظم المفكرين بأنه البد من إزالة النتائج السلبية له وذلك من خلال بذل الجهد للتحرر وتحقيق مطلب العدل على الصعيد الأخلاقي أو الأخلاقي الحقوقي وذلك ليس فقط من أجل رفض الظلم ومحو الاغتراب وإنما يستهدف تحقيق إنسانية الإنسان.</p>\n<p>نهاية المحاضرة</p>",
+        "questions": [
+            {
+                "q": "ما المعنى الحقوقي للإغتراب حسب المحاضرة؟",
+                "options": [
+                    "انحلال الرابطة الاجتماعية",
+                    "نقل ملكية شيء أو حق أو بيع شيء من الأشياء",
+                    "الجنون والاختلال النفسي",
+                    "انحلال ارتباط الفرد بالإله"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "كيف نظر جان جاك روسو إلى تنازل المرء عن حريته الطبيعية؟",
+                "options": [
+                    "فعل جنون واختلال",
+                    "فعل اغتراب مقابل منافع الحرية المدنية",
+                    "انتحار أناني",
+                    "انتحار إيثاري"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "من هو الفيلسوف الذي ينظر للإغتراب من زاوية انفصال العامل عن شروط عمله وعن الأشياء التي ينتجها؟",
+                "options": [
+                    "جان جاك روسو",
+                    "كارل ماركس",
+                    "فيورباخ",
+                    "سيمان"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "ما هو الشيء الذي يعتبره 'موزيس هس' القيمة الإنسانية معبراً عنها بالأرقام وعلاقة عبوديتنا؟",
+                "options": [
+                    "الدين",
+                    "المال",
+                    "الزواج",
+                    "العمارة"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "كم عدداً من الأبعاد حددها 'سيمان' لإضفاء الصفة الإجرائية على الاغتراب وقياسه؟",
+                "options": [
+                    "ثلاثة أبعاد",
+                    "خمسة أبعاد",
+                    "سبعة أبعاد",
+                    "عشرة أبعاد"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "ما نوع الانتحار الذي ينجم عن انعدام تكامل الفرد مع المجتمع وانعزاله عنه حسب دوركهايم؟",
+                "options": [
+                    "الانتحار الإيثاري",
+                    "الانتحار الأناني",
+                    "الانتحار اللامعياري (الأنومي)",
+                    "الانتحار التقني"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "ينجم الانتحار الإيثاري عند دوركهايم عن:",
+                "options": [
+                    "انعدام سلطة الدولة",
+                    "ازدياد سطوة المجتمع والمبالغة في خضوع الفرد للعادات وانمحاء شخصيته",
+                    "إخفاق الفرد في التكيف مع ظروف طارئة",
+                    "تفتيت العمل والروتين"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "ما هو الانتحار اللامعياري (الأنومي)؟",
+                "options": [
+                    "نتيجة إخفاق الفرد في التكيف مع ظروف جديدة طارئة واختلال المعايير",
+                    "نتيجة التضحية بالنفس لأجل الجماعة",
+                    "نتيجة النقد الذاتي",
+                    "نتيجة ممارسة الحريات المدنية"
+                ],
+                "correct": 0
+            },
+            {
+                "q": "ما هو العلاج الإيجابي الأجدر لمشكلة الاغتراب والاستغلال أخلاقياً بدلاً من العزلة والانتحار؟",
+                "options": [
+                    "الاستسلام للعرش",
+                    "التحرر وطلب العدل",
+                    "السب والنميمة",
+                    "ترك العمل نهائياً"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "كيف يرى 'ريمون رويه' موقع العامل في دائرة المبادلة في النظام الرأسمالي؟",
+                "options": [
+                    "أنه فاعل رئيسي",
+                    "أنه موضوع أو سلعة متبادلة",
+                    "أنه حاكم سياسي",
+                    "أنه نجل ومثل أعلى"
+                ],
+                "correct": 1
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "📙 الحضارة: تعريفها وعناصرها وعوامل قيامها",
+        "content": "<h3>أخلاق وحضارة</h3>\n<h4>المحاضرة الحادية عشر: تعريف الحضارة ـ عناصرها ـ عوامل قيامها</h4>\n<p><strong>* تعريف الحضارة:</strong></p>\n<p>الحضارة في اللغة هي الإقامة في الحضر ، وهي خلاف البادية ، وهي المدن والقرى والريف ، حيث تذكر الحضارة في اللغة ، فإنه يقصد بالحضر ما هو عكس البادية أي سكن المدن والقرى.</p>\n<p>أما الحضارة اصطلاحاً فيزاد منها التعبير عن طراز العيش الذي يسود مجتمعاً من المجتمعات ، أي هوية ذلك المجتمع ، فالمجتمع عبارة عن مجموعة منظمة من الأفراد ، والحضارة مجموعة منظمة من الاستجابات التي تعلمها الأفراد واصبحت ميزة المجتمع. أما صموئيل هنتنغتون فيرى بأن الحضارة هي أعلى تجمع ثقافي للناس وأوسع مستوى للهوية الثقافية للشعب وهي تحدد بالعناصر الموضوعية المشتركة مثل اللغة والتاريخ والعادات والمؤسسات كما تحدد بالعناصر الذاتية التي يقوم الشعب نفسه بها.</p>\n<p><strong>* عناصر الحضارة:</strong></p>\n<p>لما كانت الحضارة هي ثمرة التفاعل بين الإنسان والكون والحياة فعناصر الحضارة تتمثل في هذه الكليات الثلاث: الإنسان ، الحياة ، الكون.</p>\n<p><strong>1. الإنسان:</strong> يعتبر هذا المكون هو أهم عناصر الحضارة فهو العنصر المؤثر والفاعل فوظيفة الإنسان التي خلق من أجلها هي إعمار الأرض بالمعنى الشامل. وإقامة مجتمع إنساني سليم ، و إشادة حضارة إنسانية شاملة ويمكن تصنيف التقدم الذي يحققه الإنسان إلى ثلاثة أصناف:</p>\n<p><strong>الصنف الأول:</strong> ما يخدم الجسد ويمنعه من وسائل العيش وأسباب الرفاهية والتعميم ، وأنواع التقدم العمراني والزراعي والصناعي والصحي والأدبي والفني والتقدم في الإنتاج الحيواني.</p>\n<p><strong>الصنف الثاني:</strong> ما يخدم المجتمع الإنساني ويكون من الوسائل التي تمنحه سعادة التعاون والإخاء والأمن والطمأنينة والرخاء ويشمل ذلك تقدم النظم الاجتماعية كافة كالنظم الادارية والحقوقية و المالية والأحوال الشخصية والأخلاق والعادات والتقاليد الفاضلة.</p>\n<p><strong>الصنف الثالث:</strong> ما يأخذ بيد الإنسان فرداً كان أو جماعة إلى السعادة الخالدة والوجود الأبدي الذي ينتقل من حياة جسدية عادية يكون فيها الابتلاء إلى حياة نفسية روحية ويدخل في هذا الصنف أنواع التقدم الفكري والقائم على التأملات التي تحمل اسم المعتقدات والواجبات الدينية.</p>\n<p><strong>2. الحياة:</strong> بالإضافة إلى الإنسان ، فالحياة التي نعيشها تعتبر عنصراً أساسياً من عناصر الحضارة. فمن الضروري أن تكون الحضارة التي يضعها الإنسان حضارة متطورة تستطيع أن تسع كل تطورات الحياة الإنسانية ، وتحقق ما يخدم المجتمع الإنساني ، بحيث تواجه ما يجد من حياة البشر من تطورات في شتى المجالات ولا تقف جامدة أمام متغيرات الحياة البشرية في واقعها الفردي والإجتماعي.</p>\n<p><strong>3. الكون:</strong> وهو من عناصر الحضارة فنحن نعيش في الكون ونشاهد كل ما فيه من خلق. ولا سيما أن كل ما نراه في الكون ومظاهره مسخر لخدمتنا وتدبير أسباب عيشنا وتحقيق شروط رفاهيتنا.</p>\n<p>لكن بالمقابل على الإنسان أن يمارس دنياه وأسباب عيشه وتقدمه وبناء حضارته بدافع وظيفي وبروح استشعار المسؤولية لا بدافع التعلق النفسي. أي أن يدرج حقيقة وهي أن وجوده في هذه الدنيا غير أبدي وإنما هنالك إنتقال لوجود آخر في الحياة الآخرة.</p>\n<p><strong>* أهم عوامل قيام الحضارات:</strong></p>\n<p><strong>1. الطعام والاقتصاد:</strong> فلا بد من تأمين مصدر موثوق ومستقر من الطعام مثل الإعتماد على الزراعة أو تربية الحيوانات ، .....</p>\n<p><strong>2. العمارة والتقدم التقني:</strong> أي البناء الإجتماعي والمادي المحسوس الذي يدعم نمو السكان.</p>\n<p><strong>3. السياسة و ضبط المجتمع:</strong> وجود حكومة مركزية وظهور طبقات إجتماعية كلها ميزات لمجتمع متطور وحضاري.</p>\n<p><strong>4. العوامل الجغرافية:</strong> مثل تضاريس الأرض وتوفير الحماية الطبيعية والمصادر المائية والمناخ المناسب كلها عوامل جذب للحضارات أي عندما تتوافر يسهل على الإنسان الإستقرار والتطوير للوصول إلى مستوى متقدم وحضاري.</p>\n<p><strong>5. العوامل الاقتصادية:</strong> لقيام الحضارة أولها (الزراعة) والتي تساعد على استيطان البشر وتطويرهم للبنى التحتية في مجتمعاتهم. وثانيها (التجارة) لطالما اعتمد سكان الحضارات على التجاره التي توفر السلع والموارد التي يحتاجها ولا يستطيعون انتاجها فالتجارة حلقة وصل بين الحضارات المختلفة ، ثالثها (الموارد الطبيعية) فهي المواد الخام لإنتاج السلع ومن هذه الموارد النفط ، الفحم ، المعادن ، التربة ، الماء ، الرمل وضوء الشمس.</p>\n<p><strong>6. العوامل الاجتماعية:</strong> ومنها (التقسيم الطبقي) فهو ينظم دور كل فرد في المجتمع ويحدد وظيفته ، (الاستقرار الاجتماعي) ويكون بوجود منظومة أمنية تحافظ على استقرار الأنظمة والقوانين ، (الحكومة المنظمة) فهي تحافظ على أمن المجتمعات داخلياً وخارجياً وحماية المواطنين وإدارة المدن والتجارة.</p>\n<p><strong>7. العوامل الدينية:</strong> منها (الوحدة الدينية) فالدين يؤسس أرضية مشتركة بين الأفراد الذين يتشاركون نفس المعتقدات ويوحد المجتمع. (النفوذ الديني) فقد ارتبطت السياسة بالدين وساعدت تنظيم السياسي والديني على نشأة تسلسلات السلطة في المجتمعات. وشكل القادة الدينيون مصدر تأييد للقادة السياسيين ودعموا سلطتهم في الحضارات.</p>\n<p><strong>8. العوامل الفكرية:</strong> منها (العمارة) فقد عبرت الحضارات القديمة عن معتقداتها وتطورها عن طريق العمارة والبناء وما يزال بعضها موجود حتى الان ، (الفن) فاستخدمت الفن لتوثيق ثقافة وقيم الحضارات وتسجيل الأحداث المهمة والإنجازات البشرية لأن الناس عموماً لم يكونوا يجيدوا القراءة والكتابة فاعتمدوا بشكل أساسي على الفن كالرسم والنحت ، ..... ، (الكتابة) استخدمها سكان الحضارات لتوثيق السجلات الخاصة بالأعمال التجارية والضرائب ، بالاضافه إلى المعرفة والأدب وأشكالهما.</p>\n<p>نهاية المحاضرة</p>",
+        "questions": [
+            {
+                "q": "ما معني الحضارة في اللغة؟",
+                "options": [
+                    "الترحال في البادية",
+                    "الإقامة في الحضر (المدن والقرى والريف)",
+                    "التجارة البحرية",
+                    "الانعزال النفسي"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "ما هي الكليات الثلاث التي تمثل عناصر الحضارة الناتجة عن تفاعل الإنسان معها؟",
+                "options": [
+                    "الأرض والنبات والحيوان",
+                    "الإنسان والحياة والكون",
+                    "المال والجاه والسلطة",
+                    "الزراعة والصناعة والتجارة"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "ما هو الصنف الثاني من أصناف التقدم الذي يحققه الإنسان؟",
+                "options": [
+                    "ما يخدم الجسد والرفاهية الجسدية",
+                    "ما يخدم المجتمع الإنساني ويمنحه سعادة التعاون والأمن كالنظم الاجتماعية",
+                    "ما يتعلق بالمعتقدات الدينية فقط",
+                    "ما يخص التقسيم الطبقي"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "ما هي الوظيفة الأساسية التي خلق الإنسان من أجلها ويعتبر بسببها أهم عناصر الحضارة؟",
+                "options": [
+                    "جمع الثروة والأموال",
+                    "إعمار الأرض بالمعنى الشامل وإقامة مجتمع سليم",
+                    "ممارسة الانتحار الأناني",
+                    "التخلي عن الحريات المدنية"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "أي العوامل الاقتصادية تساعد بشكل أساسي على استيطان البشر وتطوير البنى التحتية؟",
+                "options": [
+                    "الزراعة",
+                    "السب والنميمة",
+                    "الانعزال عن المجتمع",
+                    "تفتيت العمل"
+                ],
+                "correct": 0
+            },
+            {
+                "q": "ما هي الفائدة الأساسية للتجارة كعامل اقتصادي لقيام الحضارة؟",
+                "options": [
+                    "تقليل عدد السكان",
+                    "توفير السلع والموارد التي لا يستطيعون إنتاجها والربط بين الحضارات",
+                    "منع استقرار الأنظمة",
+                    "إلغاء القوانين والأنظمة"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "كيف يحافظ الاستقرار الاجتماعي على بيئة الحضارة؟",
+                "options": [
+                    "عن طريق إلغاء الحكومات",
+                    "وجود منظومة أمنية تحافظ على استقرار الأنظمة والقوانين",
+                    "عن طريق تشجيع الانتحار الأنومي",
+                    "من خلال فرض العزلة على الأفراد"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "ما الدور الفكري والتوثيقي الذي لعبه الفن (كالرسم والنحت) في الحضارات القديمة؟",
+                "options": [
+                    "تدمير المعتقدات",
+                    "توثيق ثقافة وقيم الحضارة وتسجيل الأحداث لأن معظم الناس لم يجيدوا القراءة والكتابة",
+                    "احتراف التجسس",
+                    "فرض الضرائب على التجارة"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "لماذا استخدم سكان الحضارات الكتابة كعامل فكري بارز؟",
+                "options": [
+                    "لتفتيت العمل الإداري",
+                    "لتوثيق السجلات الخاصة بالأعمال التجارية والضرائب والمعرفة والأدب",
+                    "لزيادة الاغتراب النفسي",
+                    "لتشجيع النرجسية"
+                ],
+                "correct": 1
+            },
+            {
+                "q": "كيف أسهمت الوحدة الدينية في قيام الحضارات؟",
+                "options": [
+                    "عن طريق نشر الانحلال",
+                    "تأسيس أرضية مشتركة بين الأفراد وتوحيد المجتمع",
+                    "تقليل الموارد الطبيعية",
+                    "إلغاء التملك والعمل"
+                ],
+                "correct": 1
+            }
+        ]
+    }
+]
+
+        // ================================================================
+        // حالة اللعبة
+        // ================================================================
+
+        let gameState = {
+            unlockedKeys: lecturesData.map(() => Array(10).fill(false)),
+            completedLectures: lecturesData.map(() => false),
+            currentLecture: 0,
+        };
+
+        let isFullscreen = false;
+
+        // ================================================================
+        // دوال مساعدة
+        // ================================================================
+
+        function isLectureUnlocked(lectureId) {
+            if (lectureId === 0) return true;
+            return gameState.completedLectures[lectureId - 1] === true;
+        }
+
+        function isLectureCompleted(lectureId) {
+            return gameState.completedLectures[lectureId] === true;
+        }
+
+        function getKeysCount(lectureId) {
+            return gameState.unlockedKeys[lectureId].filter(v => v === true).length;
+        }
+
+        function isLectureFullyCompleted(lectureId) {
+            return getKeysCount(lectureId) === 10;
+        }
+
+        function updateCompletionStatus(lectureId) {
+            if (isLectureFullyCompleted(lectureId)) {
+                gameState.completedLectures[lectureId] = true;
+                saveProgress();
+            }
+        }
+
+        // ================================================================
+        // حفظ وتحميل التقدم
+        // ================================================================
+
+        function saveProgress() {
+            try {
+                localStorage.setItem('EthicsCivilization1', JSON.stringify(gameState));
+            } catch (e) { }
+        }
+
+        function loadProgress() {
+            try {
+                const saved = localStorage.getItem('EthicsCivilization1');
+                if (saved) {
+                    const parsed = JSON.parse(saved);
+                    if (parsed.unlockedKeys && parsed.unlockedKeys.length === lecturesData.length) {
+                        gameState = parsed;
+                        return true;
+                    }
+                }
+            } catch (e) { }
+            return false;
+        }
+
+        // ================================================================
+        // رسم الخريطة
+        // ================================================================
+
+        function renderMap() {
+            const mapGrid = document.getElementById('mapGrid');
+            mapGrid.innerHTML = '';
+
+            lecturesData.forEach((lecture, index) => {
+                const unlocked = isLectureUnlocked(index);
+                const completed = isLectureCompleted(index);
+                const keysCount = getKeysCount(index);
+                const isCurrent = (index === gameState.currentLecture);
+
+                const node = document.createElement('div');
+                node.className = 'map-node';
+
+                if (!unlocked) {
+                    node.classList.add('locked');
+                } else if (completed) {
+                    node.classList.add('completed');
+                } else if (isCurrent) {
+                    node.classList.add('current');
+                } else {
+                    node.classList.add('available');
+                }
+
+                const circle = document.createElement('div');
+                circle.className = 'node-circle';
+
+                const icon = completed ? '✓' : (unlocked ? '📖' : '🔒');
+                circle.innerHTML = `
+                    <span class="icon">${icon}</span>
+                    <span class="number">${index + 1}</span>
+                    ${!unlocked ? '<span class="lock-icon">🔒</span>' : ''}
+                `;
+
+                const label = document.createElement('div');
+                label.className = 'node-label';
+                const titleParts = lecture.title.split(':');
+                label.textContent = titleParts.length > 1 ? titleParts[0].trim() : `محاضرة ${index + 1}`;
+
+                const keysInfo = document.createElement('div');
+                keysInfo.className = 'node-keys';
+                keysInfo.innerHTML = `🔑 <span class="gold">${keysCount}</span>/10`;
+
+                node.appendChild(circle);
+                node.appendChild(label);
+                node.appendChild(keysInfo);
+
+                if (unlocked) {
+                    node.addEventListener('click', () => {
+                        openLectureModal(index);
+                    });
+                }
+
+                mapGrid.appendChild(node);
+
+                if (index < lecturesData.length - 1) {
+                    const arrowWrapper = document.createElement('div');
+                    arrowWrapper.style.cssText = 'display:flex;align-items:center;flex-shrink:0;';
+                    const arrow = document.createElement('div');
+                    arrow.className = 'map-arrow';
+                    const nextUnlocked = isLectureUnlocked(index + 1);
+                    const currentCompleted = isLectureCompleted(index);
+
+                    
+
+                    arrowWrapper.appendChild(arrow);
+                    mapGrid.appendChild(arrowWrapper);
+                }
+            });
+
+            updateGlobalProgress();
+        }
+
+        // ================================================================
+        // تحديث التقدم الكلي
+        // ================================================================
+
+        function updateGlobalProgress() {
+            const totalKeys = lecturesData.length * 10;
+            let unlockedTotal = 0;
+            gameState.unlockedKeys.forEach(arr => {
+                unlockedTotal += arr.filter(v => v === true).length;
+            });
+            const percent = Math.round((unlockedTotal / totalKeys) * 100);
+            document.getElementById('globalProgressFill').style.width = percent + '%';
+            document.getElementById('globalProgressText').textContent = percent + '%';
+        }
+
+        // ================================================================
+        // نافذة المحاضرة
+        // ================================================================
+
+        function openLectureModal(lectureId) {
+            if (!isLectureUnlocked(lectureId)) return;
+
+            gameState.currentLecture = lectureId;
+            const lecture = lecturesData[lectureId];
+
+            document.getElementById('modalTitle').textContent = lecture.title;
+            document.getElementById('modalBody').innerHTML = lecture.content;
+
+            renderModalKeys(lectureId);
+
+            // إعادة تعيين حالة ملء الشاشة إذا كانت مفعلة
+            if (isFullscreen) {
+                toggleFullscreen();
+            }
+
+            document.getElementById('lectureModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function renderModalKeys(lectureId) {
+            const grid = document.getElementById('modalKeysGrid');
+            grid.innerHTML = '';
+            const keys = gameState.unlockedKeys[lectureId];
+
+            const count = keys.filter(v => v).length;
+            document.getElementById('modalKeysCount').textContent = `${count} / 10`;
+
+            for (let i = 0; i < 10; i++) {
+                const key = document.createElement('div');
+                key.className = 'key-item-modal';
+                if (keys[i]) {
+                    key.classList.add('unlocked');
+                    key.textContent = '🔓';
+                } else {
+                    key.classList.add('locked-key');
+                    key.textContent = `${i + 1}`;
+                    key.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        openQuestion(lectureId, i);
+                    });
+                }
+                grid.appendChild(key);
+            }
+        }
+
+        // ================================================================
+        // وظيفة ملء الشاشة النقي 100%
+        // ================================================================
+
+        function toggleFullscreen() {
+            const exitBtn = document.getElementById('exitFullscreenFloat');
+            const fsText = document.getElementById('fsText');
+            const fsIcon = document.querySelector('.fs-icon');
+            const body = document.body;
+
+            isFullscreen = !isFullscreen;
+
+            if (isFullscreen) {
+                // إضافة كلاس ملء الشاشة للبدي - يخفي كل شيء
+                body.classList.add('fullscreen-pure-mode');
+
+                // إخفاء زر ملء الشاشة في الهيدر وإظهار الزر العائم
+                document.getElementById('fullscreenBtn').style.display = 'none';
+                exitBtn.classList.add('show');
+                fsText.textContent = 'خروج من ملء الشاشة';
+                fsIcon.textContent = '⛶';
+
+                // محاولة استخدام Fullscreen API الحقيقي للمتصفح
+                try {
+                    if (document.documentElement.requestFullscreen) {
+                        document.documentElement.requestFullscreen().catch(() => { });
+                    }
+                } catch (e) { }
+
+            } else {
+                // إزالة كلاس ملء الشاشة
+                body.classList.remove('fullscreen-pure-mode');
+
+                document.getElementById('fullscreenBtn').style.display = 'flex';
+                exitBtn.classList.remove('show');
+                fsText.textContent = 'ملء الشاشة';
+                fsIcon.textContent = '⛶';
+
+                try {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen().catch(() => { });
+                    }
+                } catch (e) { }
+
+                // إعادة التمرير للخلفية
+                if (!document.getElementById('lectureModal').classList.contains('active')) {
+                    document.body.style.overflow = '';
+                }
+            }
+        }
+
+        // زر ملء الشاشة
+        document.getElementById('fullscreenBtn').addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleFullscreen();
+        });
+
+        // زر الخروج العائم
+        document.getElementById('exitFullscreenFloat').addEventListener('click', () => {
+            toggleFullscreen();
+        });
+
+        // مراقبة تغيير ملء الشاشة من المتصفح (ESC)
+        document.addEventListener('fullscreenchange', () => {
+            if (!document.fullscreenElement && isFullscreen) {
+                // المستخدم خرج من ملء الشاشة عبر Esc
+                isFullscreen = false;
+                document.body.classList.remove('fullscreen-pure-mode');
+                document.getElementById('fullscreenBtn').style.display = 'flex';
+                document.getElementById('exitFullscreenFloat').classList.remove('show');
+                document.getElementById('fsText').textContent = 'ملء الشاشة';
+                document.querySelector('.fs-icon').textContent = '⛶';
+                if (!document.getElementById('lectureModal').classList.contains('active')) {
+                    document.body.style.overflow = '';
+                }
+            }
+        });
+
+        // ================================================================
+        // إغلاق نافذة المحاضرة
+        // ================================================================
+
+        document.getElementById('closeLectureModal').addEventListener('click', () => {
+            if (isFullscreen) {
+                toggleFullscreen();
+            }
+            document.getElementById('lectureModal').classList.remove('active');
+            document.body.style.overflow = '';
+            renderMap();
+        });
+
+        document.getElementById('lectureModal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                if (isFullscreen) {
+                    toggleFullscreen();
+                }
+                document.getElementById('lectureModal').classList.remove('active');
+                document.body.style.overflow = '';
+                renderMap();
+            }
+        });
+
+        // ================================================================
+        // نظام الأسئلة
+        // ================================================================
+
+        let currentQuestionLecture = null;
+        let currentQuestionIndex = null;
+        let questionAnswered = false;
+
+        function openQuestion(lectureId, questionIndex) {
+            if (gameState.unlockedKeys[lectureId][questionIndex]) return;
+
+            const lecture = lecturesData[lectureId];
+            const q = lecture.questions[questionIndex];
+            if (!q) return;
+
+            currentQuestionLecture = lectureId;
+            currentQuestionIndex = questionIndex;
+            questionAnswered = false;
+
+            const modal = document.getElementById('questionModal');
+            document.getElementById('qNumber').textContent = `🔑 المفتاح ${questionIndex + 1} من 10`;
+            document.getElementById('qText').textContent = q.q;
+
+            const optionsContainer = document.getElementById('qOptions');
+            optionsContainer.innerHTML = '';
+
+            const feedback = document.getElementById('qFeedback');
+            feedback.className = 'q-feedback';
+            feedback.textContent = '';
+
+            const closeBtn = document.getElementById('closeQuestionBtn');
+            closeBtn.className = 'close-modal-btn';
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.textContent = opt;
+                btn.dataset.index = idx;
+                btn.addEventListener('click', () => {
+                    if (questionAnswered) return;
+                    handleQuestionAnswer(lectureId, questionIndex, idx, btn);
+                });
+                optionsContainer.appendChild(btn);
+            });
+
+            modal.classList.add('active');
+        }
+
+        function handleQuestionAnswer(lectureId, questionIndex, selectedIdx, clickedBtn) {
+            if (questionAnswered) return;
+            const q = lecturesData[lectureId].questions[questionIndex];
+            const isCorrect = (selectedIdx === q.correct);
+
+            const allBtns = document.querySelectorAll('#qOptions button');
+            allBtns.forEach(btn => btn.disabled = true);
+
+            allBtns.forEach((btn, idx) => {
+                if (idx === q.correct) btn.classList.add('correct');
+                if (idx === selectedIdx && !isCorrect) btn.classList.add('wrong');
+            });
+
+            const feedback = document.getElementById('qFeedback');
+            if (isCorrect) {
+                feedback.className = 'q-feedback show success';
+                feedback.textContent = '✅ إجابة صحيحة! تم فتح المفتاح 🎉';
+                gameState.unlockedKeys[lectureId][questionIndex] = true;
+                renderModalKeys(lectureId);
+                updateCompletionStatus(lectureId);
+                saveProgress();
+            } else {
+                feedback.className = 'q-feedback show error';
+                feedback.textContent = '❌ إجابة خاطئة. حاول مرة أخرى!';
+                setTimeout(() => {
+                    allBtns.forEach(btn => {
+                        btn.disabled = false;
+                        btn.classList.remove('correct', 'wrong');
+                    });
+                    feedback.className = 'q-feedback';
+                    feedback.textContent = '';
+                    questionAnswered = false;
+                }, 1500);
+                return;
+            }
+
+            questionAnswered = true;
+            document.getElementById('closeQuestionBtn').className = 'close-modal-btn show';
+        }
+
+        document.getElementById('closeQuestionBtn').addEventListener('click', () => {
+            document.getElementById('questionModal').classList.remove('active');
+        });
+
+        document.getElementById('questionModal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                document.getElementById('questionModal').classList.remove('active');
+            }
+        });
+
+        // ================================================================
+        // تهيئة اللعبة
+        // ================================================================
+
+        function initGame() {
+            const hasSaved = loadProgress();
+            if (!hasSaved) {
+                gameState.completedLectures = lecturesData.map(() => false);
+                gameState.unlockedKeys = lecturesData.map(() => Array(10).fill(false));
+                gameState.currentLecture = 0;
+                saveProgress();
+            }
+
+            renderMap();
+        }
+
+        document.addEventListener('DOMContentLoaded', initGame);
+
+        console.log('☀️ رحلة المعرفة العربية - ملء شاشة نقي 100%');
+        console.log(`📚 ${lecturesData.length} محاضرة · 🔑 10 مفاتيح لكل محاضرة`);
+        console.log('📖 اضغط على ⛶ ملء الشاشة للقراءة المركزة');
+        console.log('🔄 اضغط ESC للخروج من ملء الشاشة');
+    </script>
+
+</body>
+
+</html>
