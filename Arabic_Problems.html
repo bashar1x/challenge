@@ -1,0 +1,2160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="description" content="دراس  محاضرات مجتمع عربي ومشكلاته على شكل خرائط ومفاتيح للتقدم">
+    <meta property="og:url" content="https://bashar1x.github.io/bash">
+    <link rel="icon" type="image/jpeg" href="https://f.top4top.io/p_3881c1zvy1.jpg">
+    <meta property="og:image" content="https://f.top4top.io/p_3881c1zvy1.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <title>رحلة دراسة مجتمع عربي ومشكلاته • baash.dev</title>
+    <style>
+        /* ==============================================================
+           التصميم النهاري الدافئ
+           ============================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(145deg, #fcf9f7 0%, #f0edea 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            transition: all 0.4s ease;
+        }
+
+        /* ====== وضع ملء الشاشة النقي - إخفاء البدي بالكامل ====== */
+        body.fullscreen-pure-mode {
+            padding: 0 !important;
+            margin: 0 !important;
+            background: #fcf9f7 !important;
+            overflow: hidden !important;
+            /* إزالة السكرول من البدي */
+        }
+
+        /* إخفاء شريط التمرير في وضع ملء الشاشة */
+        body.fullscreen-pure-mode::-webkit-scrollbar {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+        }
+
+        body.fullscreen-pure-mode {
+            -ms-overflow-style: none !important;
+            /* IE و Edge */
+            scrollbar-width: none !important;
+            /* Firefox */
+        }
+
+        .app-container {
+            background: rgba(255, 252, 250, 0.75);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 40px;
+            padding: 30px;
+            max-width: 1100px;
+            width: 100%;
+            border: 1px solid rgba(184, 115, 26, 0.12);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.02),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        /* ====== إخفاء التطبيق بالكامل في وضع ملء الشاشة ====== */
+        body.fullscreen-pure-mode .app-container {
+            display: none !important;
+        }
+
+        .app-container::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -30%;
+            width: 160%;
+            height: 160%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(184, 115, 26, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(184, 115, 26, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.02) 0%, transparent 60%);
+            animation: float-bg 20s ease-in-out infinite alternate;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes float-bg {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(20px, -20px) rotate(3deg);
+            }
+        }
+
+        .app-container>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .app-header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(184, 115, 26, 0.10);
+            margin-bottom: 25px;
+        }
+
+        .app-header h1 {
+            font-size: 2.5rem;
+            color: #2c2a2e;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .app-header h1 .highlight {
+            background: linear-gradient(135deg, #b8731a, #d4a04a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .app-header .subtitle {
+            color: #6b5f55;
+            font-size: 0.95rem;
+            margin-top: 5px;
+            font-weight: 400;
+        }
+
+        .progress-bar-container {
+            background: rgba(255, 252, 250, 0.6);
+            border-radius: 16px;
+            padding: 12px 20px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            border: 1px solid rgba(184, 115, 26, 0.08);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .progress-bar-container .label {
+            color: #4a4038;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .progress-bar-container .label .emoji {
+            font-size: 1.2rem;
+        }
+
+        .progress-track {
+            flex: 1;
+            min-width: 120px;
+            height: 8px;
+            background: rgba(184, 115, 26, 0.08);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.03);
+        }
+
+        .progress-track .fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #b8731a, #d4a04a, #e8c77a);
+            border-radius: 10px;
+            transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .progress-track .fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: progress-shine 2s infinite;
+        }
+
+        @keyframes progress-shine {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .progress-text {
+            color: #b8731a;
+            font-weight: 700;
+            font-size: 0.95rem;
+            min-width: 60px;
+            text-align: left;
+        }
+
+        .map-container {
+            position: relative;
+            padding: 30px 10px 40px 10px;
+            min-height: 350px;
+            background: rgba(255, 252, 250, 0.25);
+            border-radius: 28px;
+            border: 1px solid rgba(184, 115, 26, 0.04);
+        }
+
+        .map-grid {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            gap: 8px;
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+        }
+
+        .map-node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            min-width: 80px;
+            max-width: 130px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .map-node .node-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 252, 250, 0.5);
+            border: 2.5px solid rgba(44, 42, 46, 0.08);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            margin-bottom: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .map-node .node-circle .icon {
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        .map-node .node-circle .number {
+            font-size: 0.6rem;
+            color: #8a7a6a;
+            margin-top: 2px;
+            font-weight: 600;
+        }
+
+        .map-node .node-circle .lock-icon {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            font-size: 0.9rem;
+            background: rgba(255, 252, 250, 0.85);
+            border-radius: 50%;
+            padding: 2px;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .map-node.locked .node-circle {
+            opacity: 0.5;
+            filter: grayscale(0.6);
+            cursor: not-allowed;
+            border-color: rgba(44, 42, 46, 0.04);
+        }
+
+        .map-node.locked .node-label {
+            color: #b0a89e;
+        }
+
+        .map-node.available .node-circle {
+            border-color: #b8731a;
+            background: rgba(184, 115, 26, 0.06);
+            box-shadow: 0 4px 20px rgba(184, 115, 26, 0.08);
+            cursor: pointer;
+        }
+
+        .map-node.available .node-circle:hover {
+            transform: scale(1.1) translateY(-6px);
+            box-shadow: 0 8px 35px rgba(184, 115, 26, 0.15);
+            background: rgba(184, 115, 26, 0.10);
+        }
+
+        .map-node.completed .node-circle {
+            border-color: #2d8f5c;
+            background: rgba(45, 143, 92, 0.06);
+            box-shadow: 0 4px 20px rgba(45, 143, 92, 0.06);
+        }
+
+        .map-node.completed .node-circle:hover {
+            transform: scale(1.05);
+        }
+
+        .map-node.current .node-circle {
+            border-color: #d4a04a;
+            background: rgba(212, 160, 74, 0.08);
+            box-shadow: 0 0 0 4px rgba(212, 160, 74, 0.08), 0 8px 30px rgba(212, 160, 74, 0.10);
+            animation: pulse-node 1.8s ease-in-out infinite;
+        }
+
+        @keyframes pulse-node {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 4px rgba(212, 160, 74, 0.08), 0 8px 30px rgba(212, 160, 74, 0.10);
+            }
+
+            50% {
+                transform: scale(1.06);
+                box-shadow: 0 0 0 8px rgba(212, 160, 74, 0.02), 0 8px 40px rgba(212, 160, 74, 0.15);
+            }
+        }
+
+        .map-node .node-label {
+            color: #4a4038;
+            font-size: 0.7rem;
+            text-align: center;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .map-node .node-keys {
+            font-size: 0.6rem;
+            color: #8a7a6a;
+            margin-top: 3px;
+        }
+
+        .map-node .node-keys .gold {
+            color: #b8731a;
+            font-weight: 700;
+        }
+
+        .map-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: rgba(44, 42, 46, 0.08);
+            flex-shrink: 0;
+            padding: 0 5px;
+            min-width: 30px;
+            transition: all 0.5s ease;
+        }
+
+        .map-arrow.active {
+            color: #b8731a;
+        }
+
+        .map-arrow.completed {
+            color: #2d8f5c;
+        }
+
+        /* ====== نافذة المحاضرة ====== */
+        .lecture-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 42, 46, 0.20);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            transition: all 0.4s ease;
+        }
+
+        .lecture-modal.active {
+            display: flex;
+        }
+
+        .lecture-modal .modal-content {
+            background: rgba(255, 252, 250, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border: 1px solid rgba(184, 115, 26, 0.08);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+            animation: modal-slide 0.4s ease;
+            transition: all 0.4s ease;
+        }
+
+        .modal-content::-webkit-scrollbar {
+            display: none;
+        }
+
+        @keyframes modal-slide {
+            from {
+                transform: translateY(30px) scale(0.97);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .lecture-modal .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+            transition: all 0.4s ease;
+        }
+
+        .lecture-modal .modal-header h2 {
+            color: #2c2a2e;
+            font-size: 1.3rem;
+            font-weight: 700;
+            flex: 1;
+            transition: all 0.4s ease;
+        }
+
+        .lecture-modal .modal-header .header-actions {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+            transition: all 0.4s ease;
+        }
+
+        .lecture-modal .modal-header .header-actions button {
+            background: rgba(44, 42, 46, 0.04);
+            border: 1px solid rgba(44, 42, 46, 0.04);
+            color: #6b5f55;
+            font-size: 1.1rem;
+            cursor: pointer;
+            padding: 6px 14px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+        }
+
+        .lecture-modal .modal-header .header-actions button:hover {
+            background: rgba(184, 115, 26, 0.06);
+            border-color: rgba(184, 115, 26, 0.15);
+            color: #b8731a;
+        }
+
+        .lecture-modal .modal-header .header-actions .close-btn:hover {
+            background: rgba(192, 57, 43, 0.06);
+            border-color: rgba(192, 57, 43, 0.15);
+            color: #c0392b;
+        }
+
+        .lecture-modal .modal-body {
+            color: #3a3538;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            max-height: 400px;
+            overflow-y: auto;
+            padding-left: 5px;
+            transition: all 0.4s ease;
+        }
+
+        .lecture-modal .modal-body::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .lecture-modal .modal-body::-webkit-scrollbar-thumb {
+            background: #b8731a;
+            border-radius: 10px;
+        }
+
+        .lecture-modal .modal-body::-webkit-scrollbar-track {
+            background: rgba(184, 115, 26, 0.04);
+            border-radius: 10px;
+        }
+
+        .lecture-modal .modal-body h3 {
+            color: #b8731a;
+            margin: 20px 0 10px 0;
+            font-weight: 700;
+        }
+
+        .lecture-modal .modal-body h4 {
+            color: #8a6a3a;
+            margin: 15px 0 8px 0;
+            font-weight: 600;
+        }
+
+        .lecture-modal .modal-body p {
+            color: #3a3538;
+        }
+
+        .lecture-modal .modal-body ul {
+            padding-right: 25px;
+            margin: 8px 0;
+        }
+
+        .lecture-modal .modal-body ul li {
+            margin: 4px 0;
+            color: #3a3538;
+        }
+
+        /* ====== المفاتيح ====== */
+        .keys-section-modal {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(184, 115, 26, 0.06);
+            transition: all 0.4s ease;
+        }
+
+        .keys-section-modal .keys-title {
+            color: #4a4038;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .keys-section-modal .keys-title .count {
+            color: #b8731a;
+            font-weight: 700;
+        }
+
+        .keys-grid-modal {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+            gap: 8px;
+            max-width: 500px;
+        }
+
+        .key-item-modal {
+            aspect-ratio: 1/1;
+            border-radius: 12px;
+            border: 2px solid rgba(44, 42, 46, 0.04);
+            background: rgba(255, 252, 250, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #8a7a6a;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .key-item-modal.unlocked {
+            background: rgba(45, 143, 92, 0.06);
+            border-color: #2d8f5c;
+            color: #2d8f5c;
+            cursor: default;
+        }
+
+        .key-item-modal.locked-key {
+            cursor: pointer;
+            color: #4a4038;
+        }
+
+        .key-item-modal.locked-key:hover {
+            background: rgba(184, 115, 26, 0.06);
+            border-color: #b8731a;
+            transform: scale(1.05);
+        }
+
+        /* ================================================================
+           وضع ملء الشاشة النقي 100% - إخفاء كل شيء
+           ================================================================ */
+
+        /* إخفاء نافذة المحاضرة بالكامل ونظهر فقط المحتوى */
+        body.fullscreen-pure-mode .lecture-modal {
+            background: #fcf9f7 !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            z-index: 9999 !important;
+        }
+
+        body.fullscreen-pure-mode .lecture-modal .modal-content {
+            max-width: 100% !important;
+            max-height: 100vh !important;
+            border-radius: 0 !important;
+            padding: 40px 60px !important;
+            background: #fcf9f7 !important;
+            animation: none !important;
+            border: none !important;
+            box-shadow: none !important;
+            max-height: 100vh !important;
+            overflow-y: auto !important;
+            margin: 0 !important;
+        }
+
+        /* إخفاء الهيدر والمفاتيح */
+        body.fullscreen-pure-mode .lecture-modal .modal-header {
+            display: none !important;
+        }
+
+        body.fullscreen-pure-mode .lecture-modal .keys-section-modal {
+            display: none !important;
+        }
+
+        /* تكبير المحتوى وتحسين القراءة */
+        body.fullscreen-pure-mode .lecture-modal .modal-body {
+            max-height: 100vh !important;
+            font-size: 1.2rem !important;
+            line-height: 2.2 !important;
+            padding: 0 !important;
+            overflow-y: auto !important;
+        }
+
+        /* إخفاء شريط التمرير في المحتوى أثناء ملء الشاشة */
+        body.fullscreen-pure-mode .lecture-modal .modal-body::-webkit-scrollbar {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+        }
+
+        body.fullscreen-pure-mode .lecture-modal .modal-body {
+            -ms-overflow-style: none !important;
+            scrollbar-width: none !important;
+        }
+
+        body.fullscreen-pure-mode .lecture-modal .modal-body h3 {
+            font-size: 1.8rem !important;
+            color: #b8731a !important;
+        }
+
+        body.fullscreen-pure-mode .lecture-modal .modal-body h4 {
+            font-size: 1.4rem !important;
+            color: #8a6a3a !important;
+        }
+
+        body.fullscreen-pure-mode .lecture-modal .modal-body p {
+            font-size: 1.2rem !important;
+            color: #2c2a2e !important;
+        }
+
+        body.fullscreen-pure-mode .lecture-modal .modal-body ul li {
+            font-size: 1.15rem !important;
+            color: #2c2a2e !important;
+            margin: 6px 0 !important;
+        }
+
+        /* ====== زر الخروج من ملء الشاشة (عائم) ====== */
+        .exit-fullscreen-float {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 99999 !important;
+            background: rgba(44, 42, 46, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: #fff;
+            border: none;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .exit-fullscreen-float:hover {
+            background: rgba(184, 115, 26, 0.95);
+            transform: translateX(-50%) scale(1.05);
+        }
+
+        .exit-fullscreen-float.show {
+            
+            
+        }
+
+        @keyframes float-up {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        /* ====== نافذة السؤال ====== */
+        .question-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 42, 46, 0.25);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .question-modal.active {
+            display: flex;
+        }
+
+        .question-box {
+            background: rgba(255, 252, 250, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 35px;
+            max-width: 550px;
+            width: 100%;
+            border: 1px solid rgba(184, 115, 26, 0.08);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+            animation: modal-slide 0.3s ease;
+        }
+
+        .question-box .q-number {
+            color: #b8731a;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .question-box .q-text {
+            color: #2c2a2e;
+            font-size: 1.1rem;
+            margin: 15px 0 20px 0;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .question-box .q-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .question-box .q-options button {
+            background: rgba(255, 252, 250, 0.3);
+            border: 1.5px solid rgba(44, 42, 46, 0.04);
+            border-radius: 12px;
+            padding: 12px 18px;
+            color: #2c2a2e;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: right;
+            font-weight: 500;
+        }
+
+        .question-box .q-options button:hover:not(:disabled) {
+            background: rgba(184, 115, 26, 0.06);
+            border-color: #b8731a;
+        }
+
+        .question-box .q-options button.correct {
+            background: rgba(45, 143, 92, 0.08);
+            border-color: #2d8f5c;
+            color: #2d8f5c;
+        }
+
+        .question-box .q-options button.wrong {
+            background: rgba(192, 57, 43, 0.08);
+            border-color: #c0392b;
+            color: #c0392b;
+        }
+
+        .question-box .q-options button:disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .question-box .q-feedback {
+            margin-top: 15px;
+            padding: 10px 15px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            display: none;
+            font-weight: 500;
+        }
+
+        .question-box .q-feedback.show {
+            display: block;
+        }
+
+        .question-box .q-feedback.success {
+            background: rgba(45, 143, 92, 0.06);
+            color: #2d8f5c;
+            border: 1px solid rgba(45, 143, 92, 0.12);
+        }
+
+        .question-box .q-feedback.error {
+            background: rgba(192, 57, 43, 0.06);
+            color: #c0392b;
+            border: 1px solid rgba(192, 57, 43, 0.12);
+        }
+
+        .question-box .close-modal-btn {
+            margin-top: 18px;
+            padding: 10px 35px;
+            background: #b8731a;
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+            display: none;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .question-box .close-modal-btn:hover {
+            background: #d4a04a;
+            transform: scale(1.02);
+            box-shadow: 0 4px 20px rgba(184, 115, 26, 0.15);
+        }
+
+        .question-box .close-modal-btn.show {
+            display: inline-block;
+        }
+
+        .footer-info {
+            text-align: center;
+            color: #b0a89e;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            border-top: 2px solid rgba(184, 115, 26, 0.04);
+            padding-top: 15px;
+            font-weight: 400;
+        }
+
+        .footer-info .highlight-text {
+            color: #b8731a;
+            font-weight: 500;
+        }
+
+        /* ====== استجابة ====== */
+        @media (max-width: 768px) {
+            .app-container {
+                padding: 15px;
+                border-radius: 28px;
+            }
+
+            .app-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .map-container {
+                padding: 20px 5px 30px 5px;
+            }
+
+            .map-grid {
+                gap: 4px;
+            }
+
+            .map-node .node-circle {
+                width: 60px;
+                height: 60px;
+            }
+
+            .map-node .node-circle .icon {
+                font-size: 1.5rem;
+                color: #00C477;
+            }
+
+            .map-node .node-label {
+                font-size: 0.6rem;
+            }
+
+            .map-arrow {
+                font-size: 1rem;
+                min-width: 20px;
+            }
+
+            .lecture-modal .modal-content {
+                padding: 20px;
+                margin: 10px;
+                border-radius: 24px;
+            }
+
+            body.fullscreen-pure-mode .lecture-modal .modal-content {
+                padding: 25px 30px !important;
+                border-radius: 0 !important;
+                margin: 0 !important;
+            }
+
+            body.fullscreen-pure-mode .lecture-modal .modal-body {
+                font-size: 1rem !important;
+            }
+
+            body.fullscreen-pure-mode .lecture-modal .modal-body h3 {
+                font-size: 1.5rem !important;
+            }
+
+            body.fullscreen-pure-mode .lecture-modal .modal-body h4 {
+                font-size: 1.2rem !important;
+            }
+
+            .lecture-modal .modal-header h2 {
+                font-size: 1.1rem;
+            }
+
+            .lecture-modal .modal-header .header-actions button {
+                font-size: 0.85rem;
+                padding: 4px 10px;
+            }
+
+            .question-box {
+                padding: 25px;
+                margin: 10px;
+                border-radius: 24px;
+            }
+
+            .keys-grid-modal {
+                grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+            }
+
+            .exit-fullscreen-float {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+                bottom: 20px;
+                
+            }
+        }
+
+        @media (max-width: 480px) {
+            .map-node .node-circle {
+                width: 50px;
+                height: 50px;
+            }
+
+            .map-node .node-circle .icon {
+                font-size: 1.2rem;
+            }
+
+            .map-node .node-circle .number {
+                font-size: 0.5rem;
+            }
+
+            .map-arrow {
+                font-size: 0.8rem;
+                min-width: 15px;
+            }
+
+            .app-header h1 {
+                font-size: 1.5rem;
+            }
+
+            body.fullscreen-pure-mode .lecture-modal .modal-content {
+                padding: 20px !important;
+            }
+
+            body.fullscreen-pure-mode .lecture-modal .modal-body {
+                font-size: 0.9rem !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ====== التطبيق ====== -->
+    <div class="app-container">
+
+        <header class="app-header">
+            <h1>🏰 <span class="highlight">رحلة دراسة مجتمع عربي ومشكلاته</span></h1>
+            <p class="subtitle">📚 محاضرات · اجمع كل المفاتيح لفتح الطريق</p>
+        </header>
+
+        <div class="progress-bar-container">
+            <span class="label">
+                <span class="emoji">🗺️</span> التقدم
+            </span>
+            <div class="progress-track">
+                <div class="fill" id="globalProgressFill"></div>
+            </div>
+            <span class="progress-text" id="globalProgressText">0%</span>
+        </div>
+
+        <div class="map-container">
+            <div class="map-grid" id="mapGrid"></div>
+        </div>
+
+        <div class="footer-info">
+            💡 اضغط على <span class="highlight-text">المحاضرة</span> لدراستها · 🔑 كل محاضرة فيها <span
+                class="highlight-text">10 مفاتيح</span>
+        </div>
+    </div>
+
+    <!-- ====== نافذة المحاضرة ====== -->
+    <div class="lecture-modal" id="lectureModal">
+        <div class="modal-content" id="modalContent">
+            <div class="modal-header">
+                <h2 id="modalTitle">📖 المحاضرة</h2>
+                <div class="header-actions">
+                    <button class="fullscreen-btn" id="fullscreenBtn" title="ملء الشاشة للقراءة فقط">
+                        <span class="fs-icon">⛶</span> <span id="fsText">ملء الشاشة</span>
+                    </button>
+                    <button class="close-btn" id="closeLectureModal">✕</button>
+                </div>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- المحتوى هنا -->
+            </div>
+            <div class="keys-section-modal">
+                <div class="keys-title">
+                    <span>🔑 المفاتيح</span>
+                    <span class="count" id="modalKeysCount">0 / 10</span>
+                </div>
+                <div class="keys-grid-modal" id="modalKeysGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== زر الخروج من ملء الشاشة (عائم) ====== -->
+    <button class="exit-fullscreen-float" id="exitFullscreenFloat">
+        ✕
+    </button>
+
+    <!-- ====== نافذة السؤال ====== -->
+    <div class="question-modal" id="questionModal">
+        <div class="question-box">
+            <div class="q-number" id="qNumber">السؤال 1</div>
+            <div class="q-text" id="qText">نص السؤال هنا</div>
+            <div class="q-options" id="qOptions"></div>
+            <div class="q-feedback" id="qFeedback"></div>
+            <button class="close-modal-btn" id="closeQuestionBtn">إغلاق</button>
+        </div>
+    </div>
+
+    <script>
+        // ================================================================
+        // البيانات: المحاضرات (أول محاضرتين للتجربة)
+        // ================================================================
+
+        const lecturesData =
+            [
+
+
+                {
+                    "id": 0,
+                    "title": "📘 تمهيد وسمات المجتمع العربي",
+                    "content": "<h3>تمهيد</h3><p>يُعرّف المجتمع بأنه تآلف معقد يضم عناصر أساسية مثل الوطن، البيئة، السكان، التنظيم الاجتماعي، والمؤسسات. هذه العناصر تتفاعل فيما بينها ومع المجتمعات الأخرى عبر التاريخ. يُوصف المجتمع العربي بأنه مجتمع شديد التنوع والاختلاف والتناقض.</p><h3>أولاً: سمات المجتمع العربي</h3><p>يتصف المجتمع العربي بعدة صفات أبرزها:</p><h4>1. المجتمع العربي مجتمع متكامل (أمة)</h4><ul><li>يُنظر إلى المجتمع العربي ككل متكامل وليس كمجرد كيانات مستقلة، فهو يشكل \"مجتمع-أمة\".</li><li>ينقص هذا التكامل وجود نظام سياسي موحد وشامل.</li><li>يستخدم علم الاجتماع مصطلح \"مجتمع\" بمعنى نسبي مرن، فيمكن الحديث عن المجتمع المصري أو العراقي، وفي الوقت نفسه عن المجتمع العربي الأشمل الذي يضمها جميعاً.</li></ul><h4>2. المجتمع العربي مجتمع متنوع في تكامله</h4><ul><li>يتميز المجتمع العربي بتنوع هائل حسب البيئة، الإقليم، التنظيم الاجتماعي، الوضع الاقتصادي، أسلوب المعيشة، الانتماء الطبقي والطائفي والإثني، ومستوى التخلف والمعيشة.</li><li>مفهوم الوحدة: الوحدة لا تقوم بالضرورة على التشابه، بل على التنوع المتكامل.</li><li>تحليل التنوع العربي: يتم التحليل بالاعتماد على بعدين:<ul><li>البعد الأول: درجة التنوع والانسجام: يمكن تصنيف المجتمعات الإنسانية على متدرج بين قطبين:<ul><li>المجتمع المتجانس: مثل مصر، تونس، ليبيا.</li><li>المجتمع الفسيفسائي: مثل لبنان.</li><li>المجتمع التعددي: يتوسط القطبين، مثل المغرب، الجزائر، سورية، العراق، البحرين.</li></ul></li><li>البعد الثاني: درجة انصهار الجماعات: تصنف العلاقات بين الجماعات وفق سياقات مجتمعية هي: النزاع، التعايش، والانصهار.</li></ul></li><li>الربط بين البعدين:<ul><li>المجتمع المتجانس: تسود فيه عملية الانصهار. يتكون من جماعة واحدة منصهرة اجتماعياً وثقافياً، تتوحد فيه الهوية الخاصة والعامة، ويسهل الوصول إلى إجماع حول القضايا الأساسية، وينشأ فيه نظام سياسي مركزي. لا يوجد تجانس كلي مطلق، بل هو نمط مثالي تقترب منه المجتمعات.</li><li>المجتمع الفسيفسائي: يتألف من عدة جماعات تغلب هوياتها الخاصة على الهوية العامة. تتصف العلاقات بالتراوح بين التعايش والنزاع وعدم القدرة على الاتفاق حول الأسس. يترسخ الانقسام بسبب فروقات في الحقوق السياسية والاقتصادية والمدنية والمكانة الاجتماعية. لبنان أقرب مثال، حيث النظام السياسي الطائفي يعزز الواقع الطائفي والتمايز، ويتميز بعدم الاتفاق على الأسس (كالهُوية اللبنانية)، وعدم فصل الدين عن الدولة، والتفاوت الطبقي الحاد.</li><li>المجتمع التعددي: يتكون من عدة جماعات تحتفظ بهوياتها الخاصة، لكنها تمكنت من إيجاد صيغة تآلف بين الهوية الخاصة والعامة، وإقامة دولة مركزية، والتفاهم حول بعض الأسس، واعتماد نظام تربوي موحد. تتمثل في سوريا، العراق، الجزائر، والمغرب. قد تعاني من أزمات بسبب تدخلات خارجية أو تسلط الأكثرية أو بعض الأقليات.</li></ul></li><li>خلاصة التصنيف: مصر، تونس، وليبيا أقرب للتجانس. سوريا، الجزائر، العراق، واليمن أقرب للتعددية. لبنان أقرب للفسيفسائية. وبذلك فالمجتمع العربي متنوع، وهو أقرب إلى النمط الفسيفسائي منه إلى التعددي.</li></ul><h4>3. المجتمع العربي مجتمع انتقالي</h4><p>يشهد صراعاً متأزماً بين قوى متعددة متناقضة:</p><ul><li>السلفية والحداثة.</li><li>قوى التجزئة وقوى الوحدة.</li><li>الطبقات الحاكمة والمحكومة.</li><li>الوطنية والتبعية.</li><li>التقدمية والرجعية.</li></ul><p>يعيش المجتمع العربي منذ قرن ونصف على الأقل \"ولادة عسيرة\" وحقبة نهوض بعد نوم عميق لعدة قرون مظلمة.</p><h4>4. المجتمع العربي مجتمع متخلف (جزء من العالم الثالث)</h4><p>يكافح للتحرر من الاستعمار بأشكاله وتنمية موارده. من أهم ظواهر التخلف:</p><ul><li>ظاهرة التبعية: عدم سيطرة المجتمع على موارده ومصيره، ووجود فجوة حضارية تفصله عن المجتمعات المتقدمة التي مارست ضده جميع أنواع الاستغلال والقهر.</li><li>ظاهرة الفقر: وجود فجوة عميقة بين الطبقات الميسورة والطبقات المحرومة، في ظل بنية طبقية هرمية. يعاني الشعب من تبعية مزدوجة (خارجية من الاستعمار، وداخلية من الطبقات الحاكمة المدعومة منه).</li><li>ظاهرة سلطوية الأنظمة: الأنظمة والبنى السائدة لا تشرك الشعب في صنع مصيره، وتعتدي على حقوقه، وتحوله إلى كائن عاجز يعيش على هامش الوجود، محتلةً الأشياء والسلع والاهتمامات السطحية روحه وفكره.</li></ul><h4>5. المجتمع العربي يعاني من حالة اغتراب عن ذاته</h4><p>كشفت الانهزامات المتتالية (حرب 1967، حصار بيروت 1982) وعجز المجتمع عن مجابهة التحديات، وفشل الحركات القومية والاشتراكية، عن اغتراب المجتمع العربي عن ذاته، وتجلى ذلك في:</p><ul><li>عدم سيطرة المجتمع على موارده ومصيره: فالثروات تعمل لصالح فئات قليلة في الداخل ودول أجنبية، وتنفق العائدات على الاستهلاك لا الإنتاج.</li><li>تداعي المجتمع من الداخل: فقد المجتمع محوره وصميمه، ولم يعد يمتلك إرادة وهدف وخطة. فشلت الأنظمة في تحقيق الوحدة أو حتى مجرد التنسيق والتضامن.</li><li>سيطرة المؤسسات على المجتمع: بدلاً من أن يسيطر المجتمع عليها، تتحكم المؤسسات السياسية وتستغل المؤسسات العامة لصالح الطبقات الحاكمة، وتهيمن على المؤسسات الثقافية والتربوية.</li></ul><p>المجتمع المغترب عن ذاته معرض للانهيار ما لم يستعد سيطرته على موارده ومؤسساته ويكوّن له محوراً وإرادة.</p><h4>6. المجتمع العربي تسوده العلاقات الاجتماعية الوثيقة (الشخصانية)</h4><ul><li>العلاقات الاجتماعية في غالبيتها (حتى في المدن) هي علاقات أولية، شخصانية، وثيقة، لا رسمية، تعاونية. يستمد منها الفرد الاكتفاء والدفء والاطمئنان، ويلتزم من خلالها التزاماً كلياً بالأقرباء والمقربين.</li><li>تتعارض هذه العلاقات مع العلاقات الثانوية السائدة في المجتمعات الصناعية، وهي علاقات لا شخصانية، رسمية، تعاقدية، تنافسية، يستمد الفرد اكتفاءه من إنجازاته ومكانته لا من علاقاته.</li><li>فروق نوعية العلاقات بين المجتمعات العربية والغربية:<ul><li>العرب يشكون من شدة الاندماج العائلي، بينما الغربيون يشكون من فقدان الحياة العائلية.</li><li>العرب يشكون من ضرورات الالتزام بالآخرين وغياب الحياة الخاصة والخوف من \"كلام الناس\"، بينما الغربيون يشكون من الوحدة والفردية.</li><li>تحتل الجماعات الوسيطة (القبيلة، الطائفة، القرية، الحي) مركزاً مرموقاً في حياة العرب، بينما في المجتمعات الغربية تقيم الدولة علاقات مباشرة مع الأفراد وتتوسط التنظيمات الحديثة (النقابات، الأحزاب). من هنا يأتي نظام \"الواسطة\".</li></ul></li></ul><h4>7. المجتمع العربي مجتمع تعبيري</h4><ul><li>يعبر الأفراد والجماعات عن مشاعرهم (حب، بغض، رضى، غضب) بشكل عفوي دون تدقيق منهجي في النتائج.</li><li>في المقابل، يسود ميل نحو النزعة المحاسبية في المجتمعات الصناعية الرأسمالية.</li><li>العرب يعبرون عن مشاعرهم وأفكارهم دون تحفظ (باستثناء السياسية)، بينما الغربيون يتحفظون ولا يعبرون إلا عما يخدم غايات محددة.</li><li>العرب ينزعون نحو العاطفة أكثر من العقلانية في التعامل مع الأحداث، وهذه النزعة تضعف بانتشار العلم والتصنيع.</li></ul>",
+                    "questions": [
+                        {
+                            "q": "ما هو العنصر الذي ينقص المجتمع العربي كي يكون مجتمع-أمة متكامل؟",
+                            "options": ["اللغة المشتركة", "نظام سياسي موحد وشامل", "الدين الواحد", "التاريخ المشترك"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "أي من المجتمعات التالية يُصنف كمجتمع فسيفسائي؟",
+                            "options": ["مصر", "تونس", "لبنان", "ليبيا"],
+                            "correct": 2
+                        },
+                        {
+                            "q": "ما هو البعد الثاني المستخدم في تحليل التنوع العربي؟",
+                            "options": ["درجة التنوع والانسجام", "درجة انصهار الجماعات", "درجة التخلف الاقتصادي", "درجة الانفتاح الثقافي"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "أي من الظواهر التالية ليست من ظواهر تخلف المجتمع العربي؟",
+                            "options": ["التبعية", "الفقر", "سلطوية الأنظمة", "الانصهار الكامل"],
+                            "correct": 3
+                        },
+                        {
+                            "q": "ما هي الأحداث التي كشفت اغتراب المجتمع العربي عن ذاته؟",
+                            "options": ["حرب 1967 وحصار بيروت 1982", "ثورة 1919", "أزمة السويس 1956", "حرب أكتوبر 1973"],
+                            "correct": 0
+                        },
+                        {
+                            "q": "ما هي العلاقات السائدة في المجتمعات الصناعية المتقدمة؟",
+                            "options": ["علاقات أولية شخصانية", "علاقات ثانوية تعاقدية", "علاقات عائلية وثيقة", "علاقات قبلية"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "من أين يأتي نظام \"الواسطة\" في المجتمع العربي؟",
+                            "options": ["من ضعف القوانين", "من الجماعات الوسيطة", "من الدولة المركزية", "من التنظيمات الحديثة"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ماذا يعني أن المجتمع العربي مجتمع تعبيري؟",
+                            "options": ["يعبر عن مشاعره بحساب دقيق", "يعبر عن مشاعره بعفوية", "لا يعبر عن مشاعره إطلاقاً", "يعبر فقط عن آرائه السياسية"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "أي الدول التالية أقرب إلى النمط التعددي؟",
+                            "options": ["مصر", "لبنان", "سوريا", "ليبيا"],
+                            "correct": 2
+                        },
+                        {
+                            "q": "ما هي النزعة التي تضعف بانتشار العلم والتصنيع في المجتمع العربي؟",
+                            "options": ["النزعة العاطفية", "النزعة العقلانية", "النزعة الفردية", "النزعة المحاسبية"],
+                            "correct": 0
+                        }
+                    ]
+                },
+                {
+                    "id": 1,
+                    "title": "📗 الإعلام العربي، الثقافة العربية، الشخصية العربية",
+                    "content": "<h3>أولاً: الإعلام في المجتمع العربي المعاصر</h3><p>يتسم الإعلام العربي بعدة صفات:</p><h4>1. تضاؤل المادة الإعلامية الجادة</h4><ul><li>تهيمن المادة الترفيهية المستوردة التي تتسم بالعقم الثقافي، ولا تعبر عن ثقافة البلد المصدر أو المستورد، ويغلب عليها الابتذال والسطحية والنمطية وغياب الإبداع.</li><li>هذا يبقي الإنسان العربي بعيداً عن واقعه الحقيقي ويتجاهل وعيه بمعاناته الوجودية.</li><li>يتم ذلك عبر تكريس نزعة استهلاكية لا تتلاءم مع إمكانات الغالبية العظمى، مما يدفع للسعي اللاهث وراء الإشباع الآني، ويؤدي إلى تراجع الإقبال على الجهد طويل النفس، وانعدام السيطرة على المستقبل، وتصاعد مشاعر الإحباط والحرمان.</li><li>حتى المادة الإعلامية الجادة تقدم العلم والفلسفة والفن بصورتها النهائية المستوردة، مما يجعل الإنسان العربي عاجزاً عن إدراك ماهيتها، ويكرس الشعور بالنقص تجاه الآخر الغربي، والإحساس بانعدام الجدوى من الإبداع.</li><li>كل هذا يشكل تحدياً مستمراً يضع الفرد في سلسلة من ردود الفعل، لدرجة يصبح فيها الفعل العربي الأصيل شبه معدوم.</li></ul><h4>2. الإعلام العربي كركيزة للقوة الناعمة</h4><ul><li>يعتبر الإعلام العربي أحد أهم ركائز \"القوة الناعمة\" التي تقوم على الاستفادة من الحوادث الرمزية الإنسانية للتحكم السياسي بدفة الأحداث.</li><li>استراتيجية القوة الناعمة تقوم على:<ul><li>القدرة على تشكيل تصورات الآخرين.</li><li>القدرة على تشكيل جدول الأعمال السياسي للأعداء والمنافسين.</li><li>جاذبية النموذج والقيم والسياسات ومصداقيتها.</li><li>القدرة على فرض الاستراتيجيات وأنماط الاتصال.</li><li>القدرة على سرد الوقائع.</li></ul></li><li>توظف القوة الناعمة أدوات ثورة المعلومات وتقنيات الاتصالات (كالرموز البصرية، الأفلام، المسلسلات، الإعلانات، الإنترنت) للتأثير.</li><li>مثال: المسلسلات التركية التي غزت الشاشات العربية هي مثال على استراتيجية القوة الناعمة لجذب العالمين العربي والإسلامي نحو قيم غربية، حيث تم اختيار النموذج التركي لما يتمتع به من واجهة ديمقراطية ممزوجة بحداثة غربية ونجاح اقتصادي ومسحة إسلامية.</li><li>يلعب الإعلام دوراً أساسياً وواسعاً يبدأ من توجيه وعي الأفراد اليومي وينتهي بتشكيل الرأي العام حول شرعية نظام سياسي من عدمه.</li><li>نظراً لهذا الدور البارز في خلق وعي فردي وجماعي مستلب، لا بد من البحث عن بديل قادر على تمكين الوعي وترك مسافة بينه وبين حالة الاستلاب.</li></ul><h3>ثانياً: الثقافة العربية</h3><p>تشتمل الثقافة عامة على ثلاث مكونات:</p><ul><li>القيم والرموز والأخلاق والمعتقدات والمفاهيم والأمثال والمعايير والتقاليد والعادات والوسائل والمهارات التي يستعملها الإنسان في تعامله مع بيئته.</li><li>الإبداعات التعبيرية الفنية من أدب وموسيقى ورسم ورقص وغيرها.</li><li>الفكر من علوم وفلسفة ومذاهب وعقائد ونظريات.</li></ul><p>تضم الثقافة العربية المعاصرة ثلاث ثقافات متصارعة:</p><ul><li>الثقافة السائدة: ثقافة النظام العام والمؤسسات والطبقات والعائلات الحاكمة، وهي الأكثر انتشاراً.</li><li>الثقافة المضادة: تتناقض مع الثقافة السائدة وتدخل في صراع حاد معها.</li><li>الثقافة الفرعية: ثقافة خاصة ضمن الثقافة العامة.</li></ul><h4>الاتجاهات القيمية السائدة</h4><p>القيم هي المقياس الموجه لسلوك الإنسان. ويمكن حصر أهم الاتجاهات القيمية في الثقافة العربية المعاصرة بالثنائيات التالية:</p><ul><li>القيم القدرية وقيم الإرادة الإنسانية الحرة.</li><li>القيم السلفية والقيم المستقبلية.</li><li>قيم الإبداع وقيم الإتباع.</li><li>قيم العقل وقيم القلب.</li><li>قيم الشكل وقيم المضمون.</li><li>القيم التي تولد شعوراً بالذنب والقيم التي تولد شعوراً بالعار.</li><li>قيم الانغلاق وقيم الانفتاح.</li><li>القيم الجمعية والقيم الفردية.</li><li>قيم الطاعة والتمرد.</li><li>قيم العدالة وقيم الإحسان والرحمة.</li></ul><p>رغم أن الثقافة السائدة ترتكز على القيم القدرية والسلفية والعمودية والإتباع والشكل والانغلاق والعار والإحسان، فإن كل شق من الثنائيات المذكورة ما زال يعيش صراعاً مع الشق الثاني. الأهم: ما تتسم به الثقافة العربية المعاصرة ليس أياً من تلك الاتجاهات بحد ذاتها، بل هو حالة الصراع ذاتها التي تشكل هوية العرب الثقافية.</p><h3>ثالثاً: الشخصية العربية</h3><p>يتم إنتاج الشخصية العربية عبر عملية التنشئة الاجتماعية التي تلعب فيها العائلة الدور الأهم. تتشكل السمات العامة للشخصية العربية من الآليات الدفاعية التي يتخذها الإنسان العربي للتكيف مع واقع مؤسسات المجتمع، كرد فعل للحفاظ على التوازن. أهم هذه الآليات:</p><h4>1. الانشطار الذاتي</h4><ul><li>يلجأ الإنسان العربي لتعويض ما يعانيه من هدر كياني إلى العيش في زمان ومكان آخرين وأحاسيس وتفاعلات أخرى، متخذاً قناعاً خارجياً اجتماعياً يتستر به على ذاته أمام الآخرين، حتى يصل إلى التستر على ذاته أمام ذاته.</li><li>يفقد التكامل الذاتي بين السلوك والحاجات والرغبات، مما يؤدي إلى التناقض بين القول والفعل، الفكر والممارسة.</li><li>ينشط لمصلحة صورة ذاته أكثر مما يعيش لمصلحة ذاته الداخلية الفعلية، وبدلاً من تحقيق ذاته يحقق صورته، فاقداً القدرة على ضبطها وتوجيهها.</li><li>يعيش وجوده في حالة من \"البيرانية\" (الاغتراب) عن الذات، مما يعيد إنتاج هدر مضاعف من الداخل.</li></ul><h4>2. الازدواجية</h4><ul><li>تظهر كمفارقة صارخة بين \"التحديث الاستهلاكي المظهري والتخلف الإنتاجي، بين التحديث الأداتي والتخلف الفكري، بين التحديث في المظهر والقبلية والعشائرية في الجوهر\".</li></ul><h4>3. الفردية</h4><ul><li>تظهر على شكل فوضى ذاتية موسومة بنقص في الروح الاجتماعية.</li><li>يهتم الفرد بقضايا المجتمع بأسلوبين: اهتمام \"مباشر\" مرتبط بالكلام، واهتمام \"فعلي\" مرتبط بالمصلحة المادية، بينما يبلغ الالتزام العملي اتجاه قضايا المجتمع حده الأدنى.</li><li>سبب ذلك هو شعوره بالعجز الكلي عن التأثير في مجريات الأحداث، فيقف عند حد المشاركة الكلامية اللافاعلة، مما يوسع هوة التناقض بين القول والفعل، بل ويصبح التلفظ بالأقوال هو الفعل ذاته.</li></ul><h4>4. اللامبالاة</h4><ul><li>حالة من الفتور والسلبية والاتكالية تجاه قضايا المجتمع، تتخذ قناعاً من الاستقلالية المزعومة.</li><li>يكرس هذا النمط الشخصية التبعية التي يسودها الشعور بالعجز والنزوع للتهرب والانسحاب من ميدان الفعل والمسؤولية.</li><li>تساهم في تكريسها سلسلة الإحباطات (الإحباط العاطفي، إحباط التعبير عن الذات، الإحباط الوجودي العام).</li></ul><h4>5. حب البروز</h4><ul><li>ينزع الإنسان العربي إلى إبراز الأنا والتأكيد على احترام الناس له، والتشديد على منزلته والدفاع عن سمعته وفرض نفسه على الآخرين وتحقيرهم.</li><li>مظهر الثقة هذا هو أمر ظاهري مكتسب اجتماعياً، ويتم بصورة عفوية أو على شكل نماذج مهيأة سلفاً.</li><li>لا يعبر عن شخصية فردية بقدر ما يعبر عن شخصية جماعية تتبلور تبعاً لمكانة أصحابها في النظام الاجتماعي.</li></ul><h4>6. التجاذب الوجداني</h4><ul><li>يبلغ أقصى حالاته في وضعية المرأة العربية، التي تعد أكثر العناصر تعرضاً للتبخيس في قيمتها (الجنس، الجسد، الفكر، الإنتاج، المكانة).</li><li>يقابل هذا التبخيس \"مثْلَنَة\" مفرطة من قبل الرجل والمجتمع الذي يرى فيها مركز الشرف الذاتي ورمز الصفاء (الأمومة).</li><li>تذبذب الموقف منها: فهي تابعة لا حرية لها ولا إرادة ولا كيان، ملكية اجتماعية، وعلى العكس منها صورة المرأة \"المرجِع\" التي يقف منها الزوج والأبناء موقفاً اتكالياً.</li></ul><h4>7. الاختزال</h4><ul><li>أحد أهم الآليات الدفاعية للتكيف مع الوضع الاجتماعي، ويظهر بوضوح في وضعية المرأة التي يتم اختزال كيانها إلى إحدى صفاتها أو وظائفها (الإثارة، الإنجاب، الخدمة).</li><li>يتم التوحيد بين هذا الجانب الجزئي وكيانها الكلي، فتسجن في صورة محددة لا يسمح لها بتعديها.</li><li>تفقد المرأة القدرة على استخدام طاقاتها الذهنية والعاطفية، مما يخلق لديها حالة من الارتداد إلى الداخل على شكل فوران انفعالي مفرط (كالدس والحقد والحسد والكيد)، فضلاً عن استفحال الخرافة والعاطفة الزائدة وسيطرة الانفعالات.</li></ul>",
+                    "questions": [
+                        {
+                            "q": "ما هي السمة الأساسية للمادة الترفيهية المستوردة في الإعلام العربي؟",
+                            "options": ["الإبداع العالي", "العقم الثقافي", "التعبير عن ثقافة المصدر", "العمق الفكري"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي القوة التي تقوم على الاستفادة من الحوادث الرمزية الإنسانية للتحكم السياسي؟",
+                            "options": ["القوة الصلبة", "القوة الناعمة", "القوة العسكرية", "القوة الاقتصادية"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "أي من التالي ليس من مكونات الثقافة؟",
+                            "options": ["القيم والرموز", "الإبداعات التعبيرية الفنية", "الفكر والعلوم", "الموارد الطبيعية"],
+                            "correct": 3
+                        },
+                        {
+                            "q": "ما هي الثقافة الأكثر انتشاراً في المجتمع العربي المعاصر؟",
+                            "options": ["الثقافة الفرعية", "الثقافة المضادة", "الثقافة السائدة", "ثقافة الأقليات"],
+                            "correct": 2
+                        },
+                        {
+                            "q": "ما الذي يشكل هوية العرب الثقافية وفق النص؟",
+                            "options": ["الانغلاق التام", "حالة الصراع بين القيم المتضادة", "الانفتاح الكامل", "القيم السلفية فقط"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي الآلية الدفاعية التي يفقد فيها الإنسان العربي التكامل الذاتي بين السلوك والحاجات؟",
+                            "options": ["اللامبالاة", "الانشطار الذاتي", "حب البروز", "الاختزال"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو سبب الفردية في الشخصية العربية كما ورد في النص؟",
+                            "options": ["حب الظهور", "الشعور بالعجز الكلي عن التأثير", "الانفتاح الثقافي", "ضعف التعليم"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي الآلية التي تظهر بوضوح في وضعية المرأة التي يتم اختزال كيانها لإحدى صفاتها؟",
+                            "options": ["الانشطار الذاتي", "الازدواجية", "الاختزال", "حب البروز"],
+                            "correct": 2
+                        },
+                        {
+                            "q": "ما هو المثال الذي ذكره النص على استراتيجية القوة الناعمة؟",
+                            "options": ["الأفلام الأمريكية", "المسلسلات التركية", "الموسيقى الغربية", "الإعلانات اليابانية"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي الإحباطات التي تساهم في تكريس اللامبالاة؟",
+                            "options": ["الإحباط الاقتصادي فقط", "الإحباط العاطفي والوجودي وإحباط التعبير عن الذات", "الإحباط السياسي فقط", "الإحباط الديني فقط"],
+                            "correct": 1
+                        }
+                    ]
+                },
+
+
+
+
+                {
+                    "id": 2,
+                    "title": "📙 العولمة والعولمة الثقافية",
+                    "content": "<h3>مفهوم العولمة</h3><ul><li>مصطلح مستحدث في اللغة العربية، ويقصد به:<ul><li>جعل الشيء عالمياً بحيث يصبح العالم وكأنه منظومة واحدة متكاملة.</li><li>تعميم الشيء وتوسيع دائرته ليشمل العالم كله.</li><li>التشارك والتبادل والتفاعل بين المجتمعات مما يؤدي إلى انكماش العالم وتجاوز الحد الزماني والمكاني ليصبح مجتمعاً واحداً بلا حدود.</li></ul></li><li>تتضمن العولمة الجانب الاقتصادي والاجتماعي والثقافي والسياسي حيث يتصارع الناس للحفاظ على هوياتهم.</li><li>يعتبرها آخرون تعميماً لنموذج الحضارة الغربية بأنماطها الفكرية والسياسية والاقتصادية والثقافية على العالم كله، وإجبار الشعوب على الاندماج فيها وتبنيها.</li><li>تهدف إلى نزع الخصوصية الفردية والقضاء على الهوية الذاتية للمجتمعات من خلال فرض الثقافة الرأسمالية، وسلب سيطرة الدول على مجالاتها، ونشر ثقافة العولمة التي هي السلاح الآخر لامتصاص ثروات الشعوب.</li></ul><h3>العولمة الثقافية</h3><ul><li>تقوم على أن يفرض مجتمع ما أفكاره وثقافته على المجتمعات الأخرى، فينتقل اهتمام الفرد من ثقافته المحلية إلى الثقافة العالمية.</li><li>التصور بوجود خصائص ثقافية عالمية صالحة لكل المجتمعات هو تصور خاطئ، فالعولمة تسعى لفرض هيمنة الثقافة الغربية عبر استحواذها على وسائل الإعلام وقولبتها في قالب واحد.</li><li>يعد هذا \"اغتصاباً ثقافياً رمزياً\" و\"اختراقاً تقنياً\" يستخدم وسائل الاتصال والإعلام لهدر سيادة الثقافات الأخرى.</li><li>تعريف: هي قدرة الثقافات الأقوى تكنولوجياً على السيطرة على الثقافات الأضعف، ومحاولة مجتمع ما تعميم نموذجه الثقافي من خلال التأثير في المفاهيم الحضارية والقيمية والأنماط السلوكية.</li><li>هدفها: إقصاء الثقافات الأخرى عن العالمية بحجة تعارضها مع توجهات الثقافة الغربية المادية، وفي الوقت ذاته خنق الثقافة العربية الإسلامية لكونها (كما يدعون) الخطر الزاحف نحو الغرب.</li><li>حل مفهوم \"العولمة الثقافية\" محل مفهوم \"الغزو الفكري والتقاني\". وهي الأخطر لاهتمامها بإشاعة قيم ثقافة واحدة وإحلالها محل الثقافات الأخرى، مما يعني تلاشي القيم والثقافات القومية لصالح ثقافة البلد الأكثر تقدماً (أمريكا وأوروبا).</li><li>العولمة تصنع الثقافة، وهي وليدة تراكمات ثقافية تنتقل بطرق مختلفة، وتصدر منتجاتها الثقافية كما تصدر السلع.</li><li>الهدف الاستراتيجي من نشر العولمة الثقافية هو إلغاء كل مقاومة محتملة من المجتمعات المستغلة، بالتركيز على الأطراف المحورية فيها (المرأة، الأسرة، الشباب) لأنهم يحملون قوة التغيير الحقيقي، وذلك لزعزعة بنية المجتمعات وإضعاف قوتها بطمس الهوية الثقافية بأبعادها الزمنية والمكانية والحضارية.</li><li>تأثيرها على الشباب: تهدد أمنهم الثقافي، وتدعو لإيجاد ثقافة كونية أوروبية تفرض على الثقافات الأخرى، مما يؤدي إلى الانقسام والتفكك وإحداث شروخ في الأبنية الثقافية، وطمس معالم الهوية الثقافية.</li><li>التقدم الهائل في وسائل نقل المعلومات وتكنولوجيا الاتصالات كان له دور كبير في انتشار العولمة الثقافية والانسلاخ الثقافي، حيث يتبنى الشباب العربي الرؤى الغربية دون وعي بحجة الموضة ومواكبة العصر.</li><li>تحولت هذه الثقافة الاستهلاكية إلى آلة لتشويه البنى التقليدية وتغريب الإنسان وعزله عن قضاياه، لكونها تدعو لاعتناق قيم سلبية (الأنانية، المنفعة الشخصية، حب الذات، اللامبالاة)، مما أدى إلى اختلال النسق القيمي والتشكيك في القناعات الثقافية والوطنية والدينية.</li><li>المشكلة ليست في الانفتاح الثقافي، بل في طمس معالم الهوية الثقافية التي تعد كنزاً اجتماعياً يحتاج إلى الحماية.</li></ul><h3>العولمة الثقافية والهوية الثقافية</h3><ul><li>تعريف الهوية الثقافية: مجموعة نتاجات من عوامل دينية ولغوية وتاريخية وسياسية، يوجد بينها تفاعل مستمر. أسسها ومكوناتها هي العوامل التي تؤثر في تكوين الأمة وتحديد ملامحها وطابعها القومي.</li><li>قبل العولمة، كانت الهوية الثقافية هي التي تميز شعباً عن آخر وتحدد خصائصه، وهي الحصن المنيع ضد أي غزو أو أفكار دخيلة.</li><li>اليوم، فقدت العديد من البلدان العربية شيئاً من هويتها الثقافية بسبب العولمة وآثارها المتمثلة في سيطرة الإعلام على ثقافات الشعوب، وإفراغ الهوية من محتواها بالاستسلام للتبعية الحضارية، مما ينتج عنه فقدان الشعور بالانتماء للوطن والأمة.</li><li>ليس هنالك ثقافة عالمية واحدة، بل ثقافات. ولا تكتمل الهوية الثقافية إلا إذا كانت مرجعيتها جماعة الوطن والأمة والدولة. العولمة نظام يعمل على إفراغ الهوية الجماعية من كل محتوى، ويدفع إلى التفتيت، ليربط الناس بعالم \"اللاوطن واللاأمة\".</li></ul><h3>العولمة الثقافية واللغة</h3><ul><li>تعتبر اللغة الإنجليزية هي اللغة الأولى عالمياً من حيث الاتصال والتواصل، وهي المسيطرة على بقية اللغات، وتكمن سيطرتها في إضعاف اللغات الأخرى خاصة القوية منها مثل العربية.</li><li>هي اللغة الأكثر دراسة كلغة أجنبية، والجامعات تعطي أهمية لنشر المقالات العلمية بها، وكذلك المواقع الإلكترونية.</li><li>هي عامل جذب لطلبة الجامعات وعامل أساسي للدراسة في البلدان العربية، وشرط للالتحاق بوظائف مهمة.</li><li>أصبح التدريس والعمل باللغة الإنجليزية من أهم نتائج العولمة الثقافية.</li></ul><h3>العولمة الثقافية ووسائل الإعلام</h3><ul><li>وسائل الإعلام وسيلة ثقافية بالغة التأثير في نشر وترويج الثقافات الأخرى. أدى التطور العلمي الهائل إلى سرعة تدفق الثقافات إلى المجتمع العربي.</li><li>يؤدي ذلك إلى تأثر الفكر العربي بالفكر المعولم، مما يشكل هوة كبيرة بين الثقافة الحالية للمجتمعات العربية وثقافاتها السابقة.</li><li>دور الدول العربية يكمن في كونها مستقبلاً لتلك الثقافات بدون تبصر، وقد يكون دورها في أحسن الأحوال تطوير تلك الثقافات.</li><li>ترتكز العولمة الثقافية على انتشار المعلومات وتدفقها، معتمدة على وسائل الاتصالات والقنوات الفضائية والأقمار الصناعية وشبكات الإنترنت.</li><li>الإنترنت أهم وسائل العولمة الإعلامية، ويشكل مجتمعاً متكاملاً له عاداته وتقاليده ولغته الخاصة، ويعتبره البعض التعبير الأمثل عن ثقافة ما بعد الحداثة.</li></ul><h3>الآثار التربوية للعولمة الثقافية في المجتمع العربي</h3><ol><li>شيوع الثقافة الاستهلاكية.</li><li>تشويه التقاليد والأعراف السائدة.</li><li>تغريب الإنسان وعزله عن قضاياه والتشكيك في قناعاته وهويته.</li><li>إشاعة أدب الجنس وثقافة العنف، وبروز الثقافة الغربية كنموذج.</li><li>عولمة التربية.</li><li>محاربة اللغة العربية وتشجيع اللغات الأخرى (كالفرنسية والإنجليزية).</li><li>خلق ثقافة اتكالية.</li><li>إكساب الأجيال اتجاهات وأعرافاً تتسم بالعنف والإجرام والغطرسة والعدوان، مما يفسد الشخصية العربية وينمي فيها الغربة والتبعية والعداء لتراثها.</li><li>تعزيز الفردية والتحرر من القيود الاجتماعية والتمحور حول الذات.</li><li>إضعاف الانتماء والارتباط بالمجتمع.</li><li>غرس قيم دخيلة (حرية غير مضبوطة، إشباع الغرائز) تنعكس على سلوك الأجيال.</li><li>تفكيك روابط الأسرة (مثال الحرية الجنسية المطلقة) مما يؤدي للتفكك الأسري والعنف.</li><li>شيوع الفوضى الفكرية، ظهور القيم النفعية، تغريب الوعي، تخريب الشخصية، ضياع الانتماء.</li><li>اتساع الفجوة المعرفية بين المجتمعات المتقدمة والمجتمع العربي، وهشاشة المتلقي للإعلام الغربي وانبهاره به.</li></ol><h3>مواجهة العولمة من المنظور الثقافي والتراثي والقومي</h3><ul><li>إنشاء مراكز متعددة الجوانب والتخصصات للبحث العلمي لصناعة التكنولوجيا والعلم وفق الإمكانات الذاتية.</li><li>إنشاء مراكز متخصصة للتعريب والترجمة العلمية في جميع فروع العلوم.</li><li>تبني استراتيجيات تربوية وإعلامية لنشر الوعي الثقافي والتفكير العلمي لدى الشباب.</li></ul><h3>مواجهة العولمة من المنظور التربوي والديني</h3><ul><li>تغيير المناهج وتطويرها بما يتماشى وقضايا العصر، خاصة التي تتناقض مع قيم المجتمع.</li><li>ترسيخ عقيدة الإيمان بالله والحرية والسلام.</li><li>غرس الخصوصية الثقافية وتعميقها.</li><li>مراجعة نقدية شاملة لمناهج التربية والتعليم لتطويرها وتحديثها.</li><li>حشد الطاقات لتعزيز التبادل العلمي والتقني بين الدول العربية.</li><li>تشجيع البحث العلمي والتعاون بين العلماء والمفكرين العرب.</li></ul><h3>مواجهة العولمة الثقافية في ظل الانفتاح الحضاري</h3><ul><li>الابتعاد عن التفكير التقليدي والجهل والتعصب، والإقرار بالتنوع الحضاري.</li><li>تكوين قادة جامعيين ترتكز كفاياتهم على التعدد الثقافي وحماية الهوية.</li><li>النهوض بالمجتمعات العربية، لأن العولمة تتغلغل في المجتمعات الفقيرة التي تفتقد القدرة على المقاومة.</li><li>تفعيل الوعي الإعلامي.</li><li>فتح الأبواب أمام المعلومات والأفكار بدلاً من إغلاقها، وإتاحة المجال لنقدها ومناقشتها والاعتراف بالآخر.</li><li>امتلاك مفاتيح المعرفة بما يتناسب وحاجات العصر.</li></ul><h3>الموقف الصحيح في مواجهة العولمة</h3><ul><li>هو \"التأثر والتأثير\" بالعولمة:<ul><li>التفاعل معها والأخذ بما هو مفيد منها.</li><li>المشاركة في تطويرها بعد احتوائها، والأخذ بمنافع التكنولوجيا.</li><li>العمل على نشر الرموز التاريخية والحضارية والدينية، والتأصيل الثقافي لدى الشباب، وتوعيتهم بمخاطر الفضائيات.</li></ul></li><li>يجب الاندماج والانخراط والانفتاح ومعرفة ما يجري في العالم، مع المحافظة على الهوية الثقافية وخصوصية المجتمعات.</li><li>أقوال: \"نضال نجار\": ليس بمقدور أي إنسان أن ينأى عن تأثير العولمة وإلا بقي في عزلة من التهميش والتبعية، فأي بلد عربي عليه إما التأقلم \"الإيجابي\" مع العولمة أو التعرض \"السلبي\" لتهديداتها، فثقافة العولمة ضرورة لمواجهة عولمة الثقافة.</li><li>\"بدران لحسن\" نقلاً عن مالك بن نبي: لم يعد من المستساغ الغفلة عما يجري في القرية العالمية، وإلا سيصيب وعينا الضمور.</li><li>\"غاندي\": \"مستعد أن أفتح نوافذ بيتي على كل الثقافات ولكني أرفض أن أذوب معها.\"</li></ul>",
+                    "questions": [
+                        {
+                            "q": "ما هو أحد التعريفات الأساسية للعولمة كما ورد في المحاضرة؟",
+                            "options": ["إغلاق الحدود بين الدول", "جعل العالم وكأنه منظومة واحدة متكاملة", "فرض العزلة الثقافية", "تقوية الاقتصادات المحلية فقط"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي العولمة الثقافية وفقاً للنص؟",
+                            "options": ["تبادل ثقافي متكافئ", "فرض مجتمع ما أفكاره وثقافته على المجتمعات الأخرى", "الحفاظ على الخصوصيات الثقافية", "منع انتشار الثقافات الأجنبية"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو الهدف الاستراتيجي من نشر العولمة الثقافية؟",
+                            "options": ["تعزيز المقاومة الثقافية", "إلغاء كل مقاومة محتملة من المجتمعات المستغلة", "دعم الاقتصاد المحلي", "الحفاظ على القيم العائلية"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي اللغة التي تعتبر الأولى عالمياً من حيث الاتصال والتواصل؟",
+                            "options": ["الفرنسية", "العربية", "الإنجليزية", "الصينية"],
+                            "correct": 2
+                        },
+                        {
+                            "q": "ما هو أهم وسائل العولمة الإعلامية وفقاً للنص؟",
+                            "options": ["الصحف", "الراديو", "الإنترنت", "التلفزيون الأرضي"],
+                            "correct": 2
+                        },
+                        {
+                            "q": "ما هي المشكلة الحقيقية في العولمة الثقافية وفقاً للمحاضرة؟",
+                            "options": ["الانفتاح الثقافي بحد ذاته", "طمس معالم الهوية الثقافية", "عدم وجود تكنولوجيا حديثة", "ضعف الاقتصاد"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ماذا تفعل العولمة بالهوية الجماعية؟",
+                            "options": ["تقويها", "تعيد تشكيلها", "تفرغها من كل محتوى", "تحافظ عليها"],
+                            "correct": 2
+                        },
+                        {
+                            "q": "ما هو الموقف الصحيح في مواجهة العولمة؟",
+                            "options": ["الرفض التام", "القبول الكامل", "التأثر والتأثير", "العزلة"],
+                            "correct": 2
+                        },
+                        {
+                            "q": "من صاحب المقولة: \"مستعد أن أفتح نوافذ بيتي على كل الثقافات ولكني أرفض أن أذوب معها\"؟",
+                            "options": ["مالك بن نبي", "نضال نجار", "غاندي", "بدران لحسن"],
+                            "correct": 2
+                        },
+                        {
+                            "q": "ما هي إحدى الآثار التربوية للعولمة الثقافية في المجتمع العربي؟",
+                            "options": ["تعزيز الانتماء الوطني", "تقوية الروابط الأسرية", "شيوع الثقافة الاستهلاكية", "دعم الهوية الثقافية"],
+                            "correct": 2
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "title": "📕 العولمة الثقافية والمسؤولية الاجتماعية",
+                    "content": "<h3>التحولات المحلية والعالمية في ظل العولمة</h3><ul><li>التحولات المحلية والعالمية في ظل العولمة والانفتاح الإعلامي (كالثورة المعلوماتية والذكاء الاصطناعي والتقدم التكنولوجي) أثرت في المجتمعات العربية التي قاومت للحفاظ على خصوصيتها الثقافية ومواجهة تحديات العولمة التي أصبحت أكثر انتشاراً نظراً لتفاعل أفرادها (خاصة الشباب) مع الإنترنت وما يحتويه من أفكار وقيم وأساليب حياة مخالفة للمجتمع العربي.</li><li>وسائل الاتصال والإنترنت تلعب دوراً كبيراً في تشكيل قيم واتجاهات جديدة تؤثر على قواعد السلوك الاجتماعي، وهذا يشكل خطراً على الهوية الثقافية.</li><li>العلاقات الاجتماعية لم تعد إنسانية مباشرة بل أصبحت \"افتراضية\" قائمة على التفاعل عبر \"وسيط آلي\" بشكل غير مباشر.</li><li>المجتمع الرقمي الجديد أخرجنا إلى مجتمع إنساني-آلي تسوده علاقات افتراضية تحددها منظومة تكنو-اجتماعية.</li><li>أصبح الفرد يحمل خصائص التكنولوجيا الرقمية في عقله وسلوكه، مما أثر على مكونات هويته وانتمائه ومستقبل علاقاته الاجتماعية والأسرية، خاصة مع الإفراط في استخدام مواقع التواصل الذي يؤدي إلى الانقطاع عن المحيط الاجتماعي الحقيقي والدخول في خطر العزلة وتفكك العلاقات الأسرية (مثال: أفراد أسرة واحدة يتواصلون مع آخرين عبر الإنترنت متجاهلين بعضهم).</li><li>الإفراط في استخدام الأجهزة والإنترنت يزيد من خطر الوحدة والعزلة، ويؤدي إلى العيش من غير عائلة ولا قبيلة ولا هوية ولا وطن.</li><li>تؤثر وسائل الإعلام على فئة الشباب بشكل خاص باعتبارهم أكثر انفتاحاً على الثقافات الأخرى وأكثر ميلاً نحو قيم التغيير والتمرد.</li><li>الشباب العربي أكثر قابلية للتأثر بأفكار وثقافات جديدة نتيجة ضعف خبرتهم وقلة الفرص لتكوين التفكير النقدي لديهم.</li><li>التطورات التكنولوجية السريعة والمؤثرات المادية والنفعية تؤثر على الشباب فتجعلهم في حالة حيرة وتشتت بين الأهداف والغايات، مما يضعف قدرتهم على الاختيار بين القيم المتصارعة.</li><li>هذا الصراع يؤدي إلى اضطراب في الهوية وفقدان الإحساس بالانتماء، ويتحولون إلى أفراد غير مسؤولين وغير مبالين، لا ينفعون ذاتهم ولا مجتمعهم.</li><li>أصبح الشباب العربي بحاجة ماسة إلى تحصينه وتعزيز قيمه الإنسانية من خلال المحافظة على القيم، والجمع بين الأصالة والعصرنة، والحفاظ على الهوية الثقافية.</li><li>العولمة تسعى للوصول إلى إنسان لا يعرف حدوداً ولا هوية ولا يكترث للقيم الأخلاقية.</li><li>المطلوب هو حداثة جديدة تتبنى العلم والتكنولوجيا دون أن تلغي القيم الإنسانية، حداثة تحيي العقل ولا تميت القلب، وتهتم بالحاضر دون إنكار التراث.</li><li>هذا يدعو إلى التمعن في الثقافة المتدفقة للتصدي لها بحكمة ومضاعفة المسؤوليات، وليس الانعزال، وذلك عبر تعزيز الهوية وتربية الشباب على القيم الأصيلة وتزويدهم بالمهارات للتفاعل مع العالم دون أن يؤثر ذلك في هويتهم.</li><li>يجب على المجتمعات العربية أن تعود لتاريخها الحضاري وتتمسك بثقافتها وتعتمد على العلم والعقل لمواكبة التقدم، فالإسلام يشجع على الابتكار وإعمال العقل (مثال حديث معاذ بن جبل عندما أرسله النبي لليمن قاضياً: \"بما تقضي؟ قال: بكتاب الله. قال: فإن لم تجد؟ قال: فبسنة رسول الله. قال: فإن لم تجد؟ قال: اجتهد رأيي ولا آلو\").</li><li>لإحداث تغيير في أي مجتمع على مستوى الحياة الاجتماعية، يقتضي إحداث تغيير في العقول والذهنيات (البنية الثقافية ككل). أول ما تصاب به الأمم في أطوار تراجعها الفكري هي \"مفاهيمها\". من هذا المنطلق، يجب تناول مفهوم \"المسؤولية الاجتماعية\" الذي غاب عن سلوك وتفكير الشباب العربي وحل مكانه اللامبالاة.</li></ul><h3>المسؤولية الاجتماعية</h3><ul><li>تعريف مجمع اللغة العربية: حال أو صفة من يسأل عن أمر تقع عليه تبعاته. وتطلق أخلاقياً على التزام شخص بما يصدر عنه قولاً وفعلاً.</li><li>تعريفات أخرى:<ul><li>المقدرة على أن يلزم الإنسان نفسه أولاً والمقدرة على الوفاء بالتزامه ثانياً.</li><li>إقرار الفرد بما يصدر عنه من أفعال واستعداده لتحمل نتائجها.</li></ul></li><li>أنواع المسؤولية: تتنوع المسؤولية لاعتبارات شتى (شخصية، جماعية، اعتبارية)، وتتبعاً لنوع المساءلة (أخلاقية، شرعية، قانونية، اجتماعية).</li><li>الإنسان \"كائن اجتماعي\" بطبعه، يحمل اتجاه الآخرين مسؤوليات وواجبات ترتبط بأدواره الاجتماعية.</li><li>الفرد مؤهل للقيام بعدة أدوار اجتماعية وتحمل مسؤولياتها.</li></ul><h4>تعريف المسؤولية الاجتماعية</h4><ul><li>المسؤولية الفردية عن الجماعة، أي مسؤولية الفرد أمام ذاته عن الجماعة التي ينتمي إليها.</li><li>التزام الأفراد والمؤسسات بالمساهمة في تحقيق أهداف التنمية المستدامة من خلال ممارسات مسؤولة تعزز حقوق الإنسان وتحافظ على البيئة وتدعم المجتمعات.</li><li>نظرية أخلاقية تقترح أن أي كيان (منظمة أو فرد) يقع على عاتقه العمل لمصلحة المجتمع ككل.</li></ul><p>يرى \"سارتر\" أن الإنسان طالما أنه حر فهو يتحمل مسؤولية أفعاله مسؤولية كاملة، لأن بدون المسؤولية تصبح الحرية فوضى ودماراً على المجتمع.</p><h3>عناصر المسؤولية الاجتماعية</h3><h4>1. الاهتمام</h4><p>الارتباط العاطفي بالجماعة، اهتمام يحيطه الحرص على استمرارها وتقدمها. حدد \"سيد عثمان\" أربعة مستويات للاهتمام:</p><ul><li>الأول: الانفعال مع الجماعة: أبسط صورة للاهتمام، وهو ارتباط عضوي بالجماعة يتأثر فيه كل عضو بما يجري في الجماعة كلها دون اختيار أو قصد أو إدراك ذاتي.</li><li>الثاني: الانفعال بالجماعة: مستوى أرقى، وهو التعاطف مع الجماعة، والفرق أن الفرد هنا يدرك ذاته أثناء انفعاله بالجماعة، ولم تعد المسألة عضوية آلية.</li><li>الثالث: الاتحاد مع الجماعة: يشعر الفرد بأنه والجماعة شيء واحد، وأن خيرها خيره وما يقع عليها من ضرر واقع عليه.</li><li>الرابع: تعقل الجماعة: ويتضمن شقين:<ul><li>استبطان الجماعة: أن تصبح الجماعة داخل الفرد فكرياً، أي تتطبع في فكره وتصوره العقلي، ويستطيع إدراكها وجعلها موضع تأمل.</li><li>الاهتمام المتفكر المتزن الرزين: الاهتمام بمشكلات الجماعة ومصيرها ودرجة التناسق بين أنشطتها وأهدافها، يقوم على منهج موضوعي مخطط من التفكير، وهو أعلى مستويات الاهتمام.</li></ul></li></ul><h4>2. الفهم والإدراك</h4><p>يتحكم إدراك الفرد في مدى فهمه للمواقف واتخاذ القرارات. مستوى الإدراك يرتبط بالمستوى التعليمي والرصيد المعرفي والخبرة. بقدر ارتفاع وعي الفرد لواقعه الاجتماعي وتاريخه وثقافته، بقدر ما تزداد مسؤوليته الاجتماعية. يتضمن الفهم شقين:</p><ul><li>فهم الفرد للجماعة: فهم حالتها الحاضرة ومؤسساتها وقيمها وأيديولوجيتها، وفهم العوامل التي تؤثر في حاضرها، وفهم تاريخها الذي بدونه لا يتم فهم حاضرها ولا تصور مستقبلها.</li><li>فهم الفرد للمغزى الاجتماعي لسلوكه: أن يدرك الفرد أن كل فعل يصدر عنه ذو قيمة اجتماعية وأنه باقٍ ومؤثر في الجماعة مهما صغر. الفرد الواعي مسؤول عن أفعاله تجاه ضميره أولاً وتجاه المجتمع ثانياً.</li></ul><h4>3. المشاركة</h4><p>هي تعبير عن الاهتمام والفهم، فهي ترجمان الوجدان والفكر معاً. هي اشتراك الفرد مع الآخرين في عمل يساعد الجماعة في إشباع حاجاتها وحل مشكلاتها وتحقيق رفاهيتها. لها ثلاثة جوانب:</p><ul><li>تقبل الفرد للدور: تقبل الأدوار الاجتماعية وما يرتبط بها من سلوك وتبعات، مما يجعل الفرد يشارك في الجماعة (موحداً) وليس منفصماً.</li><li>المشاركة المنفذة: المشاركة في العمل الفعلي لإخراج فكرة أو خطوة إلى عالم الواقع، أو تنفيذ ما على الفرد أداؤه.</li><li>المشاركة المقومة: نوع من المشاركة الموجهة الناقدة.</li></ul><h4>4. الأخلاق</h4><p>المسؤولية الاجتماعية هي التزام أمام الضمير وأمام الله وأمام المجتمع، لذا فهي ترتبط بالمنظومة الأخلاقية التي تجعل الفرد ينظر إلى الجماعة والمجتمع على أنهما مسؤولية أخلاقية.</p><h4>5. التنشئة الاجتماعية</h4><p>المسؤولية نمط من أنماط التنشئة الاجتماعية التي تحول الفرد من مخلوق ضعيف إلى شخص قادر على تحمل مسؤولية أقواله وأفعاله.</p><ul><li>الأسرة: دورها أساسي في صقل الشخصية وغرس القيم وتنمية روح المسؤولية، وذلك باعتماد أساليب تربوية صحيحة بعيدة عن الدلال الزائد أو العنف والقسوة، فكلاهما يؤثر سلباً ويكسب شعوراً باللامبالاة وانعدام المسؤولية.</li><li>المدرسة: تنمي شعور المسؤولية وتعززه عبر مناهجها وبرامجها، وتجسده بمواقف وتصرفات واعية. تحمل المسؤولية لا يمكن تنميته إلا عن طريق الممارسة والخبرات التي تسهم في صقل شخصية الفرد وبناءها سوياً، فالسلوك الاجتماعي الإيجابي يزداد بزيادة قدرة الفرد على تحمل المسؤولية الذاتية والاجتماعية.</li><li>مراحل تنمية الشعور بالمسؤولية: يمر بعدة مراحل تبدأ بمرحلة المسؤولية تجاه الآخرين حيث تنمو قدرة الفرد على الاتحاد مع الآخرين وتعلم الوعي الجماعي، ويضع في اعتباره رغبات ومشاعر الآخرين، وهنا تكمن بداية تكوين المعنى الحقيقي للمسؤولية الاجتماعية. وفي المرحلة الأخيرة يصل الفرد إلى كمال المسؤولية الاجتماعية ويسعى لتحقيق قيم المجتمع بسلوكياته، ويصبح أكثر قدرة على إدراك تصرفاته والاهتمام بالتفكير المنطقي الناقد والاعتماد على النفس.</li><li>تقاعس الفرد عن تحمل المسؤولية يلحق الضرر به وبمجتمعه، لذلك تعد تنشئة الفرد على تحمل المسؤولية مسألة في غاية الأهمية.</li><li>من القيم التي تعزز المسؤولية: حرية التعبير عن الرأي والنقد الموضوعي، احترام أعراف المجتمع وقوانينه، احترام حريات الآخرين، التسامح والأمانة والثقة بالنفس.</li></ul><h3>علاقة المسؤولية الاجتماعية بالانتماء</h3><ul><li>لابد للفرد أن يشعر بالانتماء ليحقق المسؤولية الاجتماعية، ولابد أن يتمتع بالمسؤولية ليشعر بالانتماء.</li><li>الانتماء يتضمن الارتباط المعنوي بالجماعة والحرص على سلامتها، وبالتالي الشعور بالمسؤولية تجاهها.</li><li>اتسام الفرد بالمسؤولية يتضمن معرفة واجباته والالتزام بها، وبالتالي يتعزز شعوره بالانتماء والاعتزاز بمجتمعه وتاريخه وثقافته.</li></ul><h3>علاقة المسؤولية الاجتماعية بالدين</h3><ul><li>أولى الدين الإسلامي أهمية كبيرة للمسؤولية الاجتماعية، وحث الشباب على تولي مسؤولياتهم ومعرفة حقوقهم وواجباتهم.</li><li>المسؤولية الاجتماعية ذات طبيعة أخلاقية واجتماعية ودينية، ويعد إيمان الفرد من أهم دعائمها، إذ يغذي الضمير الأخلاقي ويعزز شعوره برقابة الله، فتصبح المسؤولية التزاماً أخلاقياً ودينياً نحو الجماعة، ومرجعها الأساسي تقوى الله.</li></ul>",
+                    "questions": [
+                        {
+                            "q": "كيف أصبحت العلاقات الاجتماعية في المجتمع الرقمي الجديد؟",
+                            "options": ["علاقات إنسانية مباشرة", "علاقات افتراضية عبر وسيط آلي", "علاقات عائلية وثيقة", "علاقات رسمية فقط"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو تأثير الإفراط في استخدام الأجهزة والإنترنت؟",
+                            "options": ["زيادة الترابط الأسري", "خطر الوحدة والعزلة", "تعزيز الهوية الوطنية", "تحسين العلاقات الاجتماعية"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "لماذا الشباب العربي أكثر قابلية للتأثر بأفكار وثقافات جديدة؟",
+                            "options": ["قوة تفكيرهم النقدي", "ضعف خبرتهم وقلة فرص التفكير النقدي", "تمسكهم بالعادات", "عزلتهم عن الإنترنت"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما الذي حث عليه حديث معاذ بن جبل كما ورد في المحاضرة؟",
+                            "options": ["التقليد الأعمى", "الاجتهاد وإعمال العقل", "الاعتماد على الآخرين", "ترك القضاء"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو التعريف الأخلاقي للمسؤولية وفق مجمع اللغة العربية؟",
+                            "options": ["الالتزام بقوانين الدولة فقط", "التزام شخص بما يصدر عنه قولاً وفعلاً", "طاعة الوالدين", "تحقيق الذات"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "من هو المفكر الذي يرى أن الإنسان الحر يتحمل مسؤولية أفعاله كاملة؟",
+                            "options": ["مالك بن نبي", "سارتر", "غاندي", "سيد عثمان"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو أعلى مستويات الاهتمام بالجماعة وفق سيد عثمان؟",
+                            "options": ["الانفعال مع الجماعة", "الاتحاد مع الجماعة", "تعقل الجماعة", "الانفعال بالجماعة"],
+                            "correct": 2
+                        },
+                        {
+                            "q": "ما هي الجوانب الثلاثة للمشاركة في المسؤولية الاجتماعية؟",
+                            "options": ["الفهم، الاهتمام، الأخلاق", "تقبل الدور، المشاركة المنفذة، المشاركة المقومة", "الانتماء، الدين، التنشئة", "الأسرة، المدرسة، المجتمع"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي العلاقة بين المسؤولية الاجتماعية والانتماء؟",
+                            "options": ["علاقة عكسية", "علاقة طردية تكاملية", "لا توجد علاقة", "علاقة تنافسية"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو المرجع الأساسي للمسؤولية الاجتماعية في الدين الإسلامي؟",
+                            "options": ["الخوف من العقاب", "تقوى الله", "السمعة الاجتماعية", "التقليد الأعمى"],
+                            "correct": 1
+                        }
+                    ]
+                },
+
+
+
+                {
+                    "id": 4,
+                    "title": "📘 الانتماء لدى الشباب العربي",
+                    "content": "<h3>أولاً. مفهوم الانتماء</h3><ul><li>لغة: من معاني (نما) الارتفاع. \"انتمى إليه\" أي انتسب وارتفع إليه في النسب. الانتماء هو الانتساب والارتباط بعلاقة وثيقة والتمتع بالعلاقات الاجتماعية التي تتيح الاندماج في الجماعة.</li><li>اصطلاحاً: الإحساس تجاه أمر معين يبعث على الولاء له والفخر به والانتساب إليه. ويرى باحثون أنه الانتساب الحقيقي للدين والوطن فكراً وعملاً، وتقمص عضوية ما لمحبة الفرد لها واعتزازه بها.</li><li>يعد الانتماء من أهم الحاجات الإنسانية التي تشعر الفرد بالروابط المشتركة. أشار \"أبراهام ماسلو\" في \"نظرية سلم الحاجات\" إلى حاجة الانتماء في المرتبة الثالثة، بعد الحاجات الأساسية وحاجات الأمان، وقبل حاجات التقدير وتحقيق الذات.</li><li>في علم الاجتماع: ارتباط الفرد بجماعة يسعى أن تكون قوية، يتقمص شخصيتها ويوحد نفسه بها، وهو مرتبط بالولاء، ويستخدم للدلالة على العلاقات والعواطف التي تربط الفرد بالجماعة أو رموزها.</li><li>في علم النفس: نوع من الاتحاد بين الفرد والجماعة مع توفر الإحساس بالأمان والرضا والفخر بها، وهو اتجاه يستشعره الفرد من خلال اندماجه في جماعة وتوحده بها، وأنه صار جزءاً مقبولاً منها له مكانته.</li></ul><h3>ثانياً. مستويات الانتماء</h3><ul><li>التصنيف الأول:<ul><li>المستوى اللفظي: التعبير عن الانتماء بالألفاظ والمشاعر فقط دون تطبيق.</li><li>المستوى السلوكي: التعبير عن الانتماء بالسلوك والممارسة (بذل جهد أو وقت أو مال).</li></ul></li><li>التصنيف الثاني:<ul><li>مستوى الانتماء المادي: كون الفرد جزءاً من جماعة ما ويبرز لها الولاء.</li><li>مستوى الانتماء الأناني: لفظي فقط، يعبر الفرد عن انتمائه للحصول على حاجاته، وقد يتحول لجماعة أخرى إذا حققت له إشباعاً أكبر.</li><li>مستوى الإيثار: يظهر خلال مواقف تتطلب التضحية من أجل الجماعة.</li></ul></li><li>التصنيف الثالث:<ul><li>مستوى الانتماء الدائم: مثل الانتماء للأسرة، الدين، الوطن.</li><li>مستوى الانتماء الطويل: الانتماء إلى الأقارب، النقابات، الجيران.</li><li>مستوى الانتماء القصير: زملاء الدراسة.</li></ul></li><li>التصنيف الرابع:<ul><li>مستوى الانتماء المعلن: يعبر الفرد لفظياً عن انتمائه.</li><li>مستوى الانتماء السلوكي: يتخذ الفرد موقفاً سلوكياً يدل على الولاء.</li></ul></li></ul><h3>ثالثاً. أنواع الانتماء</h3><h4>1. الانتماء الأول: دائرة الإنسانية</h4><ul><li>هو الانتماء الذي يجمع كل أفراد النوع البشري ويضفي عليهم هوية، من خلال إبراز المشترك بين الذوات.</li><li>من أهم سماته التشارك في الموروث الوراثي (البنية الجسدية والدماغ البشري) بغض النظر عن الاختلافات العرقية.</li><li>الدماغ البشري مكن الإنسان من ممارسة وظائف مثل التفكير وإبداع اللغات، لذا يوصف الإنسان بالكائن الرمزي.</li><li>الإنسان هو الكائن الوحيد الذي يدرك ببعدي المكان والزمان، فيعيش ماضيه وحاضره ومستقبله، فالتفكير واللغة ووعي الزمن هي أهم السمات المميزة للإنسان.</li><li>سمحتا التفكير واللغة بتشكيل منظومة أفكار تشكل الوعي، الذي يصفه \"إدغار موران\" بأنه أروع انبثاق للذهن البشري، وهو منتج ونتاج للعقل الإنساني.</li><li>الوعي يضفي على الإنسان هوية تميزه عن غيره.</li><li>صفة الوعي تحيلنا إلى فكرة الاعتراف بالغير كمشارك للأن ا في الوعي والوجود، فكلاهما يتشارك في اكتساب الهوية والانتماء لدائرة الإنسانية، وفي الغايات والقيم العليا.</li><li>يقول \"سارتر\": الآخر موجود ضمنياً في الواقع، وهو جوهر مفكر لديه الماهية ذاتها التي لدي.</li><li>الإنسانية تتعدى العقل إلى المشاعر، فالإنسان كائن وجداني، والمشاعر الإنسانية هي حلقة ربط تجمع البشرية، وبدونها لا يكون للتعاطف والتضامن أي معنى.</li><li>الإنسان كائن اجتماعي، يرتقي في اجتماعه إلى مستوى التنظيم والتنظير الاجتماعيين، وتقسيم العمل، والرقي إلى درجة المدنية والمواطنة التي تضمن الحريات وتقتضي معرفة الحقوق والواجبات.</li><li>رغم الاشتراك في الهوية البشرية، تختلف الجماعات الإنسانية في نفس ما تتشارك فيه، فالبنى النفسية تخضع لعوامل خارجية، مما يجعلها متمايزة، والوعي بالاختلاف يصبح خاصة مميزة للإنسان.</li></ul><h4>2. الانتماء الفكري</h4><ul><li>هو محصلة جملة من الاختيارات الإرادية الواعية التي يتخذها الإنسان في شتى المجالات.</li><li>يكتسب أهمية بالغة لكونه عاملاً أساسياً مشكلاً للهوية الفردية، فهو يبلور نظرة الإنسان للوجود ويسهم في تشكل فلسفته الذاتية التي تصنع تفرّده، وهو الكفيل بجعل الذات تدرك موقعها في العالم.</li><li>معناه: الانتساب الطوعي الفكري إلى فئة من البشر تتبنى نسقاً فكرياً أو مذهباً عقلياً أو منهجاً في التفكير.</li><li>توافق الإنسان مع جماعة في بعض التوجهات لا يعني بالضرورة انتماءه لنسقهم الفكري، فالإنسان حر في تفكيره، وهذا طبيعي ويشكل خصوصيته الفكرية.</li><li>التصنيف القسري: في مقابل الانتساب الطوعي، يوجد مفهوم التصنيف القسري، وهو إلصاق فرد أو جماعة بتوجه أيديولوجي دون معرفة حقيقية بهم، وهو نتاج إسقاط أحكام الغير على الذات. يرتبط برؤية الغير المخالف، ويؤدي إلى أحكام تعسفية وتمييز سلبي. وهو انتماء فكري وهمي يحصل بطريقة قسرية لا إرادية، في مقابل الانتماء الفكري الحقيقي المرتبط بالحرية والإرادة.</li><li>مصدر النظرة السلبية للانتماء الفكري هو رفض الغير للاختلاف ونفي مشروعيته والتشبث برؤية أحادية للحقيقة، وهو بمثابة سجن للعقل وتقويض لحريته.</li><li>تزداد حدة المشكلة عندما يرتبط الأمر بالانتماء الديني، حيث تتعدد الطوائف والفرق الدينية، ويتجلى رفض الاختلاف من خلال نعت الغير بالضلال أو التكفير.</li></ul><h4>3. الانتماء الاجتماعي</h4><ul><li>يمثل أحد الأسس الهامة لتشكل الهوية الاجتماعية، وهو إجابة عن سؤال \"من نحن؟\".</li><li>هو جملة الروابط التي تشد الفرد إلى مجتمعه، ولا يتأتى إلا بواسطة الذهنية المتشكلة التي تحمل نسقاً من القيم والمنطلقات والرموز الثقافية والدين والتاريخ.</li><li>الذهنية الاجتماعية تتشكل نتيجة تفاعل العقول مع النسق الثقافي عبر التنشئة الاجتماعية التي تضمن التزام الأفراد بالقيم والقوانين.</li><li>اكتساب اللغة: عملية تلعب دوراً مهماً في الانتماء الاجتماعي والهوية، فاللغة \"ليست أداة تقنية للتخاطب فقط، وإنا هي بالأساس، الوعاء الحضاري للأمم، تحمل العادات والتقاليد والمعارف وأنماط الحياة، وبها يكون انتماء الإنسان إلى مجتمعه\".</li><li>كيف يتبلور مفهوم الانتماء:<ul><li>يبدأ الفرد بإدراك مفهوم الانتماء في مرحلة الطفولة المتوسطة، من خلال فهمه لأمرين: إدراك العلاقات الأسرية (روابط الدم) وموقعه فيها، وإدراكه لفكرة المشاركة الجماعية والفريق (شلة الرفاق، فريق كرة القدم).</li><li>مع احتكاكه مع أقرانه في أوساط مختلفة، يبدأ بتشكيل معنى الغير والتفاعل معه، ويتجلى ذلك في المقارنات (أنا أفضل، أنا أحسن)، ويتعلم الأخذ بوجهة نظر الغير وتقديرها، وهو ما سماه علماء النفس \"التعاطي مع وجهة نظر الآخر\".</li><li>يحصل الإنسان في طفولته على كل المفاهيم الأساسية المرتبطة بالانتماء الاجتماعي مثل الهوية والمشاركة ومعنى الغير.</li><li>كلما تقدم في العمر، كلما فهم أكثر بنية النسق الاجتماعي وتأصلت انتماءاته في بناه ومؤسساته.</li></ul></li><li>تعددية الانتماء: في ظل الحياة الاجتماعية المتعددة، يؤدي الإنسان أدواراً متنوعة أساسها تعددية الانتماء (طبقة، حزب، دين، رياضة)، وهذه التعددية تشكل هويته المتنوعة.</li><li>هل تعددية الانتماء مشكلة سياسية؟<ul><li>ليست كل المجتمعات تشكل فيها تعددية الانتماء مشكلة، ففي نموذج الدولة الحديثة القائمة على المواطنة والقانون، لا تشكل التعددية مشكلة بل ينظر إليها كتنوع هوياتي.</li><li>الأمر يختلف في المجتمعات ذات التراكيب الاجتماعية المعقدة مثل المجتمعات العربية القائمة على القبيلة أو الطائفة أو العشيرة، والتي تمارس سلطة على أفرادها عبر الأعراف المتوارثة.</li><li>الفرد هنا مزدوج الانتماء إلى القبيلة والدولة، وقد يجد نفسه مجبراً على الالتزام بقوانين متعارضة. ما الذي يحدث إذا تعارض قانون الدولة مع عرف القبيلة؟ هذه هي إحدى إشكاليات الانتماء غير متاحة الحلول في العالم العربي.</li><li>التمييز: يجب التمييز بين القبيلة (تكوين اجتماعي قائم على رابطة الدم) و\"القبلية\" (نزعة تعصبية)، وبين الطائفة (تكوين قائم على أساس ديني) و\"الطائفية\" (نزعة تعصبية). فجوهر المشكلة يكمن في الفكر القبلي أو الطائفي القائم على التعصب والمؤسس للولاء.</li><li>الولاء: حالة دمج بين الذات الفردية في ذات أوسع، وهو تغييب للخصوصية الفردية واختزال لإمكاناتها. كل محاولة للاستقلال عن سطوة الجماعة تجعل الإنسان عرضة لأحكام سلبية (خائن، متآمر، غير مسؤول).</li><li>تزيد المشكلة حدة عندما ترتبط القبلية والطائفية بالسياسة، فتكون خدمة القبيلة أو الطائفة هي الغاية الأساسية قبل الوطن.</li></ul></li></ul>",
+                    "questions": [
+                        {
+                            "q": "في أي مرتبة وضع أبراهام ماسلو حاجة الانتماء في سلم الحاجات؟",
+                            "options": ["الأولى", "الثانية", "الثالثة", "الرابعة"],
+                            "correct": 2
+                        },
+                        {
+                            "q": "ما هو المستوى الذي يعبر فيه الفرد عن انتمائه بالألفاظ والمشاعر فقط؟",
+                            "options": ["المستوى السلوكي", "المستوى اللفظي", "مستوى الإيثار", "الانتماء الدائم"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "من هو المفكر الذي وصف الوعي بأنه أروع انبثاق للذهن البشري؟",
+                            "options": ["سارتر", "مالك بن نبي", "إدغار موران", "ماسلو"],
+                            "correct": 2
+                        },
+                        {
+                            "q": "ما هو الكائن الوحيد الذي يدرك ببعدي المكان والزمان؟",
+                            "options": ["الحيوان", "الإنسان", "النبات", "الجماد"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو التصنيف القسري في الانتماء الفكري؟",
+                            "options": ["انتساب طوعي لنسق فكري", "إلصاق فرد بتوجه أيديولوجي دون معرفة حقيقية", "اختيار فلسفة ذاتية", "تبني مذهب عقلي بإرادة"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي اللغة وفقاً للنص؟",
+                            "options": ["أداة تقنية للتخاطب فقط", "الوعاء الحضاري للأمم", "مجرد أصوات", "وسيلة ترفيه"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "متى يبدأ الفرد بإدراك مفهوم الانتماء؟",
+                            "options": ["في المراهقة", "في الطفولة المتوسطة", "في الرشد", "في الشيخوخة"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو جوهر المشكلة في المجتمعات العربية ذات التراكيب المعقدة؟",
+                            "options": ["تعدد الانتماءات", "الفكر القبلي أو الطائفي القائم على التعصب", "قلة الموارد", "ضعف التعليم"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو الفرق بين القبيلة والقبلية؟",
+                            "options": ["لا فرق بينهما", "القبيلة رابطة دم والقبلية نزعة تعصبية", "القبيلة نزعة تعصبية والقبلية رابطة دم", "كلاهما نزعة تعصبية"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ماذا يحدث عندما ترتبط القبلية والطائفية بالسياسة؟",
+                            "options": ["تخدم الوطن أولاً", "تكون خدمة القبيلة أو الطائفة هي الغاية الأساسية قبل الوطن", "تتحقق الديمقراطية", "تختفي النزعات"],
+                            "correct": 1
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "title": "📗 الانتماء الثقافي والوطني",
+                    "content": "<h3>الانتماء الثقافي</h3><ul><li>الإنسان كائن منتج للثقافة، والثقافة تعني كل ما أبدعته يد الإنسان، وكل ما هو صناعي مقابل الطبيعي.</li><li>تتجاوز الثقافة الطبيعة البشرية لتشكل المظاهر التعبيرية عن الحياة الإنسانية. المشاعر الإنسانية مشتركة (حزن، فرح)، لكن كيفيات التعبير عنها (طقوس جنائزية، مراسيم فرح) هي ما يمثل الثقافة ويجعل البشر مختلفين.</li><li>ترتبط الثقافة بالإرادة الواعية الفاعلة التي تجعل من المظاهر الثقافية نظاماً متسقاً مشكلاً للمعنى.</li><li>الارتباط بين الهوية الثقافية والتنظيم الاجتماعي: التنظيم الاجتماعي (القوانين، الأعراف، العادات) هو جزء من الثقافة الإنسانية.</li></ul><h4>التنشئة الاجتماعية والتطبع الثقافي</h4><ul><li>يتشكل الانتماء الثقافي في الذات نتيجة التنشئة الاجتماعية، التي لا تقتصر مهمتها على تهذيب السلوك، بل تتعداها لتلقين الفرد الخصوصيات الثقافية للمجتمع (أسلوب الحياة، النظام القيمي، حدود المقدس، النظام الرمزي المرتبط باللغة والدين والتاريخ).</li><li>يمكن تعريف التنشئة بأنها: عملية تطبع الهوية الثقافية الجمعية في الهوية الثقافية الفردية.</li><li>أدرك الفكر اليوناني القديم أهمية التربية في تشكيل الهوية الثقافية الفردية، ووضع ثلاثة مفاهيم:<ul><li>\"فوسيس\" (Phusis): المادة أو الاستعدادات الطبيعية القابلة للتشكيل (الطبيعة البشرية).</li><li>\"البايديا\" (Paidea): العناية والتربية والتنشئة، أو الجهد المبذول في صقل الطبيعة البشرية، وهي تستثمر \"الفوسيس\" لتكوين فاعل وهاد.</li><li>\"الأيديا\" (Idea): الأنموذج التربوي أو المثال الذي تسير وفقه عملية التنشئة، ويرتكز على مفهوم التقليد والاحتذاء.</li></ul></li><li>آلية التقليد والاحتذاء تكرس مفهوم الالتزام، أي التزام الشخص بقواعد النظام الاجتماعي عبر مطابقة أفعاله للسلوك المحدد، حتى تتصف سلوكياته بـ\"العادية\" أو \"السوية\".</li><li>في مرحلته الأولى، يتعلم الفرد الالتزام الثقافي والاجتماعي عبر التمثل والخضوع للقواعد، ساعياً للانضباط حتى يحظى بالتقدير، ولا يحرص على التأمل النقدي للقواعد بقدر حرصه على تطبيقها والخضوع لها.</li></ul><h4>التفاعل الثقافي</h4><ul><li>قضية الانتماء الثقافي لا تقتصر على التنشئة فقط، بل ترتبط بالتفاعل الثقافي الذي يحدث نتيجة التقاء الهويات الثقافية المختلفة.</li><li>هذا الالتقاء يمكن الفرد من اتخاذ مواقف من مسألتين: الوافد الثقافي والموروث الثقافي.</li><li>في ظل العولمة كظرف حضاري راهن، تأثرت الهويات الثقافية في بنياتها وعلاقاتها، وخلقت وسطاً تفاعلياً لم يشهد من قبل بسبب الثورة التقنية التي جعلت الترابط العالمي ممكناً.</li><li>أحدثت التقنية ثورة تواصلية عالمية غيرت مفهوم الاتصال ذاته، فلم يعد مقترناً بضرورة الحضور الجسدي والتواجد المكاني.</li><li>التفاعل الثقافي -كعامل محدد للانتماء- لا يمكن أن يتاح إلا من خلال التواصل. التواصل إذا اتخذ شكل الحوار سيفتح باب النقد، وهذا قد يؤدي إلى قوة الهوية وصلابتها، أو إلى زعزعة الثوابت وإعادة ترتيب المرجعيات.</li><li>الهوية الثقافية في زمن العولمة أصبحت ترتبط بمفاهيم مثل: عدم اليقين، الليونة، التفتت.</li><li>ثقافة الصورة (الفيديولوجيا): أهم الأدوات التقنية للتفاعل الثقافي في زمن العولمة هي ثقافة الصورة التي تفوقت على الوسائل التقليدية.<ul><li>استبدلت العولمة الأيديولوجيا بـ\"الفيديولوجيا\" التي تدعي تصوير الواقع، لكنها تحمل رسائل مضمرة وتصور نماذج ثقافية نمطية.</li><li>أمثلة: الأفلام الهوليودية تحمل إشارات أيديولوجية كتصوير أمريكا كمنقذة للعالم، أو تصوير الإسلام على أنه أصل الإرهاب.</li><li>يقول \"عبد الغني عماد\" عن الفيديولوجيا: \"أكثر ضبابية وأقل ثقة من الأيديولوجيا السياسية التقليدية\".</li><li>خلق النماذج النمطية يؤدي إلى صراع ثقافي (مثل ربط الإسلام بالإرهاب وتصدير هذه الصورة).</li></ul></li><li>إذا كانت الصور الإعلامية تحمل رموزاً ثقافية تعكس هوية وانتماءً، فإن المشاهدة المستمرة لها تؤدي إلى تشكل منظومة رموز في ذهن المتلقي تعمل على هندسة الخيال وتشكل هوية رمزية قد تحدث الشعور بالانتماء إليها.</li><li>الانتماء الثقافي في زمن العولمة أزال \"الحدود الإقليمية\" كشرط من شروط الانتماء للهوية الثقافية، عبر فقدان العلاقة الطبيعية بين الثقافة والجغرافيا.</li></ul><h3>الانتماء الوطني</h3><ul><li>تعريفه: شعور الفرد بأنه جزء من وطن أو أمة ينتسب لها ويرتبط بها ويشاركها اجتماعياً وثقافياً واقتصادياً وسياسياً ويحميها من أي تهديد.</li></ul><h4>مؤسسات تعزز الانتماء الوطني</h4><ul><li>الأسرة: غرس العادات والتقاليد السليمة وبناء الشخصية وتأصيل القيم الدينية والوطنية.</li><li>المؤسسات التعليمية:<ul><li>المدرسة: بناء الاتجاهات الإيجابية (حب الوطن، حب الخير)، عبر ممارسات عديدة كطابور الصباح والنشيد الوطني، تدريس مواد التربية الوطنية والاجتماعية والدينية، القيام بمبادرات وأنشطة جماعية.</li><li>الجامعة: تعزيز الولاء عبر أنشطة رعاية الشباب، الندوات، المبادرات، المؤتمرات.</li></ul></li><li>المؤسسات الدينية: عبر الخطب والدروس الدينية والاسترشاد بالآيات والأحاديث التي تظهر قداسة الوطن، وتقديم القدوة من الصحابة والرموز الدينية.</li><li>وسائل الإعلام الجماهيرية: عبر البرامج والمقالات والمسلسلات والأغاني التي تتعلق بالتاريخ والوطن وإنجازاته.</li><li>الدولة: يقع على عاتقها مسؤوليات لبناء الانتماء مثل تحقيق المساواة والعدالة، توفير مستوى معيشي مناسب، توعية الأفراد بالإنجازات، إتاحة الفرص للمشاركة الشعبية، سيادة الديمقراطية، محاربة الفساد، عدم التمييز، توفير الأمن.</li></ul><h4>مظاهر الانتماء الوطني</h4><ul><li>حب الوطن والفخر به، الامتثال للقيم الوطنية، الاستعداد للتضحية، الحفاظ على الآداب والممتلكات العامة، احترام القوانين، الاهتمام بمشكلات الوطن، تأدية الخدمة العسكرية والعامة، المشاركة التطوعية، احترام العلم والنشيد، الاحتفال بالمناسبات، التمسك بالعادات، معرفة التاريخ.</li></ul><h4>مظاهر ضعف الانتماء الوطني</h4><ul><li>النقد اللاذع وغير الموضوعي، تشويه صورة الوطن ورموزه، تضخيم السلبيات، انتشار اللامبالاة والأنانية، التعدي على الممتلكات، فقدان الإحساس بالمسؤولية، محاولة تغيير اتجاهات أبناء الوطن.</li></ul><h4>أسباب ضعف الانتماء الوطني</h4><ul><li>عدم قيام الأسرة والمؤسسات التعليمية والدينية والإعلام بدورها.</li><li>التغيرات السريعة في المجتمعات العربية.</li><li>العولمة والغزو الثقافي وانتشار القيم الفردية.</li><li>غياب الوعي القومي.</li><li>عدم الشعور بالعدالة والمساواة.</li><li>عدم الحصول على الرعاية المطلوبة أو مستوى معيشي مناسب.</li><li>انتشار الفساد والشعور بالاغتراب.</li></ul><h4>أساليب بناء ودعم الانتماء الوطني</h4><ul><li>توعية الأفراد بأهمية الانتماء والحفاظ على الوطن.</li><li>توعية الأفراد بحقوقهم وواجباتهم.</li><li>تضمين موضوعات الانتماء في المناهج التعليمية.</li><li>القدوة الصالحة.</li><li>غرس واجبات المواطنة.</li><li>التأكيد على الهوية الوطنية.</li></ul><h3>مفاهيم مرتبطة بالانتماء الوطني</h3><h4>1. المواطنة</h4><ul><li>مفهوم متجدد ومتغير، والاختلاف بينها وبين الوطنية أن المواطنة هي الإطار الفكري والنظري للوطنية (عملية فكرية)، بينما الوطنية هي الممارسة. أما الانتماء فهو أساس المواطنة ويرتبط بها بعلاقة طردية.</li><li>ارتبط ظهورها بحدثين: دستور الولايات المتحدة 1788، وإعلان حقوق الإنسان والمواطن في فرنسا 1789. وهي مبنية على فكرة الشعب صاحب السيادة ووجود حقوق أساسية للفرد.</li><li>تعريفات:<ul><li>مكانة أو علاقة اجتماعية بين فرد طبيعي ومجتمع سياسي (دولة)، يقدم الفرد الولاء وتتولى الدولة الحماية.</li><li>شعور الفرد بالمواطنة محكوم بنوع العلاقة بينه وبين النظام الحاكم، فيقوى إذا مُكّن الفرد من حقوقه.</li><li>علاقة بين الفرد والدولة يحددها القانون، وتتضمن واجبات وحقوقاً متبادلة.</li><li>علاقة اجتماعية تفترض حقوقاً دستورية وواجبات قانونية تهدف لتحقيق مقاصد مشتركة بين الوطن والمواطن.</li></ul></li><li>أسباب بروز مفهوم المواطنة:<ul><li>أدركت الدول العربية خطورة التغيرات والأحداث على قيم مواطنيها، مما ولّد لديها الخوف والقلق، لا سيما مع الاتجاهات الدخيلة التي تتعارض مع قيمها، وعجز مؤسسات المجتمع الثقافية عن التصدي لها. ومن هذه التغيرات:<ul><li>تغيير موازين القوى وسيطرة القطب الأوحد.</li><li>ظهور التكتلات السياسية والاقتصادية.</li><li>تنامي البنى الاجتماعية الحاضنة للفكر الليبرالي.</li><li>عبور الحدود الجغرافية على جسور تكنولوجيا الاتصال.</li><li>الانفتاح الإعلامي.</li><li>قصور دور مؤسسات المجتمع في تشكيل الوعي الوطني.</li><li>غياب الدور الفاعل للمؤسسات التربوية في التشجيع على المشاركة التطوعية.</li></ul></li></ul></li><li>مكونات المواطنة:<ul><li>الانتماء: الانتساب الحقيقي للوطن فكراً وعملاً.</li><li>الحقوق: التي تكفل للمواطن حياة كريمة (حرية، مساواة، عدالة، رعاية صحية وتعليمية).</li><li>الواجبات: المترتبة على كل مواطن (احترام النظام، الدفاع عن الوطن، المساهمة في تنميته).</li><li>المشاركة المجتمعية: وتوحد الفكر، والمشاركة في الأعمال التطوعية.</li><li>الاشتراك في القيم العامة: من عادات وتقاليد ونظم وقوانين.</li><li>أساس تحقيق المواطنة هو أن يدين الفرد بالولاء للدولة، وأن تلتزم الدولة بتوفير الحماية والأمن، ويحدد العقد الاجتماعي الحقوق والواجبات.</li></ul></li></ul><h4>2. الهوية</h4><ul><li>تعريف عام: الإدراك الوجداني الذاتي للفرد.</li><li>أبعادها:<ul><li>الهوية الوطنية: مجموعة السمات المشتركة التي تميز أمة أو مجتمع عن غيره (مثال الجنسية).</li><li>الهوية الفردية: الصفات التي تميز الفرد عن الآخرين (الخبرات، المعتقدات، التجارب).</li><li>الهوية الجمعية: تعكس انتماء الفرد لجماعة، وتتشكل من القيم والعادات (مثال الانتماء الديني).</li><li>الهوية الثقافية الفردية: جزء من هوية الفرد تتشكل من تفاعله مع الثقافة المحيطة ومدى قبوله لها.</li><li>الهوية الثقافية الجمعية: تتمثل باللغة والعادات والتاريخ التي تشترك بها جماعة معينة (مثال الاحتفال بعيد النيروز).</li></ul></li></ul><h3>رابعاً. آثار تحقيق الانتماء وأهميته</h3><ul><li>آثار دينية: تحقيق التوحيد، قوة الاتصال بالدين، احترام العلماء، القيام بالواجبات بأمانة، تربية الأبناء على تقدير الوطن، تحصين المجتمع من الأفكار الضالة، وتحصين الشباب ضد النزعات الفكرية.</li><li>آثار فكرية: عدم التأثر بالأفكار المنحرفة، الاقتداء بالرموز الراسخة، الاعتراف بفضل الوطن، زيادة دافعية التعلم، التشبع بالحس الوطني، الحوار بدل العنف، استشعار قيمة الوطن، تأكيد الهوية الوطنية، الثقة بالآخرين والمشاركة، ودعم الهوية الثقافية.</li><li>آثار نفسية: الشعور بالاستقرار والأمان النفسي، إحساس الفرد بأهمية دوره، الغيرة على ممتلكات الوطن، زيادة الثقة بالنفس، الشعور بمحبة الآخرين، الشعور بأهمية الذات، وغلبة روح الانتماء للوطن على الروح القبلية.</li><li>آثار اجتماعية: ارتفاع التماسك الاجتماعي، سيادة المحبة والتعاون، شعور الفرد بكيانه، تعزيز العلاقات الأسرية، التخلي عن الأنانية، التعاون مع مؤسسات المجتمع، تعزيز المشاركة المجتمعية، قوة الأداء العام، تحقيق الأمن، تخفيف الأعباء عن الدولة، تحقيق التنمية المستدامة، وتحفيز الإبداع.</li></ul><h3>خامساً. تقاطع أنواع الانتماء وتشكل الهوية الفردية</h3><ul><li>تشكل الهوية الفردية هو نتاج تفاعل أنواع الانتماء، وهي عملية دينامية معقدة.</li><li>تفاعل الهوية الفردية مع الأنساق الفكرية والاجتماعية والثقافية يحدث عن طريق التنشئة الاجتماعية في المراحل العمرية الأولى، عبر آليتي التقليد والالتزام.</li><li>لكن التطبع لا يعني الانعكاس التام أو ذوبان الهوية الفردية في الجمعية، لأن الإنسان تفرّد يأبى الذوبان.</li><li>تمايز الفرد لا يتأتى إلا من خلال عملية تأمل فكري ونقد بناء في الأنساق الثقافية، وإعادة قراءة التاريخ الثقافي للجماعة (اللغة، الدين، تاريخ الجماعة).</li><li>تشكل الهوية الفردية هو عملية بناء غير منتهية، فالإنسان المفكر يعيش مشتغلاً بالمشكلات الفكرية المستجدة، ونتاج هذا الجهد يزيد ذاته صقلاً وهويته تمايزاً.</li><li>لا يمكن الجزم بأن كل الذوات تخوض تجربة التفكير العقلي الممنهج، فالكثير من العقول تأخذ الموروث الثقافي كمسلمات لا تقبل الشك، وفهمها للواقع الراهن سطحي.</li><li>الاستنتاج: هوية الفرد المتمايزة ليست معطى جاهزاً، بل هي نتاج جهد عقلي يتسم بالوعي والاستمرارية.</li></ul><h3>سادساً. الانتماء والتعصب</h3><ul><li>التعصب: التشدد، وعكسه التسامح. من العصبية، وهي أن يدعو الرجل لنصرة عصبته ظالمين كانوا أو مظلومين.</li><li>تعريفه: شعور داخلي يجعل الإنسان يتشدد فيرى نفسه على حق ويرى الآخر على باطل بلا حجة أو برهان، ويظهر بمواقف متزمتة تنطوي على احتقار الآخر وعدم الاعتراف بحقوقه.</li><li>هو اتجاه نفسي جامد مشحون انفعالياً، أو حكم مسبق ضد جماعة، لا يقوم على سند منطقي أو معرفة كافية، بل ربما يستند إلى أساطير وخرافات.</li><li>أنواعه: ديني أو طائفي، عرقي أو قومي أو قبلي، فكري، للنوع الاجتماعي، رياضي، طبقي.</li><li>الفرق بين الانتماء والتعصب:<ul><li>الانتماء: معتدل، إيجابي، موضوعي، لا يترتب عليه أضرار، يجمع الناس، يتقبل الآخر، منفتح، ويتطلب ذكاءً اجتماعياً وعاطفياً.</li><li>التعصب: متشدد، سلبي، غير موضوعي، يترتب عليه أضرار، يفرق الناس، لا يتقبل الآخر، منغلق على ذاته.</li></ul></li></ul>",
+                    "questions": [
+                        {
+                            "q": "ما هو المفهوم اليوناني الذي يعني المادة أو الاستعدادات الطبيعية القابلة للتشكيل؟",
+                            "options": ["البايديا", "الأيديا", "فوسيس", "لوجوس"],
+                            "correct": 2
+                        },
+                        {
+                            "q": "ما هي الفيديولوجيا وفقاً للنص؟",
+                            "options": ["أيديولوجيا سياسية تقليدية", "ثقافة الصورة التي تدعي تصوير الواقع", "فلسفة يونانية", "نظرية اجتماعية"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما الذي أزالته العولمة كشرط من شروط الانتماء للهوية الثقافية؟",
+                            "options": ["اللغة", "الدين", "الحدود الإقليمية", "التاريخ"],
+                            "correct": 2
+                        },
+                        {
+                            "q": "ما هي العلاقة بين الانتماء والمواطنة؟",
+                            "options": ["علاقة عكسية", "الانتماء أساس المواطنة ويرتبط بها بعلاقة طردية", "لا توجد علاقة", "علاقة تنافسية"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "متى ارتبط ظهور مفهوم المواطنة؟",
+                            "options": ["الثورة الصناعية", "دستور أمريكا 1788 وإعلان حقوق الإنسان 1789", "الحرب العالمية الأولى", "سقوط جدار برلين"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي الهوية الثقافية الجمعية؟",
+                            "options": ["صفات الفرد المميزة", "اللغة والعادات والتاريخ المشتركة لجماعة", "الشعور الذاتي", "الخبرات الشخصية"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو أحد مظاهر ضعف الانتماء الوطني؟",
+                            "options": ["حب الوطن", "النقد اللاذع وغير الموضوعي", "الاستعداد للتضحية", "احترام القوانين"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو الفرق الأساسي بين الانتماء والتعصب؟",
+                            "options": ["لا فرق بينهما", "الانتماء معتدل والتعصب متشدد", "التعصب إيجابي والانتماء سلبي", "كلاهما يفرق الناس"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي إحدى مؤسسات تعزيز الانتماء الوطني؟",
+                            "options": ["الأسواق", "الأسرة", "النوادي الرياضية فقط", "المقاهي"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي عملية تطبع الهوية الثقافية الجمعية في الهوية الثقافية الفردية؟",
+                            "options": ["التفاعل الثقافي", "التنشئة الاجتماعية", "العولمة", "الفيديولوجيا"],
+                            "correct": 1
+                        }
+                    ]
+                },
+                {
+                    "id": 6,
+                    "title": "📕 زواج القاصرات",
+                    "content": "<h3>تمهيد</h3><p>تعتبر ظاهرة زواج القاصرات من الظواهر التي تتزايد في المجتمعات العربية بشكل مستمر بسبب الظروف الاقتصادية والاجتماعية والسياسية الراهنة وغياب الوعي الفكري. هذه الظاهرة تعد جريمة بحق الطفولة، وشكلاً من أشكال العبودية، وانتهاكاً صارخاً لحقوق الإنسان، وتأخذ شكل الاتجار بالبشر الذي يعد مصدراً رئيسياً من مصادر عائدات الجريمة المنظمة.</p><p>يُعد زواج القاصرات والزواج السياحي من الأثرياء العرب نوعاً من الاستغلال الجنسي للقاصرات، وينتشر في المدن والقرى. يزيد من خطورته أنه يبدو مكتمل الأركان والشروط. كشفت دراسة تابعة للأمم المتحدة تناولت المراهقين المتزوجين (15-18 سنة) في ستة بلدان (1995-2000) أن الزواج المبكر منتشر بصورة لا يستهان بها في الدول العربية بنسب متفاوتة رغم وجود قوانين تحدد سن الزواج.</p><h3>أولاً. تعريف زواج القاصرات</h3><ul><li>القاصر اجتماعياً: هو من لم يبلغ سن تحمل المسؤولية، ولم يكتمل نضوجه الجسمي والعقلي والنفسي.</li><li>المواثيق الدولية: تطلق على كل من هو دون سن 18 بأنه طفل بحاجة للرعاية والاهتمام.</li><li>تعريف الظاهرة: يختلف مفهوم زواج القاصرات من مجتمع لآخر، ولكن عموماً هو كل زواج دون عمر 18 عاماً.</li></ul><h3>ثانياً. أسباب زواج القاصرات</h3><ul><li>الفقر والهروب من العبء المالي للفتاة.</li><li>الطمع في مهر الفتاة لتحسين وضع باقي أفراد الأسرة، وهذا أحد أساليب الاتجار بالفتيات، لاعتبارها سلعة مدرة للدخل.</li><li>الموروث الاجتماعي والعادات السائدة: مثل قدرة الفتاة الصغيرة على إنجاب عدد أكبر من الأطفال.</li><li>الخوف من العنوسة.</li><li>الحفاظ على شرف العائلة واستمرار العلاقات بين العائلات.</li><li>الحل الودي للاغتصاب.</li><li>التفكك والعنف الأسري وسوء المعاملة، مما يدفع الفتاة للزواج للخلاص من معاناتها.</li><li>البطالة.</li><li>الجهل وانخفاض المستوى التعليمي لدى أسر الفتيات القاصرات.</li><li>النزاعات والحروب.</li><li>ملاحظة حول تطبيق رأي الدين: لا يجوز تطبيق رأي الدين في هذه الظاهرة كما كان سابقاً، حيث كانت الفتاة تتزوج صغيرة جداً، لكن بناءها الجسدي والعقلي وبيئتها وتنشئتها تختلف تماماً عن فتيات العصر الراهن غير القادرات على تحمل مسؤوليات الزوج وتربية الأطفال.</li></ul><h3>ثالثاً. آثار ظاهرة زواج القاصرات</h3><ul><li>إهمال التعليم وانتشار الأمية.</li><li>انتشار العنوسة.</li><li>انتشار الطلاق.</li><li>آثار صحية: مشكلات في النمو، تأخر الحمل، الإجهاض، الولادات المبكرة، ارتفاع نسبة الوفيات، تشوهات في العمود الفقري بسبب الحمل.</li><li>آثار نفسية: الحرمان العاطفي من حنان الوالدين، الحرمان من الطفولة، اكتئاب، قلق، اضطرابات في الشخصية، عدم التكيف مع مسؤوليات الزواج والزوج والأطفال، العزلة والخوف.</li></ul><h3>حقوق الطفل</h3><p>تؤكد جميع الاتفاقيات المتعلقة بحقوق الطفل على:</p><ul><li>حقه في التعليم.</li><li>حقه في الحماية من أشكال العنف والاستغلال.</li><li>الحق في الإعلام والتوجيه المدرسي والمهني.</li><li>الحق في الراحة ووقت الفراغ والمشاركة في الحياة الثقافية والفنية.</li><li>الحق في عدم الانفصال عن الوالدين ضد إرادتهما.</li></ul><h3>رابعاً. بعض الحلول المقترحة لتجاوز ظاهرة زواج القاصرات</h3><ul><li>فتح مراكز خاصة بالشباب قبل الزواج بدعم من منظمات المجتمع المدني، للتعرف على مشاكل الشباب وإيجاد فرص عمل وتوعيتهم حول مسؤولية الزواج.</li><li>التأكيد على ضرورة التعليم لاكتساب الاستقلالية والتطور الفكري.</li><li>نشر الوعي المجتمعي لكل مكونات المجتمع تجاه مخاطر الظاهرة.</li><li>تعديل بعض القيم والاتجاهات والمفاهيم الثقافية المتعلقة بالزواج المبكر.</li><li>تغيير القوانين.</li><li>تحسين الوضع الاقتصادي وتمكين الفتيات اقتصادياً.</li><li>التعاون الدولي (دعم اتفاقيات دولية، تبادل خبرات لمكافحة زواج القاصرات).</li></ul>",
+                    "questions": [
+                        {
+                            "q": "من هو القاصر اجتماعياً وفقاً للمحاضرة؟",
+                            "options": ["من لم يبلغ سن 21", "من لم يبلغ سن تحمل المسؤولية ولم يكتمل نضوجه", "من لم يتزوج", "من لم يكمل تعليمه"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو تعريف زواج القاصرات عموماً؟",
+                            "options": ["كل زواج دون عمر 18 عاماً", "كل زواج دون عمر 21 عاماً", "كل زواج دون عمر 16 عاماً", "كل زواج دون عمر 15 عاماً"],
+                            "correct": 0
+                        },
+                        {
+                            "q": "ما هو أحد الأسباب الرئيسية لزواج القاصرات؟",
+                            "options": ["الرفاهية الاقتصادية", "الفقر والهروب من العبء المالي", "ارتفاع المستوى التعليمي", "الاستقرار السياسي"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "كيف يُعتبر الطمع في مهر الفتاة أحد أساليب الاتجار بالفتيات؟",
+                            "options": ["لأنه يحسن وضعها", "لاعتبارها سلعة مدرة للدخل", "لأنه يحميها", "لأنه يزيد من تعليمها"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي إحدى الآثار الصحية لزواج القاصرات؟",
+                            "options": ["تحسن النمو", "تشوهات في العمود الفقري بسبب الحمل", "زيادة الخصوبة", "انخفاض الوفيات"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي إحدى الآثار النفسية لزواج القاصرات؟",
+                            "options": ["زيادة الثقة بالنفس", "الحرمان من الطفولة", "الاستقرار العاطفي", "التكيف السريع"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو أحد حقوق الطفل التي تؤكد عليها الاتفاقيات الدولية؟",
+                            "options": ["الحق في العمل المبكر", "الحق في الحماية من العنف والاستغلال", "الحق في الزواج المبكر", "الحق في ترك المدرسة"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو أحد الحلول المقترحة لتجاوز ظاهرة زواج القاصرات؟",
+                            "options": ["تشجيع الزواج المبكر", "نشر الوعي المجتمعي تجاه مخاطر الظاهرة", "تقليل فرص التعليم", "إلغاء القوانين"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "لماذا لا يجوز تطبيق رأي الدين في زواج القاصرات كما كان سابقاً؟",
+                            "options": ["لأن الدين يحرمه", "لأن بناء الفتاة وبيئتها وتنشئتها تختلف عن السابق", "لأنه لا يوجد نص ديني", "لأنه يزيد من العنوسة"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو الأثر الاجتماعي لزواج القاصرات؟",
+                            "options": ["انخفاض نسبة الطلاق", "انتشار الطلاق", "زيادة التعليم", "تحسن الوضع الاقتصادي"],
+                            "correct": 1
+                        }
+                    ]
+                },
+
+
+                {
+                    "id": 7,
+                    "title": "📙 العنوسة والإدمان الرقمي",
+                    "content": "<h3>أولاً. العنوسة</h3><h4>تعريف العنوسة</h4><ul><li>لغة: ورد في القاموس المحيط أن \"العانس هي البنت التي لم تتزوج والرجل الذي لم يتزوج\". وهذا يشير إلى أن اللفظ ينطبق على المرأة والرجل على حد سواء، وهي ملاحظة جديرة بالاهتمام، لكن المفهوم الشعبي يرى أن العانس هي المرأة لا الرجل.</li><li>اصطلاحاً: مصطلح اجتماعي مستوحى من التركيبة الثقافية لكل مجتمع. هو متغير اجتماعي يتغير بتغير الظروف والأوضاع الاجتماعية والاقتصادية والسياسية، ويشير إلى السن التي تصل إليها الفتاة دون زواج مقارنة بالسن المتعارف عليه في المجتمع. لكل مجتمع نظرته الخاصة للظاهرة وفقاً لسياقه الثقافي والعرفي. هي ظاهرة لها أسبابها الاجتماعية والاقتصادية والنفسية، لكنها بالدرجة الأولى ظاهرة سلبية من صنع البشر أنفسهم، ولا تختص بالنساء فقط بل تطلق على الرجال أيضاً.</li></ul><h4>أنواع العنوسة</h4><ul><li>عنوسة اختيارية: ترتبط بقرار شخصي من الشاب أو الفتاة بعدم الرغبة بالزواج، وغالباً تعتمد لدى الفتاة على الاستقلالية التي اكتسبتها من أسرتها أو قدرتها المادية.</li><li>عنوسة حتمية (قسرية): هي عدم الزواج نتيجة لظروف مفروضة، مثل تأخر السن دون تقدم أحد، أو عدم توفر الظروف اللازمة.<ul><li>يفسر أسباب ذلك نفسياً بالحديث عن عدة شخصيات:<ul><li>الشخصية التمامية: لا ترضى إلا بالكمال التام في الشريك، شخصية قلقة تبحث عن المثالية.</li><li>الشخصية النرجسية: المغرورة التي ترى أنه لا شريك يليق بها، تعشق ذاتها وتبحث عن خصوصية تشبع غرورها.</li><li>الشخصية الانطوائية: منغلقة وخجولة، متعتها في وحدتها، وتعتبر المشاركة الوجدانية ثانوية.</li><li>الشخصية المتقمصة: تتقمص الفتاة شخصية أمها، مما يؤدي إلى القلق والنفور من الزواج.</li></ul></li></ul></li></ul><h4>أسباب ظاهرة العنوسة</h4><ul><li>أسباب ذاتية: تتعلق بالفرد ذاته، وتختلف بين الرجل والمرأة، وترتبط بقرار شخصي:<ul><li>البحث عن شريك بمواصفات مثالية مستوحاة من القنوات الفضائية والإنترنت.</li><li>المبالغة في نفقات الزواج ومراسيمه.</li><li>الرغبة في شريك ليس لديه صداقات مع الجنس الآخر، في ظل تأثر المجتمعات بالقيم الغربية الوافدة (كالاختلاط في الأماكن العامة).</li><li>انشغال الفتاة بتحصيل العلم والسعي للشهادات.</li><li>سعي الفتاة للحصول على وظيفة لتأكيد شخصيتها واستقلالها المالي.</li><li>رواسب نفسية لدى الفتاة، وتصورات خاطئة عن الزواج وما قد ينتهي إليه من فشل أو طلاق.</li><li>عدم رغبة الشاب في تحمل مسؤولية الزواج وأعبائه.</li></ul></li><li>أسباب اقتصادية:<ul><li>الظروف الاقتصادية (البطالة، ضعف الدخل، عدم توفر السكن، الفقر) ساهمت في عزوف الشباب عن الزواج. قد يلجأ البعض للهجرة والزواج من أجنبية، أو للطرق المنحرفة، وعندما يقرر تكوين أسرة بعد الأربعين يختار فتاة عشرينية، ومصير من هن في الثلاثين والأربعين العنوسة.</li><li>ارتفاع المهور وتكاليف الزواج.</li><li>معارضة بعض الآباء تزويج بناتهم الموظفات طمعاً في أموالهن.</li></ul></li><li>أسباب اجتماعية:<ul><li>تراجع المفهوم الصحيح للزواج كوسيلة للاستقرار.</li><li>العادات والتقاليد البالية (إصرار الأهل على زواج الأخت الكبرى قبل الصغرى).</li><li>غياب دور الأسرة في التوعية وتحمل المسؤولية.</li><li>غياب دور المؤسسات الاجتماعية في إيجاد حلول عملية.</li><li>انتشار الزواج العرفي والعلاقات عبر الإنترنت كطرق بديلة وخاطئة.</li><li>زيادة عدد النساء مقارنة بالرجال، بسبب زيادة الولادات الإناث (4 بنات مقابل ذكر) والحروب التي يذهب ضحيتها الشباب.</li><li>عدم التشجيع على الزواج.</li><li>فساد المجتمع والاختلاط الفاسد والانحلال الأخلاقي، مما يدفع الشباب لعدم الثقة بالنساء.</li><li>تأثر الفتاة بما يبثه الإعلام من مفاهيم مغلوطة عن الأسرة والزواج.</li><li>اختلاف مستوى التعليم، حيث يميل الذكور للزواج ممن هن أدنى منهم تعليماً، بينما تميل الإناث للارتباط بذكور أعلى مستوى.</li></ul></li><li>أسباب صحية:<ul><li>مرض عضوي (كالقلب أو السكري) أو عيوب خلقية (كالحول أو الإعاقة) قد يمنع الشاب من التقدم خوفاً من الرفض.</li><li>مرض نفسي لدى الفتاة أو الشاب يشكل عقدة من الزواج.</li></ul></li><li>أسباب ثقافية:<ul><li>وسائل الإعلام مقصرة في تقديم برامج عن الثقافة الأسرية من جهة، ومن جهة أخرى تطرح موضوع العنوسة دون حلول، إلى جانب غياب دور المنظومة التربوية.</li><li>ساهم الإعلام في انسلاخ الفتاة عن جذورها الثقافية والذوبان في ثقافات أخرى عبر المسلسلات والأفلام التي تبث قصص الحب والعلاقات الرومانسية، مما جعل الفتاة تعيش في أحلام زائفة وتغير من معايير الزواج، فأصبحت ترى الحب شرطاً أساسياً للزواج قبل الزواج، مما ساهم في تأخر سن الزواج.</li></ul></li><li>أسباب دينية:<ul><li>غياب الوعي الديني عن أهمية الزواج، والتغافل عن حث الإسلام على الزواج وتيسير أموره.</li></ul></li></ul><p>الخلاصة: معظم أسباب العنوسة قابلة للعلاج عندما تقترن بالوعي الديني والإرادة والنظرة المتفائلة والتشجيع من الأسرة والمجتمع.</p><h4>آثار ظاهرة العنوسة</h4><ul><li>آثار نفسية:<ul><li>الشعور بالإحباط والحرمان.</li><li>العدوانية.</li><li>العزلة والانطوائية نتيجة ملاحقة الأنظار والكلام عن \"المكتوب والقسمة\"، مما يدفعها للهرب من مواجهة الناس.</li><li>فقدان التوازن النفسي.</li><li>الحزن والاكتئاب.</li></ul></li><li>آثار أخلاقية:<ul><li>الانحراف الأخلاقي: اللجوء لتلبية الحاجات الغريزية بعلاقات منحرفة عند غياب الوازع الديني.</li><li>التآمر والكيد: مشاعر الحقد والحسد قد تدفع العانس للتنكيد على السعداء، وقد تصل للسحر والشعوذة.</li><li>إقامة علاقات وهمية عبر الهاتف والإنترنت.</li><li>التسرع في الزواج والاختيار للخلاص من شبح العنوسة، مما قد يسبب الطلاق.</li></ul></li><li>آثار صحية:<ul><li>التوتر العصبي الدائم وما ينتج عنه من أمراض كضغط الدم والقولون.</li><li>اختلال وظائف الغدد نتيجة التوتر والاكتئاب.</li><li>كثرة الأورام الليفية.</li></ul></li><li>آثار اجتماعية:<ul><li>قلة النسل: فالإنجاب مقصد أساسي من مقاصد الزواج.</li><li>التفكك الأسري: بسبب تحميل كل طرف مسؤولية هذا الوضع.</li><li>ضعف الروابط الاجتماعية: فالزواج يحرم المجتمع من روابط المصاهرة والنسب.</li><li>انتشار الزواج العرفي: بسبب فقدان الأمل بالزواج الشرعي.</li><li>كثرة الطلاق: نتيجة الزواج غير المتكافئ الذي قد تلجأ إليه الفتاة للخلاص من واقعها.</li></ul></li><li>آثار اقتصادية:<ul><li>انخفاض الإنتاج.</li><li>البطالة: الفتاة العانس قد تضطر للعمل، مما قد يكون على حساب فرص الشباب.</li><li>زيادة التكاليف: من خلال معالجة الأمراض والانحرافات ودعم المؤسسات الصحية والإصلاحية.</li></ul></li></ul><h4>تداعيات العنوسة على الأسرة</h4><ul><li>لا تتوقف التداعيات على الفتاة، بل تمتد لأسرتها التي تعاني من ضغط اجتماعي وخجل وخوف.</li><li>الأب: قد يبحث عن عريس لابنته بين المحيطين به، وإذا فشل يلجأ لأساليب لا شعورية كادعاء رفض الكثيرين، وقد يتعايش مع هذا الكذب. وفي تعامله مع ابنته قد يكون إيمانه قوياً، أو قد يتشدد ويراقبها، أو يمنحها حرية مطلقة.</li><li>الأم: تعيش المشكلة بكامل طاقتها، وقد تنتابها حالات من الاكتئاب والقلق، وقد تلجأ للسحرة والدجالين أو للدلالات، أو تقوم بالتخفيف عن ابنتها وحثها على الرضا بقضاء الله إذا كان إيمانها قوياً.</li><li>الفتاة: تكون أكثر أفراد الأسرة معاناة.</li></ul><h4>بعض الحلول المقترحة للحد من ظاهرة العنوسة</h4><ul><li>نشر الوعي لدى الشباب حول المفاهيم المتعلقة بالزواج.</li><li>تغيير العادات البالية (كبر سن الزوج، مستوى التعليم، زواج الكبرى أولاً).</li><li>خلق فرص عمل للشباب.</li><li>تفعيل دور الإعلام ومؤسسات المجتمع في التوعية والتشجيع على الزواج.</li><li>تعزيز الوعي الديني حول أهمية الزواج.</li><li>إنشاء صندوق دعم الزواج، وهو ما قامت به الإمارات العربية المتحدة، وأهدافه:<ul><li>تشجيع الزواج المبكر للجنسين.</li><li>الحد من الزواج الخارجي (من الأجنبيات).</li><li>تشجيع الزواج الجماعي.</li><li>تشجيع تعدد الزوجات.</li></ul></li></ul><h3>ثانياً. الإدمان الرقمي</h3><h4>تعريف الإدمان الرقمي</h4><ul><li>هو الاستخدام المفرط للأجهزة الرقمية.</li><li>الإدمان لغة: المداومة على الشيء أو الاعتماد عليه.</li><li>الإدمان اصطلاحاً: المداومة على عادة تعاطي مواد معينة أو القيام بنشاط معين لمدة طويلة، بقصد الدخول في حالة من النشوة واستبعاد الحزن والاكتئاب.</li><li>محكات سلوك الإدمان: (حسب أحد الباحثين)<ul><li>السمة البارزة: يصبح السلوك أهم الأنشطة وأكثرها قيمة، ويسيطر على التفكير والمشاعر.</li><li>تغيير المزاج: خبرة ذاتية يشعر بها نتيجة للقيام بالسلوك، وقد تستخدم كاستراتيجية للمواجهة.</li><li>التحمل: الحاجة إلى زيادة كمية النشاط للحصول على نفس الأثر السابق.</li><li>الأعراض الانسحابية: مشاعر عدم الراحة والآثار الفيزيولوجية التي تحدث عند الانقطاع عن النشاط فجأة.</li><li>الصراع: بين المدمن والمحيطين به، أو بين هذا النشاط وغيره (العمل، الحياة الاجتماعية).</li><li>الانتكاس: الميل للعودة مرة أخرى لأنواع الأنشطة التي كان يدمنها.</li></ul></li><li>العامل البيولوجي: توصل العلماء إلى دور \"الدوبامين\" في هذه العملية، وهي مادة مرتبطة بالمتعة والابتهاج، يرتفع مستواها ليس فقط من المخدرات بل أيضاً من المديح والتسوق والمقامرة. عندما يؤدي شيء لرفع مستوى الدوبامين، يشعر الفرد برغبة طبيعية للحصول على المزيد.</li><li>موقف الجمعية الأمريكية للطب النفسي (APA): أقرت وضع الإدمان على الإنترنت ضمن عناصر الإدمان الأخرى، وعرّفته على أنه \"اضطراب يظهر حاجة سيكولوجية قسرية نتيجة عدم الإشباع من استخدام الإنترنت\".</li><li>هو حالة من الاستخدام المرضي وغير التوافقي للإنترنت يؤدي إلى اضطرابات في السلوك، ويستدل عليها بظواهر منها زيادة عدد الساعات أمام الإنترنت بشكل مطرد تتجاوز الفترات التي حددها الفرد لنفسه.</li><li>عرف أيضاً بأنه عملية تصحيحية وتعويضية لنقص الثقة بالنفس في مجالات الحياة المختلفة.</li></ul><h4>أسباب الإدمان على الإنترنت</h4><ul><li>الإنترنت أداة متطورة، لكنها أحدثت انقلاباً في المفاهيم والممارسات النفسية والاجتماعية، وتسمح بتكوين علاقات اجتماعية وتبادل الآراء، وتوفر المجتمعات الافتراضية وسيلة للهروب من الواقع.</li><li>أكدت الدراسات أن أكثر الناس قابلية للإدمان هم الشخصيات المكتئبة والقلقة، والتي تعاني من الفراغ والملل والوحدة، والذين يشفون من إدمان آخر.</li><li>العوامل المسببة:<ul><li>الافتقاد للسند العاطفي عند المراهقين، مما يجعلهم يلهثون وراء الإشباع الوهمي.</li><li>إطلاق الرغبات الدفينة والتعبير عنها عبر غرف الدردشة للتخلص من القيود المجتمعية.</li><li>توفر غرف الدردشة وسيلة للتفريغ الانفعالي وتفريغ شحنات الغضب والكبت، مما يؤدي إلى توهم المحبة.</li><li>محاولة الأفراد التخلص من القلق النفسي وضغوطات الحياة.</li><li>انتشار مقاهي الإنترنت وتوفر السيولة المالية للمراهقين.</li><li>التأثر بثقافات أخرى.</li><li>تأثير جماعة الأقران والأصدقاء المدمنين.</li><li>المفهوم السلبي للتحضر والقابلية للاستهواء.</li><li>الشغف وحب الاستطلاع واكتشاف الجديد لدى المراهقين.</li><li>الهروب من الواقع الحقيقي والضغوط والمسؤوليات.</li></ul></li></ul><h4>أعراض الإدمان الرقمي</h4><ul><li>عدم الإشباع من استخدام الإنترنت والرغبة في العودة إليها.</li><li>ظهور علامات القلق والتفكير والشعور بالحزن والاكتئاب.</li><li>اللجوء إلى نوم عميق بعد تصفح مجهد.</li><li>قدرة الاحتمال: الحاجة لزيادة وقت الاستخدام لتحقيق الرضا، وضعف واضح في المجهود أثناء الاستعمال.</li><li>حالة الفقد (الانسحاب): أعراض الانسحاب الرقمي عند التوقف أو التقليل، وتظهر علامتان أو أكثر بعد بضعة أيام إلى شهر مثل: حالة تهيج نفسي حركي، الشعور بالقلق عند الابتعاد عن الإنترنت، أفكار استحواذية وسواسية حول ما يحدث في الإنترنت، أحلام اليقظة، حركات إرادية ولا إرادية لتحريك الأصابع، حالة من التأزم الاجتماعي والمهني، استعمال الإنترنت لتجنب أعراض الانسحاب.</li><li>استعمال الإنترنت لمدة أطول مما خطط له.</li><li>ضعف الإرادة لضبط مدة الاستخدام والفشل في التقليل أو التوقف.</li><li>استغراق وقت طويل في نشاطات لها علاقة بالإنترنت (البحث عن إصدارات جديدة، التسوق، الريلزات).</li><li>إهمال الحياة الخاصة الاجتماعية والتعليمية والمهنية.</li><li>استخدام مستمر رغم معرفته بالأضرار.</li></ul><h4>ثلاث جوانب مهيمنة على المدمن</h4><ul><li>فكرة المجتمع: تجمع الأصدقاء على الخط أو الشبكة.</li><li>التخيلات: تخيلات غير أخلاقية أو اعتماد شخصيات جديدة.</li><li>السلطة أو القدرة على التحكم: للوصول الفوري إلى المعلومات وإلى الأشخاص.</li><li>الترفيه والتسلية: وعلى رأسهم المراهقين.</li></ul><h4>أكثر مواقع الإدمان الرقمي</h4><ul><li>حجرات الحوارات الحية أو غرف الدردشة: يفضل المراهق التعرف على أفراد جدد من الجنس الآخر، وقضاء وقت طويل في الحديث.</li><li>المواقع التي تعرض الصور الفاضحة: يقع المراهقون في هاوية الدخول إليها بدعوى الفضول.</li><li>الألعاب الإلكترونية: أكثر جاذبية للأطفال والمراهقين، توفر منافسة وتحدياً، وتعطي لذة في القتل والعنف، وأبرزها \"بابجي\"، والتخوف أن تتحول اللذة الخيالية إلى حقيقية.</li><li>نوادي النقاش أو المنتديات: تتبنى قضية أو هواية، مع حرية التعبير والتنفيس الانفعالي، وتتيح تقمص شخصيات دون كشف.</li><li>عمليات البحث والتصفح: تحتوي الإنترنت على كم هائل من المعلومات.</li><li>التسوق عبر الإنترنت والقمار.</li><li>مواقع التواصل الاجتماعي وإدمان مشاهدة الريلزات ومتابعة أخبار المشاهير.</li></ul><h4>تداعيات الإدمان الرقمي</h4><ul><li>مشكلات صحية: ضعف الجهاز المناعي، آلام في الظهر والعمود الفقري، ركود الدورة الدموية، جلطات دماغية وقلبية، التعب المتكرر، زيادة توتر القشرة المخية، قلة الانتباه ونقص التمييز، إصابة الأطفال بالصرع، ارتفاع ضغط الدم، التركيز المفرط بعالم الشاشات وعدم الانتباه للمؤثرات الخارجية، الاسترسال بأحلام اليقظة.</li><li>مشكلات أسرية واجتماعية:<ul><li>انخفاض المشاركة الاجتماعية والتطوع.</li><li>فقدان القدرة على التفاعل الاجتماعي.</li><li>انعزال الفرد وانسحابه من العلاقات الاجتماعية والوحدة.</li><li>إهمال الواجبات الأسرية.</li><li>انعدام المسؤولية واللامبالاة.</li><li>التفكك والتصدع الأسري.</li><li>انهيار البناء الاجتماعي وانحلال القيم بسبب علاقات غير شرعية عبر الإنترنت مما يزيد الطلاق.</li><li>انخفاض مستوى التحصيل الدراسي وربما الطرد من المدرسة أو الجامعة.</li><li>انخفاض مستوى الأداء والإنتاجية في العمل وربما فقدانه.</li><li>التعود على الكذب وإخفاء الحقائق.</li><li>تعلم الجيل الناشئ ممارسة العنف واحتقار العادات والتقاليد.</li></ul></li><li>مشكلات نفسية: عدم الاتزان الانفعالي، ضعف ردود الأفعال، توترات عصبية، سرعة الغضب والعدوانية، اضطرابات نفسية وعقلية (\"الهوس النفسي\")، فقدان الثقة بالنفس.</li></ul><h4>أساليب الوقاية والعلاج من الإدمان الرقمي</h4><ul><li>نشر الوعي إزاء مخاطر الإدمان.</li><li>تنظيم ساعات الاستخدام (ساعتان يومياً).</li><li>اعتماد أسلوب الضبط الذاتي.</li><li>ممارسة الرياضة والتواصل مع الأهل والأصدقاء.</li><li>تعزيز الوازع الديني الذي يحث على غض البصر وإدارة الوقت.</li><li>اعتراف الشخص بأنه مدمن، وهي خطوة مهمة في العلاج.</li><li>العلاج الأسري: غرس أهمية الإنترنت في البحث العلمي، التعرف على مشاكل الأبناء، وزيادة مساحة الحوار.</li><li>توفير بدائل وأنشطة ترفيهية للأطفال.</li><li>متابعة ومراقبة استخدام الأبناء للإنترنت، واستخدام برامج الحماية، وإرشادهم للمواقع الهادفة.</li></ul>",
+                    "questions": [
+                        {
+                            "q": "ما هو المعنى اللغوي لكلمة العانس في القاموس المحيط؟",
+                            "options": ["البنت التي لم تتزوج فقط", "الرجل الذي لم يتزوج فقط", "البنت التي لم تتزوج والرجل الذي لم يتزوج", "الأرملة"],
+                            "correct": 2
+                        },
+                        {
+                            "q": "ما هي الشخصية التي لا ترضى إلا بالكمال التام في الشريك؟",
+                            "options": ["النرجسية", "التمامية", "الانطوائية", "المتقمصة"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو أحد الأسباب الاقتصادية للعنوسة؟",
+                            "options": ["ارتفاع مستوى التعليم", "ارتفاع المهور وتكاليف الزواج", "زيادة فرص العمل", "الاستقرار السياسي"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو الهدف من إنشاء صندوق دعم الزواج في الإمارات؟",
+                            "options": ["تشجيع الزواج الخارجي", "الحد من الزواج الخارجي", "تقليل الزواج الجماعي", "منع تعدد الزوجات"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي المادة المرتبطة بالمتعة والابتهاج في الإدمان؟",
+                            "options": ["الأدرينالين", "الدوبامين", "السيروتونين", "الكورتيزول"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو موقف الجمعية الأمريكية للطب النفسي من الإدمان على الإنترنت؟",
+                            "options": ["رفضته كإدمان", "أقرته ضمن عناصر الإدمان", "تجاهلته", "اعتبرته مرضاً جسدياً"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "من هم أكثر الناس قابلية للإدمان على الإنترنت؟",
+                            "options": ["الشخصيات الاجتماعية", "الشخصيات المكتئبة والقلقة", "الأشخاص النشيطون", "الرياضيون"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي إحدى أكثر مواقع الإدمان الرقمي؟",
+                            "options": ["المواقع التعليمية", "غرف الدردشة", "المواقع الحكومية", "المكتبات الرقمية"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي إحدى المشكلات الصحية للإدمان الرقمي؟",
+                            "options": ["تحسن الدورة الدموية", "آلام في الظهر والعمود الفقري", "زيادة الانتباه", "تقوية المناعة"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي الخطوة المهمة في علاج الإدمان الرقمي؟",
+                            "options": ["إنكار المشكلة", "اعتراف الشخص بأنه مدمن", "زيادة ساعات الاستخدام", "العزلة"],
+                            "correct": 1
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "title": "📕 الخرس الزواجي والاستهلاك الترفي",
+                    "content": "<h3>أولاً. الخرس الزواجي وعلاقته بالإدمان الرقمي</h3><ul><li>الأسرة جماعة اجتماعية بيولوجية منظمة، من وظائفها إشباع الحاجات وتهيئة المناخ لتنشئة الأطفال، لكنها تجد صعوبات في ظل التغيرات المعاصرة (الإنترنت، الذكاء الاصطناعي)، وأبرزها إدمان أحد الزوجين على استخدام الإنترنت مما ينعكس سلباً على الأسرة ويؤدي إلى خلل في العلاقات والوظائف الأسرية.</li><li>من تداعيات إدمان الإنترنت: العدوانية، القلق، العزلة، التفكك الأسري، و\"الخرس الزواجي\".</li></ul><h4>تعريف الخرس الزواجي</h4><ul><li>حالة خاصة من المعاملة الصامتة بين الزوجين، تظهر في سلبية أسلوب المعاملة وتأخذ شكل الرفض والمحافظة على الصمت اللفظي.</li><li>حالة من غياب الحوار والتفاهم بين الزوجين، واختفاء لغة التواصل والمشاعر والعلامات الإيجابية، ومحاولة كل طرف اتخاذ حيز يحجبه عن الآخر، مما يؤدي إلى انهيار الكيان الأسري.</li><li>يعد الصمت مؤشراً على فتور العلاقة الزوجية وجمودها، لأن سلامة التواصل شرط لاستمرار العلاقة.</li><li>انقطاع التواصل بين الزوجين مع استمرارهما بالعيش في منزل واحد، وينفرد كل منهما بحياته الخاصة، فيسود الاضطراب ويغيب الأمان والحب والانسجام.</li></ul><h4>الأسباب المؤدية إلى الخرس الزواجي</h4><ul><li>أسباب تتعلق بالفرد نفسه: مفاهيم خاطئة وسلبية عن الزواج (الصمت هو الحل الأنسب).</li><li>أسباب نفسية: دوافع نفسية أو اضطرابات في الشخصية (النظرة الدونية للمرأة، عدم قناعة الزوجين ببعضهما).</li><li>أسباب اجتماعية: مشاغل الحياة وضغوطاتها.</li><li>انعدام لغة الحوار أو اقتصارها على اللوم والعتاب.</li><li>الأعباء المادية ومسؤوليات الأسرة.</li><li>المعاملة القاسية أو تعالي أحد الطرفين.</li><li>البخل العاطفي.</li><li>الإدمان الرقمي.</li></ul><h4>مظاهر الخرس الزواجي</h4><ul><li>غياب التفاهم والحوار.</li><li>الجلوس في أماكن منفصلة داخل المنزل.</li><li>الهروب المتكرر من المنزل.</li><li>تبلد المشاعر.</li><li>إهمال احتياجات الطرف الآخر.</li><li>غياب الرفق واللين.</li><li>تناول الطعام بشكل منفصل أو بصمت.</li></ul><p>في الواقع الأسري اليوم، يؤدي الانشغال المستمر بالإنترنت إلى تجاهل مشاعر الطرف الآخر، الهروب من المسؤولية، سيطرة الروتين، وضعف العلاقات، والانعزال للعيش في العالم الافتراضي وتجنب المواجهة، مما يؤدي لمشكلات كالاضطراب الأسري والانفصال العاطفي والعلاقات غير المشروعة والطلاق وتفكك المجتمع.</p><h3>ثانياً. الاستهلاك الترفي أو التفاخري</h3><ul><li>غياب الأخلاق والدين، وتراجع الدور الرقابي للأسرة، وعدم وجود القدوة، وسيطرة العناصر المادية، وعولمة التفاهة، وإثارة الشهوات في الإعلام، كلها قادت إلى الفساد والمشكلات الاجتماعية.</li></ul><h4>تعريف الاستهلاك</h4><ul><li>تصرف من الأفراد يلخص عملية شراء السلع والخدمات لإشباع الحاجات والرغبات. وهو الجزء من الدخل المخصص لشراء سلعة ما. وهو كل الأفعال والأنشطة التي يقوم بها الفرد فيما له علاقة بالطريقة التي يرغب في الظهور بها أمام الآخرين (اللباس، الطعام، الأثاث).</li></ul><h4>تعريف الاستهلاك الترفي</h4><ul><li>صرف النقود في شراء حاجات غالية ونادرة تساعد صاحبها على الظهور والتفاخر وتعطيه مركزاً اجتماعياً مرموقاً، فيعتبره الناس عضواً في الطبقة المرفهة، وهذا يجلب له السعادة والارتياح.</li><li>التفاخر والتباهي وحب الظهور واقتناء كل ما هو ذو قيمة وشهرة، بغض النظر عن أهميته ودون حاجة ماسة إليه، وذلك تقليداً للمشاهير والأغنياء لتحقيق ثقة زائفة بالنفس والحصول على مكانة اجتماعية وهمية.</li></ul><h4>نظرية الاستهلاك</h4><ul><li>من الناحية الاقتصادية، يشير مفهوم الاستهلاك التفاخري إلى استخدام خدمة أو سلعة بشكل مباشر دون استخدامها في إنتاج سلعة أخرى، ويتمثل في ممارسات فردية وأوسع نطاقاً كالإنتاج المفرط والتسويق الاستهلاكي الموجه.</li><li>ظهر المصطلح لأول مرة لدى \"ثورستين فيبلن\" في نظرية \"الطبقة المترفة\" عام 1899، وذلك بسبب تفشي الظاهرة في المجتمع الأمريكي.</li><li>لم يعد التفاخر ميزة للطبقة المترفة فقط، بل انتشر في الطبقات الأخرى، وتشير المؤشرات الاقتصادية في مصر والسعودية والإمارات ولبنان إلى ارتفاع سنوي لمعدلات \"القروض\" الاستهلاكية.</li></ul><h4>آليات نشر ثقافة الاستهلاك والأسلوب التفاخري</h4><ul><li>المطاعم: الطعام من أكثر الأساليب التي يظهر فيها النهم الاستهلاكي، ويكشف عن التغير الاجتماعي والتفاعل بين الطعام والثقافة. تشهد المدن الكبرى افتتاح مطاعم لشركات متعددة الجنسيات (ماكدونالد، كنتاكي، ستارباكس)، وصاحب ذلك بروز رموز وممارسات جديدة تشير إلى ثقافة غذائية جديدة فرضتها العولمة، وسببت انتشار عادات غذائية غير صحية، وفقدان الهوية الغذائية المحلية، وتراجع الأطباق التراثية، مما يمثل خطراً على الموروث الثقافي الغذائي، وتأثيراً على الجانب الاجتماعي للأسرة لعزوف الشباب عن الوجبات المنزلية.</li><li>مراكز التسويق التجاري (المولات): جزء من الموروث الاقتصادي والثقافي، تحمل أسلوباً خاصاً من ممارسات الحياة اليومية. أصبح التسوق منها دلالة على التحضر، والاستمتاع بالتجول فيها أهم من عملية الشراء، مما يجعل التجول هوساً سيكولوجياً.</li><li>مدن الملاهي: أصبح الترفيه صناعة عالية النمو لها أثرها الثقافي، وتعتمد فن \"السيطرة على العقول\"، ففكرتها الأساسية ألا تتصل بالقضايا الجادة بل مجرد \"شغل الفراغ\". تعتمد شركات متعددة الجنسيات على \"الاقتصاد الترفيهي\" لتعزيز وجهات النظر وأنماط السلوك. الترفيه الشعبي هو دعاية تروج للوضع الراهن. الترفيه بحد ذاته ليس سلبياً، لكن طريقة الترفيه هي المشكلة لأنها تفرض الإسراف والتبذير وتجعل التفكير ينصب فقط على التسلية.</li><li>استطاعت آليات النظام الصناعي الجديد إيجاد وعي تجاري يقوم على الشراء المعنوي قبل المادي عبر الإعلانات التي تثير الغريزة الشرائية، لنشر النزعات الاستهلاكية وتعميقها، وأوجدت ثقافة للاستهلاك في البلدان النامية.</li><li>انتشار النزعات الاستهلاكية المفرطة في المجتمعات النامية مقترنة بالتخلف الاقتصادي كفيل بتحقيق أقصى درجات التخلف، فالشعوب التي ترضى بالاستهلاك دون المساهمة في الإنتاج تحكم على نفسها بالتقهقر والتبعية.</li><li>صورة المنتج تمنح المستهلك أسلوب حياة جديد وعلاقة جديدة مع نفسه ومع العالم، وتشمل سلعاً استهلاكية تتعارض مع خصوصيتنا الثقافية، وتهدف لنقل أنماط غربية لتبني أسلوب الحياة الغربية عبر إعادة تشكيل أذواق الأفراد. هذه هي \"ثقافة الاختراق\" التي تبث عبر المحطات الفضائية ومواقع التواصل، وأدت إلى إحلال الثقافات الأجنبية محل العربية.</li></ul><h4>العوامل المؤثرة في ثقافة الاستهلاك الترفي</h4><ul><li>العوامل الاجتماعية والثقافية: السلوك الاستهلاكي للفرد يتحدد بعوامل اجتماعية مثل العادات والقيم والتعليم والمكانة.</li><li>العوامل الاقتصادية: القدرة الشرائية للفرد ترسم مسارات الاستهلاك.</li><li>عوامل دينية: الدين يحث على الإنتاج والعمل والحد من الاستهلاك الترفي، وعندما يضعف الوازع الديني تكثر مظاهر التفاخر.</li><li>عوامل سياسية: الاستقرار السياسي يقود إلى الاستقرار الاجتماعي وبروز مظاهر الرفاهية.</li></ul><h4>مخاطر الاستهلاك التفاخري</h4><ul><li>له مخاطر على المستهلك، وفوائد على المؤسسات المنتجة ومؤسسات القروض.</li><li>زيادة النشاط التجاري والاستهلاك التفاخري تعتبر مؤشرات سلبية لأنها \"غير إنتاجية\"، أي مجرد استهلاك خارج منظومة الاكتفاء الذاتي.</li><li>زيادة الاستهلاك خارج الاحتياج تعني انخفاضاً في إنتاجية الفرد وتحمله أعباء مالية تفوق قدرته.</li><li>المعالجة: زيادة الوعي، تعزيز الثقة بالنفس، تربية الأطفال على القناعة، الحد من تأثير مواقع التواصل، ومشاركة المؤسسات المالية والاجتماعية والدينية والإعلامية في التصدي.</li></ul>",
+                    "questions": [
+                        {
+                            "q": "ما هو الخرس الزواجي؟",
+                            "options": ["حالة من الحوار المستمر", "حالة من المعاملة الصامتة بين الزوجين", "حالة من التفاهم العميق", "حالة من الحب المتبادل"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو أحد الأسباب المؤدية إلى الخرس الزواجي؟",
+                            "options": ["زيادة الحوار", "الإدمان الرقمي", "التفاهم المتبادل", "الرفق واللين"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو الاستهلاك الترفي؟",
+                            "options": ["شراء الحاجات الأساسية", "صرف النقود في شراء حاجات غالية للتفاخر", "الاقتصاد في الإنفاق", "الادخار للمستقبل"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "من هو صاحب نظرية \"الطبقة المترفة\"؟",
+                            "options": ["مالك بن نبي", "ثورستين فيبلن", "سارتر", "ماسلو"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي إحدى آليات نشر ثقافة الاستهلاك التفاخري؟",
+                            "options": ["المكتبات العامة", "المولات", "المدارس", "المستشفيات"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي \"ثقافة الاختراق\"؟",
+                            "options": ["نشر الثقافة العربية", "تبني أسلوب الحياة الغربية عبر إعادة تشكيل أذواق الأفراد", "الحفاظ على الهوية", "تعزيز الإنتاج المحلي"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو أحد العوامل المؤثرة في ثقافة الاستهلاك الترفي؟",
+                            "options": ["العوامل الجوية", "العوامل الاقتصادية", "العوامل الجغرافية فقط", "العوامل الطبيعية"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي إحدى مخاطر الاستهلاك التفاخري؟",
+                            "options": ["زيادة الإنتاجية", "انخفاض إنتاجية الفرد", "تحقيق الاكتفاء الذاتي", "تقليل الأعباء المالية"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو تأثير انتشار النزعات الاستهلاكية المفرطة في المجتمعات النامية؟",
+                            "options": ["تحقيق التقدم", "أقصى درجات التخلف", "زيادة الإنتاج", "تعزيز الاستقلال"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي إحدى مظاهر الخرس الزواجي؟",
+                            "options": ["الحوار المستمر", "تبلد المشاعر", "التفاهم العميق", "الجلوس معاً"],
+                            "correct": 1
+                        }
+                    ]
+                },
+
+
+                {
+                    "id": 9,
+                    "title": "📘 الاختيار الزواجي والفجوة بين الأجيال",
+                    "content": "<h3>أولاً. الاختيار الزواجي</h3><ul><li>يعد أول وأهم القرارات الخاصة بالزواج، ويتطلب وقتاً وتفكيراً وجهداً عاطفياً ونفسياً لإيجاد الشريك المناسب في ضوء المعايير المجتمعية.</li><li>يترتب على الانتقال من العزوبية إلى الزواج تغيرات عديدة في المسؤوليات والعلاقات الاجتماعية، وتتأثر هذه العلاقات بمدى صحة الاختيار الذي يسهم في نجاح أو فشل الزواج.</li><li>لا بد من توافر الحرية والإرادة الكاملة لدى المقبلين على الزواج.</li><li>تعريفه: استجابة سلوكية ثنائية تشتمل على التوفيق في الاختيار والاستعداد للمسؤوليات والتشابه في القيم والاحترام المتبادل.</li><li>هو العملية التي يقوم من خلالها الفرد بانتقاء شريك حياته وفقاً لمجموعة من المعايير والقيم والأعراف السائدة في مجتمعه، مع مراعاة الصفات المرغوبة، والاختيار السليم المبني على التواصل الفكري والوجداني هو بداية التوافق.</li></ul><h4>أساليب الاختيار الزواجي</h4><ul><li>يتأثر بالثقافة الاجتماعية للبيئة وبالرؤية الشخصية للفرد.</li><li>مبدآن أساسيان يتحكمان في علمية الاختيار:<ul><li>مجال الاختيار: يتحدد بالعدد وبدائرة الاختيار التي على الشخص أن يختار منها.</li><li>الأسلوب المتبع عند الاختيار.</li></ul></li><li>ثلاثة أساليب أساسية في الاختيار:<ul><li>الأسلوب الوالدي (المرتب): الاختيار من اختصاص الوالدين فقط، ولا تعطى للشاب أو الفتاة فرصة التدخل. الوالدان يعتقدان أن الاختيار الأمثل لعائلة المصاهرة. لا يستطيع الفرد الخروج عن قرارهم حتى لو كان ضد رغبته، لأن ذلك قد يؤدي إلى حرمانه من الثروة والميراث. هو الأكثر انتشاراً في المجتمعات العربية خاصة في القرى. تقوم بعض الأسر على عقد اتفاقيات زواج لأطفالهم ويكون العقد ملزماً وفق التقاليد العشائرية. يعنى بالجوانب الاجتماعية والاقتصادية، ولا يعطي اهتماماً للعاطفة، فهو مشروع أسري. وقد يكون مفضلاً لدى شريحة من الشباب لأسباب نفسية كالخجل أو الفشل المتكرر.</li><li>الأسلوب الذاتي (الحر): تعطى للفرد حرية الاختيار، ويتم بطريقة فردية دون تدخل الوالدين، يكون المشروع شخصياً، وفي حالة الفشل يتحمل الفرد المسؤولية، بينما يكون رأي الآباء استشارياً. ظهر بسبب التطور التكنولوجي والانفتاح، ودخول الفتاة سوق العمل، مما أتاح فرصة الاختلاط واختيار الشريك بحرية خارج دائرة القرابة.</li><li>الأسلوب التعاوني (المقيد): مزيج بين الأسلوبين الوالدي والذاتي. يسمح بتدخل الأسرة في الاختيار ولا يهمل رأي الأبناء، ويعطي الشاب حرية اختيار شريكته ويعطي الشابة حق إبداء الرأي بما يتوافق مع رغبة الأهل.</li></ul></li></ul><h4>معايير الاختيار الزواجي</h4><ul><li>تختلف من مجتمع لآخر ومن فرد لآخر، باختلاف القيم الثقافية والأعراف الاجتماعية.</li></ul><h5>أولاً: معايير مجتمعية</h5><ul><li>المعيار الاجتماعي: الحرص على تماثل المكانة الاجتماعية والانتماء الطبقي وتشابه القيم، وتكافؤ الأسر في المكانة والنسب والسمعة، بما يكفل الانسجام ويحقق الاستقرار.</li><li>المستوى الثقافي والتعليمي: الاهتمام به يتفاوت بين الذكور والإناث. بعض الرجال يفضلون التقارب التعليمي، بينما \"يميل كثير من الرجال إلى الزواج بمن هن أقل منهم تعليماً ودخلاً وذكاءً، مما يحقق لهم الهيمنة\"، بينما تفضل معظم النساء الارتباط بذكور بمستوى تعليمي يكافئ أو أعلى للشعور بالأمن والاستقرار.</li><li>معيار الدين: من المعايير الأساسية، خصوصاً مع تعدد الطوائف والمذاهب التي تميل إلى منع أبنائها من الزواج من غير طائفتهم، وقد يصل الأمر إلى النبذ والمقاطعة.</li><li>وجود مصدر دخل ثابت: من أهم المعايير لضمان تلبية احتياجات الأسرة وتوفير حياة كريمة.</li></ul><h5>ثانياً: معايير فردية</h5><ul><li>المظهر الخارجي: من معايير الجذب، ويتركز عليه الشباب أكثر، فالشاب يهتم أن تكون الفتاة رشيقة ذات مظهر حسن، بينما هذا المعيار ليس بالأهمية نفسها عند الغالبية من الفتيات، رغم حرصها على شريك ذي مظهر لائق.</li><li>تقارب العمر: بهدف تحقيق انسجام فكري ونفسي، وعادة ما يكون عمر الزوج أكبر من عمر الزوجة، وهو النمط الأكثر شيوعاً.</li></ul><p>على الفرد مراعاة تقبل الشخص نفسياً لشريكه، والإلمام بشخصيته بجوانبها الإيجابية والسلبية، وتقارباً فكرياً يساعدهما على الحوار ومعالجة المشكلات، وبخلاف ذلك يؤدي التباعد الفكري لفشل الزواج.</p><h4>النظريات المفسرة للاختيار الزواجي</h4><ul><li>تتعدد النظريات في اتجاهين: أحدهما يغلب عليه الطابع الاجتماعي الثقافي، والآخر يذهب إلى أثر العوامل النفسية (نظريات التحليل النفسي).</li><li>نظرية التجانس: الفرد يفضل الارتباط بمن يشبهه في الخصائص الاجتماعية والسمات الجسمية والنفسية (المستوى الاقتصادي والاجتماعي والدين والثقافة). هو ميل الناس شعورياً ولا شعورياً لاختيار شريك تتشابه خصائصه مع خصائصهم.</li><li>نظرية المعايير: ثقافة المجتمع تحدد للفرد معايير اختيار الشريك، فاختياره يبقى مرهوناً بما يقبله المجتمع أو يرفضه من معايير (السن، المستوى الاقتصادي، الدين، التعليم).</li><li>نظرية التقارب المكاني: يرغب الفرد بالارتباط بشريك من بيئته المكانية والجغرافية، وهذا يفسر الزواج من الأقارب والجيران.</li><li>نظرية تكامل الحاجات: الدافع الرئيسي للاختيار هو رغبة الفرد بإكمال الحاجات التي يفتقدها. يتم الاختيار على أساس الاختلاف في السمات والتكامل في الحاجات (الرجل المسيطر يفضل زوجة خنوعة، والفقيرة تفضل الغني).</li><li>نظرية الشريك المثالي: يكون الفرد صورة مبدئية مثالية لشريك الحياة تتأثر بحاجاته ومعايير المجتمع (فتى الأحلام وفتاة الأحلام).</li><li>نظرية الجاذبية الجسمية: الخصائص الجسدية (الطول، لون الشعر، البشرة) هي العامل الأساسي في الاختيار.</li><li>نظرية الحب: الانجذاب العاطفي هو العامل الأكثر تأثيراً في الاختيار، وقد أصبح هذا ملاحظاً في المجتمعات العربية نتيجة التطورات والعولمة.</li><li>نظريات التحليل النفسي: يرى فرويد أن الفرد يبحث عن شريك يشبهه أو شريك يحميه، وهناك الاختيار النرجسي والاختيار التكميلي. وهناك نظرية الصورة الوالدية التي ترى أن الفرد يتأثر بطبيعة العلاقة الزوجية بين والديه، فصورة الوالد والوالدة تلعب دوراً جوهرياً في عملية الاختيار.</li></ul><h3>ثانياً. الفجوة بين الأجيال</h3><ul><li>توجد فجوات متعددة: فجوة التكنولوجيا والمعرفة، فجوة الاتصالات، فجوة التعليم، فجوة الثقافة، فجوة الحريات، ولكل فجوة أبعاد، لكن المحرك الرئيسي لها هو \"فجوة تكنولوجيا المعلومات والاتصالات\".</li></ul><h4>مفهوم الفجوة المعلوماتية</h4><ul><li>الفجوة الحاصلة بين أولئك الذين يمتلكون الحصول على تكنولوجيا المعلومات والاتصالات ومهارات توظيفها وبين الذين لا يمتلكونها ضمن منطقة جغرافية أو مجتمع، فهي درجات التفاوت في مستوى التقدم في مجال الاتصالات وتكنولوجيا المعلومات.</li></ul><h4>مظاهر فجوة المعلوماتية</h4><ul><li>افتقاد الرؤى، الهبوط للأسفل، عدم حرية المعلومات والتبعية، غياب الإبداع وقتل المواهب، افتقاد التقييم التكنولوجي، نشوء نظم بطيئة وغير فعالة.</li></ul><h4>أسباب فجوة المعلوماتية</h4><ul><li>الظروف المالية والاقتصادية.</li><li>أسباب سياسية: تطورت التكنولوجيا في العالم الغربي وارتبطت برؤيته \"الاستعمارية\" التي اتخذت شكل \"العولمة\"، وتستخدم كأوراق ضغط لتحقيق المصالح والأهداف السياسية.</li><li>الظروف الاجتماعية.</li><li>اختلاف مستويات البحث العلمي والتقني: تفتقر معظم جامعات الدول العربية لجودة البحث العلمي وضعف الإنفاق عليه.</li></ul><h4>الفجوة بين الأجيال</h4><ul><li>تعريفها: الهوة الحادثة بين جيل وآخر مما يؤدي لاختلاف في القيم والعادات وفي طريقة ونمط أداء الأعمال، ويترتب عليه تباعد العلاقة وحدوث مشاكل وصراعات.</li><li>هي الهوة الفكرية والثقافية والمعيشية والرقمية الفاصلة بين جيل الآباء وجيل الأبناء، ويترتب على اتساعها صراع حاد بين الجيلين.</li><li>صراع الأجيال: أحد أنماط التفاعل الاجتماعي الناشئ نتيجة اختلاف الأفكار والقيم وتعارض المصالح.</li><li>توجد هوة داخل الأسرة بين جيل الآباء المتأثر بالموروث الثقافي، وجيل الأبناء المتلهف لاقتناء الإلكترونيات والمتمرد على أفكار الآباء.</li></ul><h4>مظاهر الفجوة بين الأجيال</h4><ul><li>فكرية: الجيل القديم يلتزم بالقيم ويرفض التكنولوجيا أحياناً، بينما الجيل الجديد يتمرد ويتحدى ويعتمد على التحولات الفكرية.</li><li>لغوية: الجيل القديم يلتزم باللغة العربية، بينما الجيل الجديد يلجأ إلى العامية والرموز.</li><li>سياسية: الجيل القديم يشعر بالأمان ويسأل \"ماذا سأقدم لوطني؟\"، بينما الجيل الجديد يشعر بالقلق ويسأل \"ماذا قدم لي وطني؟\".</li><li>اقتصادية: الجيل القديم يواظب وينجز ويوفر ويدخر، بينما الجيل الجديد يشعر بالكسل والإحباط ويميل للبذخ والاستهتار.</li><li>دينية: الجيل القديم يلتزم بالموروث الديني، بينما الجيل الجديد ينشغل بمطالب دنيوية.</li><li>تربوية: الجيل القديم يتبع أساليب تقليدية، بينما الجيل الجديد يتبع أساليب حديثة.</li><li>اجتماعية: الجيل القديم لديه نزعة أسرية ومودة وأنماط حياة بسيطة، بينما الجيل الجديد يميل للأنانية والفردية والعدوانية وأنماط حياة معقدة.</li><li>الجيل القديم متمسك بالتقاليد والأنظمة المحافظة، أما الجيل الجديد فيطمح للحرية والتغيير والتكنولوجيا والفردية.</li><li>اختلاف الآراء حول الحرية الشخصية: الجيل القديم يرى أنها تمرد، والجيل الجديد يراها حقاً مشروعاً.</li></ul><h4>أسباب الفجوة بين الأجيال</h4><ul><li>التطور التكنولوجي السريع.</li><li>التحولات في القيم والمرجعيات (تغيير النظرة إلى الحرية، الدين، العمل، التقاليد).</li><li>اختلاف أساليب التربية والضبط.</li><li>ضعف لغة الحوار والتفاهم.</li><li>العولمة والانفتاح الثقافي.</li><li>الضغوط الاقتصادية والاجتماعية.</li></ul><h4>تداعيات الفجوة بين الأجيال</h4><ul><li>ضعف الروابط الأسرية.</li><li>الاغتراب الأسري.</li><li>الصراع.</li><li>فقدان التوازن الاجتماعي.</li><li>اضطرابات نفسية.</li></ul><h4>استراتيجيات يتخذها الوالدين لمواجهة الفجوة</h4><ul><li>استراتيجيات المواجهة الإيجابية:<ul><li>استراتيجية بناء الصداقة والتواصل الرقمي: صداقة قوية مع الابن بالحوار والتفاهم والإصغاء، ومحاولة التواصل معه بلغته الرقمية ومعرفة المحتوى الذي يفضله.</li><li>استراتيجية الاحتواء العاطفي والدعم الأسري: التعامل مع مشاعر الابن بذكاء عاطفي، واحتواء مشكلاته بعقلانية، وتقديم النصح والدعم.</li></ul></li><li>استراتيجيات المواجهة السلبية:<ul><li>استراتيجية الضبط الوالدي المتذبذب: التذبذب بين الشدة واللين والموافقة والرفض، مما يعيق تكوين شخصية ثابتة.</li><li>استراتيجية ممارسة النقد والتفكير السلبي: النقد المستمر وتصيد الأخطاء، مما يؤدي إلى الاغتراب الأسري.</li></ul></li></ul><h4>الاغتراب الأسري</h4><ul><li>شعور الفرد بانفصاله عن أسرته وإحساسه بالانعزال عنها، وعدم الاهتمام بمشكلاتها، ويدفعه للهروب من محيطها. ويتجلى في ثلاث مظاهر:<ul><li>التمرد واللامعيارية الأسرية: رفض الأبناء لقيام وتقاليد الأسرة ومعاييرها، والميل لأفكار وسلوكيات منحرفة.</li><li>الانسحابية وضعف الولاء الأسري: الميل لتجنب التفاعل والمشاركة.</li><li>فقدان الشعور بالأمان الأسري: افتقار الأبناء للرضا والطمأنينة.</li></ul></li><li>لتقليل الفجوة بين الأجيال يجب تفعيل ثقافة الحوار، وأسلوب التعاطف والاحتواء، وخلق مساحات مشتركة، والمرونة والانفتاح.</li></ul>",
+                    "questions": [
+                        {
+                            "q": "ما هو الأسلوب الذي يكون فيه الاختيار من اختصاص الوالدين فقط؟",
+                            "options": ["الأسلوب الذاتي", "الأسلوب التعاوني", "الأسلوب الوالدي", "الأسلوب الحر"],
+                            "correct": 2
+                        },
+                        {
+                            "q": "ما هي النظرية التي ترى أن الفرد يفضل الارتباط بمن يشبهه في الخصائص؟",
+                            "options": ["نظرية التكامل", "نظرية التجانس", "نظرية الحب", "نظرية الشريك المثالي"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو المعيار الذي يميل فيه كثير من الرجال للزواج بمن هن أقل تعليماً؟",
+                            "options": ["المعيار الديني", "المستوى الثقافي والتعليمي", "المعيار الاجتماعي", "المظهر الخارجي"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي الفجوة التي تعد المحرك الرئيسي للفجوات الأخرى بين الأجيال؟",
+                            "options": ["فجوة التعليم", "فجوة الثقافة", "فجوة تكنولوجيا المعلومات والاتصالات", "فجوة الحريات"],
+                            "correct": 2
+                        },
+                        {
+                            "q": "ما هي الهوة الفكرية والثقافية الفاصلة بين جيل الآباء وجيل الأبناء؟",
+                            "options": ["الفجوة المعلوماتية", "الفجوة بين الأجيال", "الفجوة الاقتصادية", "الفجوة السياسية"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي إحدى استراتيجيات المواجهة الإيجابية للفجوة بين الأجيال؟",
+                            "options": ["النقد المستمر", "استراتيجية بناء الصداقة والتواصل الرقمي", "الضبط المتذبذب", "التفكير السلبي"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو الاغتراب الأسري؟",
+                            "options": ["شعور الفرد بالاندماج مع أسرته", "شعور الفرد بانفصاله عن أسرته", "زيادة الترابط الأسري", "تعزيز التواصل"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي النظرية التي ترى أن صورة الوالدين تلعب دوراً في الاختيار الزواجي؟",
+                            "options": ["نظرية الحب", "نظرية الصورة الوالدية", "نظرية التجانس", "نظرية المعايير"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو أحد أسباب الفجوة بين الأجيال؟",
+                            "options": ["تقارب الأفكار", "التطور التكنولوجي السريع", "زيادة الحوار", "التفاهم المتبادل"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي إحدى تداعيات الفجوة بين الأجيال؟",
+                            "options": ["تقوية الروابط الأسرية", "ضعف الروابط الأسرية", "زيادة التفاهم", "تحقيق التوازن"],
+                            "correct": 1
+                        }
+                    ]
+                },
+                {
+                    "id": 10,
+                    "title": "📗 الذكاء العاطفي والتنمر الإلكتروني",
+                    "content": "<h3>أولاً. الذكاء العاطفي وبناء التفاهم الزوجي والأسري (نموذج بار-أون)</h3><ul><li>يقدم \"بار-أون\" نموذجه لفهم سبب قدرة بعض الأفراد على النجاح بشكل أفضل من البعض الآخر.</li><li>تعريف الذكاء العاطفي: مجموعة من القدرات العاطفية والشخصية والاجتماعية التي تؤثر في قدرة الفرد على التأقلم مع المتطلبات وضغوط البيئة.</li><li>الأفراد ذوو الذكاء العاطفي لديهم القدرة على التمييز والتعبير عن العواطف، وامتلاك احترام إيجابي للذات، وإبراز إمكانياتهم، وفهم مشاعر الآخرين، وتكوين علاقات إيجابية والحفاظ عليها دون أن يصبحوا اتكاليين. هم عادة متفائلون، مرنون، واقعيون، وناجحون في حل المشكلات دون فقدان السيطرة.</li></ul><h4>أبعاد نموذج بار-أون</h4><ul><li>البعد الشخصي الذاتي: ويتضمن: الوعي بالعواطف الذاتية، تأكيد الذات (التعبير عن المشاعر)، احترام الذات (التقييم الدقيق للذات)، تحقيق الذات (معرفة إمكانيات الذات)، الاستقلال (الفكري والعاطفي والسلوكي).</li><li>البعد الاجتماعي: ويتضمن: التعاطف (وعي وفهم مشاعر الآخرين)، المسؤولية الاجتماعية (إثبات الذات كعنصر فعال ومساهم)، العلاقات الاجتماعية (بدء علاقات متبادلة مرضية والحفاظ عليها).</li><li>بعد التكيف: ويتضمن: اختبار الواقع (إثبات مصداقية العواطف)، المرونة (تعديل العواطف والأفكار والسلوك)، حل المشكلات (تعريف المشكلة وتوليد أفضل الحلول).</li><li>بعد إدارة الضغوط: ويتضمن: تحمل الضغوط (مقاومة الأحداث المعاكسة)، ضبط الاندفاع (مقاومة وتأجيل الاندفاعات والتحكم بالعواطف).</li><li>بعد الانطباع الإيجابي: ويختص بالحالة المزاجية العامة، ويتضمن: التفاؤل (رؤية النواحي الإيجابية في الحياة)، السعادة (الشعور بالرضا عن الذات والاستمتاع بالحياة).</li></ul><p>يرى بار-أون نموذجه على أنه متصل بإمكانيات النجاح عوضاً عن النجاح بحد ذاته، ويشار له بنموذج \"الذكاء العاطفي الاجتماعي\" كمنظور أوسع، ويعرف على أنه تقاطع بين الكفاءات العاطفية والاجتماعية والمهارات التي تحدد كيف نفهم ونعبر عن ذواتنا ونفهم الآخرين ونتواصل معهم، ونتعامل مع المتطلبات اليومية.</p><h3>ثانياً. التنمر الإلكتروني</h3><ul><li>التنمر: أحد أسوأ السلوكيات السلبية المتكررة التي يقوم من خلالها المتنمر بإيذاء أو مضايقة شخص آخر أقل قوة منه.</li></ul><h4>تعريف التنمر الإلكتروني</h4><ul><li>قيام شخص ما بفعل سيء تجاه شخص آخر لأكثر من مرة بطريقة إلكترونية بقصد السخرية والإزعاج.</li><li>نوع من الإزعاج والتسلط عبر الإنترنت باستخدام الرسائل الفورية والبريد الإلكتروني وغرف الدردشة أو مواقع التواصل الاجتماعي بهدف مضايقة أو تهديد أو تخويف شخص ما.</li><li>شكل من أشكال العدوان، يعتمد على استخدام وسائل الاتصال الحديثة لنشر منشورات أو تعليقات، أو الترويج لإشاعات، أو إرسال رسائل بهدف إلحاق الضرر المعنوي والمادي بالآخرين.</li></ul><h4>أشكال التنمر الإلكتروني</h4><ul><li>الرسائل العدائية: معارك عبر الرسائل الإلكترونية، وتكون غامضة مثل رسائل التهديد من مجهول.</li><li>تشويه السمعة: تأليف قصص وشائعات ونشرها بهدف تشويه السمعة.</li><li>إفشاء الأسرار: الحصول على صور أو معلومات شخصية ونشرها، أو نشر أسرار محرجة.</li><li>المضايقة: الدخول على روابط تحتوي فيروسات، أو إرسال رسائل مسيئة.</li><li>انتحال الشخصية: التعامل على أنه شخص آخر لإيقاع الضحية في خطر.</li><li>الخداع.</li><li>الاستبعاد: إبعاد شخص ما قسراً.</li><li>التحرش.</li><li>الإهانة عبر إرسال ألفاظ نابية.</li><li>التصيد عبر تعليقات مزعجة وشتائم بشكل متعمد.</li></ul><h4>نوعا التنمر</h4><ul><li>مباشر: استخدام الإنترنت للتهديد أو الإهانة أو إرسال صور للابتزاز، وقد يكون وجهاً لوجه ويشمل أفعالاً جسدية أو لفظية.</li><li>غير مباشر: يحصل دون أن يلاحظ الضحية، كاختراق البريد الإلكتروني، أو نشر الإشاعات في الخفاء.</li></ul><h4>أسباب التنمر الإلكتروني</h4><ul><li>الإعلام والثورة التقنية:<ul><li>الألعاب الإلكترونية التي ترتكز على القوة وهزم الخصوم، فيدمنها المراهقون ويتصرفون كأن الحياة امتداد لها.</li><li>أفلام العنف: تتزايد مشاهد العنف والقتل، ويميل الأفراد للتقليد.</li></ul></li><li>الجهل بثقافة الاختلاف: رفض الاختلاف والتعامل معه كعيب.</li><li>غياب التنشئة الأسرية السليمة نتيجة الخلل في العلاقات والتفكك الأسري.</li><li>اضطراب العلاقات الاجتماعية لدى مسيئي استخدام الإنترنت، كمتابعي أفلام الرعب والعنف.</li><li>كسب الشهرة الإلكترونية عبر إثارة الجدل دون ضوابط أخلاقية.</li><li>السعي لإثبات الذات بغض النظر عن الأساليب والنتائج.</li><li>الرغبة بالتحكم وفرض السيطرة على الآخرين.</li><li>الغيرة من الناجحين ومحاولة تحطيمهم.</li><li>عدم الوعي حول أضرار التنمر الذي يمارسونه.</li><li>غياب دور المدرسة التربوي في نشر الوعي لدى الناشئة.</li></ul><h4>الفروق الأساسية بين التنمر العادي والتنمر الإلكتروني</h4><ul><li>التنمر التقليدي: صنف إلى أربعة أنماط:<ul><li>الانفعالي: التقليل من قيمة الضحية بالتجاهل والعزلة والسخرية والاحتقار.</li><li>البدني: إلحاق الأذى بالضحية عن طريق الدفع والضرب (شائع بين الذكور)، بينما تستخدم الإناث الكلام المستفز ونشر الشائعات.</li><li>الاجتماعي: عزل الضحية وانتقاد تصرفاتها ورفض صداقتها.</li><li>اللفظي: تهديد الضحية والاستهزاء بها واستعمال كلمات قاسية لإلحاق الأذى النفسي.</li></ul></li><li>التنمر الإلكتروني: يقوم على الأساليب التكنولوجية السريعة الانتشار، وتحول من البيئة الاجتماعية التقليدية إلى البيئة الافتراضية باستخدام أدوات التواصل الاجتماعي.</li></ul><h4>لماذا يعد التنمر الإلكتروني أكثر خطورة؟</h4><ul><li>يعتمد على الخبرة التكنولوجية والتخفي وانتحال الشخصية.</li><li>ضحيته تواجه صعوبة في الهروب منه، فخيار الاختباء غير موجود.</li><li>المتنمر قادر على البقاء مجهولاً، وتنفيذ التنمر لعدة أشخاص دون مجهود.</li><li>يسمح للمتنمر بمضايقة الضحية في أي وقت، ويقلل من مستوى المسؤولية والمحاسبة.</li><li>لا يتطلب المواجهة، ويستطيع المتنمر خفض المخاطر.</li><li>ينتشر في حياة الضحية بشكل أسرع ولا توجد قيود مكانية وزمانية.</li><li>في التنمر التقليدي ينتهي التنمر بانتهاء الفعل، بينما الإلكتروني مجهول وقت انتهائه لأن موضوع التنمر يبقى على الإنترنت.</li><li>يبقى التنمر التقليدي محصوراً بين قلة، بينما الإلكتروني ينتشر بسرعة ويصل لشريحة واسعة.</li></ul><h4>الآثار الناجمة عن التنمر الإلكتروني على المراهقين</h4><ul><li>صعوبة الثقة بالآخرين وصعوبة التواصل والتفاعل الاجتماعي السليم.</li><li>عدم الشعور بالأمان تجاه أي شخص.</li><li>تشتت الذهن وتراجع المستوى الدراسي وانعدام الرغبة بالذهاب إلى المدرسة.</li><li>ضعف الثقة بالنفس أمام الأقران وانعدام تقدير الذات.</li><li>الشعور بالخوف والقلق الدائم والحذر غير المبرر.</li><li>الشعور بالخجل وضعف التفاعل الاجتماعي.</li><li>اللجوء للسلوك العدواني (الدفاعي).</li><li>التعرض لأمراض نفسية وصحية، قد تؤدي إلى اكتئاب حاد والميل للعزلة، ويمكن أن تصل للانتحار.</li></ul><h4>التحديات التي يواجهها ضحايا التنمر الإلكتروني</h4><ul><li>التردد في الكشف عما يمرون به، خوفاً من أن تزيد حدة المشكلة.</li><li>بعض الآباء تكون ردات فعلهم سلبية لعدم معرفتهم بحقيقة التنمر، فيختارون طرقاً قد تزيد من حدة المشكلة.</li><li>خوف الأبناء من حرمانهم من أجهزتهم الإلكترونية.</li><li>الخوف الأكبر من نتائج معرفة أشخاص جدد بالأمر وانتشار الإساءة.</li><li>يعتقد الكثير من الأبناء أن الأهل عاجزون عن مساندتهم.</li><li>قد يفضل البعض بقاء الأهل بعيدين عما يمرون به.</li><li>النتيجة الأسوأ هي وصول الضحية لحالة صحية نفسية مأساوية.</li></ul><h4>بعض طرق الوقاية من التنمر</h4><ul><li>تعزيز الثقة بالنفس ونشر الوعي بمخاطره.</li><li>عدم نشر نقاط الضعف.</li><li>المحافظة على الخصوصية وعدم مشاركة تفاصيل الحياة.</li><li>التواصل مع الآخرين وتكوين علاقات جيدة حقيقية.</li><li>حماية الأجهزة الإلكترونية بكلمة مرور.</li><li>لا تكن متنمراً ولا تشارك فيه على أي شخص كان، ولو مرة واحدة، لأن الأمر سيعود عليك، وقد تسبب أضراراً نفسية وصحية ستكون مسؤولاً عنها.</li></ul>",
+                    "questions": [
+                        {
+                            "q": "من هو صاحب نموذج الذكاء العاطفي المذكور في المحاضرة؟",
+                            "options": ["فرويد", "بار-أون", "ماسلو", "سارتر"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو البعد الذي يتضمن التعاطف والمسؤولية الاجتماعية؟",
+                            "options": ["البعد الشخصي الذاتي", "البعد الاجتماعي", "بعد التكيف", "بعد إدارة الضغوط"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو أحد أشكال التنمر الإلكتروني؟",
+                            "options": ["المساعدة", "انتحال الشخصية", "التعاون", "الدعم"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو التنمر غير المباشر؟",
+                            "options": ["التهديد وجهاً لوجه", "اختراق البريد الإلكتروني دون ملاحظة الضحية", "الضرب", "الإهانة المباشرة"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو أحد أسباب التنمر الإلكتروني؟",
+                            "options": ["الوعي الكافي", "الجهل بثقافة الاختلاف", "التنشئة السليمة", "العلاقات الجيدة"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "لماذا يعد التنمر الإلكتروني أكثر خطورة من التقليدي؟",
+                            "options": ["لأنه ينتهي بسرعة", "لأن المتنمر قادر على البقاء مجهولاً", "لأنه يتطلب مواجهة", "لأنه محصور بين قلة"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هي إحدى الآثار الناجمة عن التنمر الإلكتروني على المراهقين؟",
+                            "options": ["زيادة الثقة بالنفس", "ضعف الثقة بالنفس", "تحسن الدراسة", "زيادة التفاعل الاجتماعي"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو أحد التحديات التي يواجهها ضحايا التنمر الإلكتروني؟",
+                            "options": ["التردد في الكشف عما يمرون به", "سهولة الإبلاغ", "دعم الأهل الكامل", "سرعة حل المشكلة"],
+                            "correct": 0
+                        },
+                        {
+                            "q": "ما هي إحدى طرق الوقاية من التنمر؟",
+                            "options": ["نشر نقاط الضعف", "المحافظة على الخصوصية", "مشاركة تفاصيل الحياة", "إهمال الأجهزة"],
+                            "correct": 1
+                        },
+                        {
+                            "q": "ما هو البعد الذي يتضمن التفاؤل والسعادة في نموذج بار-أون؟",
+                            "options": ["بعد التكيف", "بعد إدارة الضغوط", "بعد الانطباع الإيجابي", "البعد الشخصي الذاتي"],
+                            "correct": 2
+                        }
+                    ]
+                }
+
+
+            ];
+
+        // ================================================================
+        // حالة اللعبة
+        // ================================================================
+
+        let gameState = {
+            unlockedKeys: lecturesData.map(() => Array(10).fill(false)),
+            completedLectures: lecturesData.map(() => false),
+            currentLecture: 0,
+        };
+
+        let isFullscreen = false;
+
+        // ================================================================
+        // دوال مساعدة
+        // ================================================================
+
+        function isLectureUnlocked(lectureId) {
+            if (lectureId === 0) return true;
+            return gameState.completedLectures[lectureId - 1] === true;
+        }
+
+        function isLectureCompleted(lectureId) {
+            return gameState.completedLectures[lectureId] === true;
+        }
+
+        function getKeysCount(lectureId) {
+            return gameState.unlockedKeys[lectureId].filter(v => v === true).length;
+        }
+
+        function isLectureFullyCompleted(lectureId) {
+            return getKeysCount(lectureId) === 10;
+        }
+
+        function updateCompletionStatus(lectureId) {
+            if (isLectureFullyCompleted(lectureId)) {
+                gameState.completedLectures[lectureId] = true;
+                saveProgress();
+            }
+        }
+
+        // ================================================================
+        // حفظ وتحميل التقدم
+        // ================================================================
+
+        function saveProgress() {
+            try {
+                localStorage.setItem('arabicKnowledgeGame', JSON.stringify(gameState));
+            } catch (e) { }
+        }
+
+        function loadProgress() {
+            try {
+                const saved = localStorage.getItem('arabicKnowledgeGame');
+                if (saved) {
+                    const parsed = JSON.parse(saved);
+                    if (parsed.unlockedKeys && parsed.unlockedKeys.length === lecturesData.length) {
+                        gameState = parsed;
+                        return true;
+                    }
+                }
+            } catch (e) { }
+            return false;
+        }
+
+        // ================================================================
+        // رسم الخريطة
+        // ================================================================
+
+        function renderMap() {
+            const mapGrid = document.getElementById('mapGrid');
+            mapGrid.innerHTML = '';
+
+            lecturesData.forEach((lecture, index) => {
+                const unlocked = isLectureUnlocked(index);
+                const completed = isLectureCompleted(index);
+                const keysCount = getKeysCount(index);
+                const isCurrent = (index === gameState.currentLecture);
+
+                const node = document.createElement('div');
+                node.className = 'map-node';
+
+                if (!unlocked) {
+                    node.classList.add('locked');
+                } else if (completed) {
+                    node.classList.add('completed');
+                } else if (isCurrent) {
+                    node.classList.add('current');
+                } else {
+                    node.classList.add('available');
+                }
+
+                const circle = document.createElement('div');
+                circle.className = 'node-circle';
+
+                const icon = completed ? '✓' : (unlocked ? '📖' : '🔒');
+                circle.innerHTML = `
+                    <span class="icon">${icon}</span>
+                    <span class="number">${index + 1}</span>
+                    ${!unlocked ? '<span class="lock-icon">🔒</span>' : ''}
+                `;
+
+                const label = document.createElement('div');
+                label.className = 'node-label';
+                const titleParts = lecture.title.split(':');
+                label.textContent = titleParts.length > 1 ? titleParts[0].trim() : `محاضرة ${index + 1}`;
+
+                const keysInfo = document.createElement('div');
+                keysInfo.className = 'node-keys';
+                keysInfo.innerHTML = `🔑 <span class="gold">${keysCount}</span>/10`;
+
+                node.appendChild(circle);
+                node.appendChild(label);
+                node.appendChild(keysInfo);
+
+                if (unlocked) {
+                    node.addEventListener('click', () => {
+                        openLectureModal(index);
+                    });
+                }
+
+                mapGrid.appendChild(node);
+
+                if (index < lecturesData.length - 1) {
+                    const arrowWrapper = document.createElement('div');
+                    arrowWrapper.style.cssText = 'display:flex;align-items:center;flex-shrink:0;';
+                    const arrow = document.createElement('div');
+                    arrow.className = 'map-arrow';
+                    const nextUnlocked = isLectureUnlocked(index + 1);
+                    const currentCompleted = isLectureCompleted(index);
+
+                    
+
+                    arrowWrapper.appendChild(arrow);
+                    mapGrid.appendChild(arrowWrapper);
+                }
+            });
+
+            updateGlobalProgress();
+        }
+
+        // ================================================================
+        // تحديث التقدم الكلي
+        // ================================================================
+
+        function updateGlobalProgress() {
+            const totalKeys = lecturesData.length * 10;
+            let unlockedTotal = 0;
+            gameState.unlockedKeys.forEach(arr => {
+                unlockedTotal += arr.filter(v => v === true).length;
+            });
+            const percent = Math.round((unlockedTotal / totalKeys) * 100);
+            document.getElementById('globalProgressFill').style.width = percent + '%';
+            document.getElementById('globalProgressText').textContent = percent + '%';
+        }
+
+        // ================================================================
+        // نافذة المحاضرة
+        // ================================================================
+
+        function openLectureModal(lectureId) {
+            if (!isLectureUnlocked(lectureId)) return;
+
+            gameState.currentLecture = lectureId;
+            const lecture = lecturesData[lectureId];
+
+            document.getElementById('modalTitle').textContent = lecture.title;
+            document.getElementById('modalBody').innerHTML = lecture.content;
+
+            renderModalKeys(lectureId);
+
+            // إعادة تعيين حالة ملء الشاشة إذا كانت مفعلة
+            if (isFullscreen) {
+                toggleFullscreen();
+            }
+
+            document.getElementById('lectureModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function renderModalKeys(lectureId) {
+            const grid = document.getElementById('modalKeysGrid');
+            grid.innerHTML = '';
+            const keys = gameState.unlockedKeys[lectureId];
+
+            const count = keys.filter(v => v).length;
+            document.getElementById('modalKeysCount').textContent = `${count} / 10`;
+
+            for (let i = 0; i < 10; i++) {
+                const key = document.createElement('div');
+                key.className = 'key-item-modal';
+                if (keys[i]) {
+                    key.classList.add('unlocked');
+                    key.textContent = '🔓';
+                } else {
+                    key.classList.add('locked-key');
+                    key.textContent = `${i + 1}`;
+                    key.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        openQuestion(lectureId, i);
+                    });
+                }
+                grid.appendChild(key);
+            }
+        }
+
+        // ================================================================
+        // وظيفة ملء الشاشة النقي 100%
+        // ================================================================
+
+        function toggleFullscreen() {
+            const exitBtn = document.getElementById('exitFullscreenFloat');
+            const fsText = document.getElementById('fsText');
+            const fsIcon = document.querySelector('.fs-icon');
+            const body = document.body;
+
+            isFullscreen = !isFullscreen;
+
+            if (isFullscreen) {
+                // إضافة كلاس ملء الشاشة للبدي - يخفي كل شيء
+                body.classList.add('fullscreen-pure-mode');
+
+                // إخفاء زر ملء الشاشة في الهيدر وإظهار الزر العائم
+                document.getElementById('fullscreenBtn').style.display = 'none';
+                exitBtn.classList.add('show');
+                fsText.textContent = 'خروج من ملء الشاشة';
+                fsIcon.textContent = '⛶';
+
+                // محاولة استخدام Fullscreen API الحقيقي للمتصفح
+                try {
+                    if (document.documentElement.requestFullscreen) {
+                        document.documentElement.requestFullscreen().catch(() => { });
+                    }
+                } catch (e) { }
+
+            } else {
+                // إزالة كلاس ملء الشاشة
+                body.classList.remove('fullscreen-pure-mode');
+
+                document.getElementById('fullscreenBtn').style.display = 'flex';
+                exitBtn.classList.remove('show');
+                fsText.textContent = 'ملء الشاشة';
+                fsIcon.textContent = '⛶';
+
+                try {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen().catch(() => { });
+                    }
+                } catch (e) { }
+
+                // إعادة التمرير للخلفية
+                if (!document.getElementById('lectureModal').classList.contains('active')) {
+                    document.body.style.overflow = '';
+                }
+            }
+        }
+
+        // زر ملء الشاشة
+        document.getElementById('fullscreenBtn').addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleFullscreen();
+        });
+
+        // زر الخروج العائم
+        document.getElementById('exitFullscreenFloat').addEventListener('click', () => {
+            toggleFullscreen();
+        });
+
+        // مراقبة تغيير ملء الشاشة من المتصفح (ESC)
+        document.addEventListener('fullscreenchange', () => {
+            if (!document.fullscreenElement && isFullscreen) {
+                // المستخدم خرج من ملء الشاشة عبر Esc
+                isFullscreen = false;
+                document.body.classList.remove('fullscreen-pure-mode');
+                document.getElementById('fullscreenBtn').style.display = 'flex';
+                document.getElementById('exitFullscreenFloat').classList.remove('show');
+                document.getElementById('fsText').textContent = 'ملء الشاشة';
+                document.querySelector('.fs-icon').textContent = '⛶';
+                if (!document.getElementById('lectureModal').classList.contains('active')) {
+                    document.body.style.overflow = '';
+                }
+            }
+        });
+
+        // ================================================================
+        // إغلاق نافذة المحاضرة
+        // ================================================================
+
+        document.getElementById('closeLectureModal').addEventListener('click', () => {
+            if (isFullscreen) {
+                toggleFullscreen();
+            }
+            document.getElementById('lectureModal').classList.remove('active');
+            document.body.style.overflow = '';
+            renderMap();
+        });
+
+        document.getElementById('lectureModal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                if (isFullscreen) {
+                    toggleFullscreen();
+                }
+                document.getElementById('lectureModal').classList.remove('active');
+                document.body.style.overflow = '';
+                renderMap();
+            }
+        });
+
+        // ================================================================
+        // نظام الأسئلة
+        // ================================================================
+
+        let currentQuestionLecture = null;
+        let currentQuestionIndex = null;
+        let questionAnswered = false;
+
+        function openQuestion(lectureId, questionIndex) {
+            if (gameState.unlockedKeys[lectureId][questionIndex]) return;
+
+            const lecture = lecturesData[lectureId];
+            const q = lecture.questions[questionIndex];
+            if (!q) return;
+
+            currentQuestionLecture = lectureId;
+            currentQuestionIndex = questionIndex;
+            questionAnswered = false;
+
+            const modal = document.getElementById('questionModal');
+            document.getElementById('qNumber').textContent = `🔑 المفتاح ${questionIndex + 1} من 10`;
+            document.getElementById('qText').textContent = q.q;
+
+            const optionsContainer = document.getElementById('qOptions');
+            optionsContainer.innerHTML = '';
+
+            const feedback = document.getElementById('qFeedback');
+            feedback.className = 'q-feedback';
+            feedback.textContent = '';
+
+            const closeBtn = document.getElementById('closeQuestionBtn');
+            closeBtn.className = 'close-modal-btn';
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.textContent = opt;
+                btn.dataset.index = idx;
+                btn.addEventListener('click', () => {
+                    if (questionAnswered) return;
+                    handleQuestionAnswer(lectureId, questionIndex, idx, btn);
+                });
+                optionsContainer.appendChild(btn);
+            });
+
+            modal.classList.add('active');
+        }
+
+        function handleQuestionAnswer(lectureId, questionIndex, selectedIdx, clickedBtn) {
+            if (questionAnswered) return;
+            const q = lecturesData[lectureId].questions[questionIndex];
+            const isCorrect = (selectedIdx === q.correct);
+
+            const allBtns = document.querySelectorAll('#qOptions button');
+            allBtns.forEach(btn => btn.disabled = true);
+
+            allBtns.forEach((btn, idx) => {
+                if (idx === q.correct) btn.classList.add('correct');
+                if (idx === selectedIdx && !isCorrect) btn.classList.add('wrong');
+            });
+
+            const feedback = document.getElementById('qFeedback');
+            if (isCorrect) {
+                feedback.className = 'q-feedback show success';
+                feedback.textContent = '✅ إجابة صحيحة! تم فتح المفتاح 🎉';
+                gameState.unlockedKeys[lectureId][questionIndex] = true;
+                renderModalKeys(lectureId);
+                updateCompletionStatus(lectureId);
+                saveProgress();
+            } else {
+                feedback.className = 'q-feedback show error';
+                feedback.textContent = '❌ إجابة خاطئة. حاول مرة أخرى!';
+                setTimeout(() => {
+                    allBtns.forEach(btn => {
+                        btn.disabled = false;
+                        btn.classList.remove('correct', 'wrong');
+                    });
+                    feedback.className = 'q-feedback';
+                    feedback.textContent = '';
+                    questionAnswered = false;
+                }, 1500);
+                return;
+            }
+
+            questionAnswered = true;
+            document.getElementById('closeQuestionBtn').className = 'close-modal-btn show';
+        }
+
+        document.getElementById('closeQuestionBtn').addEventListener('click', () => {
+            document.getElementById('questionModal').classList.remove('active');
+        });
+
+        document.getElementById('questionModal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                document.getElementById('questionModal').classList.remove('active');
+            }
+        });
+
+        // ================================================================
+        // تهيئة اللعبة
+        // ================================================================
+
+        function initGame() {
+            const hasSaved = loadProgress();
+            if (!hasSaved) {
+                gameState.completedLectures = lecturesData.map(() => false);
+                gameState.unlockedKeys = lecturesData.map(() => Array(10).fill(false));
+                gameState.currentLecture = 0;
+                saveProgress();
+            }
+
+            renderMap();
+        }
+
+        document.addEventListener('DOMContentLoaded', initGame);
+
+        console.log('☀️ رحلة المعرفة العربية - ملء شاشة نقي 100%');
+        console.log(`📚 ${lecturesData.length} محاضرة · 🔑 10 مفاتيح لكل محاضرة`);
+        console.log('📖 اضغط على ⛶ ملء الشاشة للقراءة المركزة');
+        console.log('🔄 اضغط ESC للخروج من ملء الشاشة');
+    </script>
+
+</body>
+
+</html>
