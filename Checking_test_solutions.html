@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مراجعة حل الاختبارات • baash.dev</title>
+        <meta property="og:url" content="https://bashar1x.github.io/bash">
+    <link rel="icon" type="image/jpeg" href="https://h.top4top.io/p_38843xi4i1.jpg">
+    <meta property="og:image" content="https://h.top4top.io/p_38843xi4i1.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="description" content="منصة مراجعة حل الاختبارات والمساهمة في إكتشاف الأخطاء وتقديم حل أفضل">
+    <!-- خطوط عصرية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- أيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #fcf9f7 0%, #f0edea 100%);
+            min-height: 100vh;
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            color: #2c2a2e;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .app-container {
+            max-width: 820px;
+            width: 100%;
+            background: rgba(255, 253, 250, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 2.5rem;
+            padding: 2rem 2.2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03), 0 8px 16px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(184, 115, 26, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            transition: all 0.2s;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .header-title {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .header-title i {
+            font-size: 2.2rem;
+            color: #b8731a;
+            background: rgba(184, 115, 26, 0.1);
+            padding: 0.6rem;
+            border-radius: 1.2rem;
+            box-shadow: 0 6px 12px rgba(184, 115, 26, 0.08);
+        }
+
+        .header-title h1 {
+            font-weight: 700;
+            font-size: 1.8rem;
+            letter-spacing: -0.5px;
+            color: #2c2a2e;
+            background: linear-gradient(135deg, #2c2a2e 0%, #4a3728 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .badge-page {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            padding: 0.4rem 1rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            color: #b8731a;
+            font-size: 0.8rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            border: 1px solid rgba(184, 115, 26, 0.2);
+        }
+
+        .quiz-card {
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 2rem;
+            padding: 0.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255,255,255,0.9);
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.05);
+            transition: 0.2s;
+        }
+
+        .question-text {
+            font-size: 1.45rem;
+            font-weight: 600;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            color: #1e1b1a;
+            position: relative;
+            padding-right: 1.5rem;
+        }
+
+        .question-text::before {
+            content: "س";
+            position: absolute;
+            right: -0.2rem;
+            top: -0.3rem;
+            font-weight: 700;
+            font-size: 2.9rem;
+            color: #b8731a;
+            opacity: 0.25;
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin: 1.8rem 0 1.5rem;
+        }
+
+        .option-item {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(4px);
+            padding: 1rem 1.5rem;
+            border-radius: 1.5rem;
+            border: 1.5px solid rgba(0,0,0,0.04);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.02);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 500;
+            color: #3a3533;
+            transition: all 0.25s;
+            cursor: default;
+            border-right: 5px solid transparent;
+        }
+
+        .option-item.correct-option {
+            background: #fef9f2;
+            border-right: 5px solid #b8731a;
+            border-color: rgba(184, 115, 26, 0.4);
+            box-shadow: 0 8px 18px rgba(184, 115, 26, 0.1);
+            color: #3a2c1a;
+        }
+
+        .option-letter {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #f7f3ef;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-weight: 700;
+            color: #b8731a;
+            flex-shrink: 0;
+            font-size: 1rem;
+            border: 1px solid rgba(184,115,26,0.2);
+        }
+
+        .solution-note {
+            background: #fcf7f0;
+            border-radius: 1.5rem;
+            padding: 0.5rem 1rem;
+            margin: 2rem 0 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            border: 1px dashed #b8731a50;
+            box-shadow: 0 5px 12px rgba(184, 115, 26, 0.05);
+        }
+
+        .solution-note i {
+            color: #b8731a;
+            font-size: 1.3rem;
+            margin-top: 0.2rem;
+        }
+
+        .solution-note p {
+            font-weight: 500;
+            color: #3e2e1e;
+            line-height: 1.5;
+        }
+
+        .source-badge {
+            background: rgba(255,255,255,0.7);
+            padding: 0.2rem 0.8rem;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #8a5a2a;
+            display: inline-block;
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            justify-content: center;
+            margin: 2rem 0 1rem;
+        }
+
+        .btn {
+            padding: 0.9rem 2.2rem;
+            border-radius: 2.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: all 0.25s;
+            background: #fff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            color: #2c2a2e;
+            letter-spacing: -0.2px;
+        }
+
+        .btn-primary {
+            width: 100%;
+            background: #ffffff;
+            color: #b8731a;
+            border: 1.5px solid rgba(184, 115, 26, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #fffaf3;
+            box-shadow: 0 10px 22px rgba(184, 115, 26, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #d9cfc5;
+            color: #4e4540;
+        }
+
+        .btn-outline:hover {
+            background: #ffffffd0;
+            border-color: #b8731a;
+            transform: translateY(-2px);
+        }
+
+        /* نافذة الشك */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 42, 46, 0.3);
+            backdrop-filter: blur(6px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.3s ease;
+            padding: 1rem;
+        }
+
+        .modal-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: #fefcf9;
+            border-radius: 2.5rem;
+            max-width: 520px;
+            width: 100%;
+            padding: 2rem 2rem 2.2rem;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            transform: scale(0.96);
+            transition: 0.3s;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c2a2e;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .modal-title i {
+            color: #b8731a;
+            font-size: 2rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+            text-align: right;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 500;
+            color: #4f4640;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .input-group input, .input-group textarea, .input-group select {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1.5px solid #e4dcd3;
+            border-radius: 1.4rem;
+            padding: 1rem 1.3rem;
+            font-family: inherit;
+            font-size: 1rem;
+            color: #2c2a2e;
+            outline: none;
+            transition: 0.2s;
+            resize: vertical;
+        }
+
+        .input-group input:focus, .input-group textarea:focus, .input-group select:focus {
+            border-color: #b8731a;
+            box-shadow: 0 0 0 4px rgba(184, 115, 26, 0.1);
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-submit {
+            background: #b8731a;
+            color: white;
+            border: none;
+            padding: 0.9rem 2rem;
+            border-radius: 2.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.25s;
+            box-shadow: 0 8px 18px rgba(184, 115, 26, 0.3);
+        }
+
+        .btn-submit:hover {
+            background: #9e5f14;
+            transform: translateY(-2px);
+        }
+
+        .btn-cancel {
+            background: transparent;
+            border: 1.5px solid #ccc1b6;
+            color: #4e4540;
+            padding: 0.9rem 1.8rem;
+            border-radius: 2.5rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .warning-badge {
+            background: #c0392b10;
+            color: #c0392b;
+            padding: 0.3rem 1rem;
+            border-radius: 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #8d7f74;
+        }
+
+        .highlight {
+            background: #fef3e5;
+            padding: 0.1rem 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .app-container {
+                padding: 0.7rem;
+                border-radius: 2rem;
+            }
+            .question-text {
+                font-size: 1.2rem;
+            }
+        }
+        .truing{
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="header">
+            <div class="header-title">
+                <i class="fas fa-clipboard-check"></i>
+                <h1>تدقيق الحلول</h1>
+            </div>
+            <span class="badge-page truing"><i class="fas fa-check-double"></i> 
+            ساهم في تدقيق حل هذا الإختبار.</span>
+            <span class="badge-page"><i class="fas fa-book-open"></i> 
+            حل اختبار علم النفس الاجتماعي دورة 2025-2026 الفصل الاول
+            </span>
+
+        </div>
+
+        <!-- بطاقة السؤال الحالية -->
+        <div id="quizArea" class="quiz-card">
+            <!-- يتم ملء المحتوى بالجافاسكربت -->
+        </div>
+
+        <!-- أزرار التنقل -->
+        <div class="button-group">
+            <button id="prevBtn" class="btn btn-outline"><i class="fas fa-arrow-right"></i> السابق</button>
+            <button id="nextBtn" class="btn btn-outline">التالي <i class="fas fa-arrow-left"></i></button>
+            <button id="shareBtn" class="btn btn-primary"><i class="fas fa-share-alt"></i> مشاركة السؤال</button>
+            <button id="doubtBtn" class="btn btn-primary"><i class="fas fa-exclamation-triangle"></i> أشك في الحل</button>
+        </div>
+
+        <!-- تلميح العداد -->
+        <div class="footer-note">
+            <span id="counterDisplay" class="warning-badge"><i class="fas fa-question-circle"></i> سؤال 1 من 1</span>
+        </div>
+    </div>
+
+    <!-- نافذة الشك -->
+    <div id="doubtModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-title">
+                <i class="fas fa-edit"></i> الإبلاغ عن خطأ
+            </div>
+            <p style="color: #4f4640; margin-bottom: 1.5rem; font-weight: 500;">لماذا تعتقد أن هذا الحل غير صحيح؟ حدد الإجابة الصحيحة واسمك.</p>
+            
+            <div class="input-group">
+                <label>الاسم الكامل</label>
+                <input type="text" id="studentName" placeholder="أدخل اسمك للمشاركة في التصحيح">
+            </div>
+            
+            <div class="input-group">
+                <label>الإجابة الصحيحة من وجهة نظرك</label>
+                <select id="correctAnswerSelect" style="width: 100%; background: rgba(255,255,255,0.8); border: 1.5px solid #e4dcd3; border-radius: 1.4rem; padding: 1rem; font-family: inherit; font-size: 1rem;">
+                    <option value="" disabled selected>اختر الإجابة</option>
+                    <option value="0">أ</option>
+                    <option value="1">ب</option>
+                    <option value="2">ج</option>
+                    <option value="3">د</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>شرح الاعتراض / لماذا الحل غلط؟</label>
+                <textarea id="doubtReason" rows="3" placeholder="اكتب الأسباب والتفاصيل..."></textarea>
+            </div>
+
+            <div class="modal-actions">
+                <button id="cancelDoubt" class="btn-cancel">إلغاء</button>
+                <button id="submitDoubt" class="btn-submit"><i class="fab fa-whatsapp"></i> إرسال عبر واتساب</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // بيانات الأسئلة (بنفس الشكل المطلوب)
+            const questionsData = [
+                {
+                    "id": 1,
+                    "quiz": "وفقاً لمدرسة التحليل النفسي، ما الشرط الأساسي لكي يشكل كائنٌ ما (سواء كان نباتاً أو حيواناً أو جماداً) جزءاً من المجال النفسي للشخص ويؤثر في سلوكه الاجتماعي؟",
+                    "options": [
+                        "أن يكون الكائن ذو حضور مادي واقعي ومستمر في بيئة الفرد",
+                        "أن يمتلك الكائن خصائص وصفات مشابهة لخصائص الفرد النفسية",
+                        "أن يكون الكائن مدركاً للوجود الاجتماعي للفرد ويتفاعل معه",
+                        "أن يخضع الكائن لقوانين التثبيت والتحويل النفسي المباشر"
+                    ],
+                    "correct": 1,
+                    "note": "المقرر صفحة 10 الفقرة الثانية"
+                },
+                {
+                    "id": 2,
+                    "quiz": "أي من المفاهيم التالية يُشير إلى عملية دمج الخبرات الشعورية واللاشعورية في كلٍّ متسق داخل النسق النفسي؟",
+                    "options": [
+                        "الإزاحة",
+                        "التثبيت",
+                        "التوحيد النفسي",
+                        "الإسقاط"
+                    ],
+                    "correct": 2,
+                    "note": "المصدر: المحاضرة 3، شريحة 14"
+                },
+                {
+                    "id": 3,
+                    "quiz": "في سياق النظرية النفسية الاجتماعية، ما الذي يحدد سلوك الفرد تجاه كائن معين داخل المجال؟",
+                    "options": [
+                        "القيمة السوقية للكائن",
+                        "الدور الوظيفي الذي يلعبه الكائن في المجال النفسي",
+                        "الحجم الفيزيائي للكائن",
+                        "لون الكائن وخصائصه الفيزيائية"
+                    ],
+                    "correct": 1,
+                    "note": "المرجع: كتاب المدخل إلى التحليل النفسي ص 23"
+                }
+            ];
+
+            // رقم الواتساب (بصيغة دولية بدون + أو 00)
+            const WHATSAPP_NUMBER = '963985780023'; // قم بتعديل الرقم إذا لزم (بدون مسافات أو رموز)
+            
+            // حالة التطبيق
+            let currentIndex = 0;
+            const totalQuestions = questionsData.length;
+            
+            // عناصر DOM
+            const quizArea = document.getElementById('quizArea');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const doubtBtn = document.getElementById('doubtBtn');
+            const shareBtn = document.getElementById('shareBtn');
+            const counterDisplay = document.getElementById('counterDisplay');
+            
+            const modalOverlay = document.getElementById('doubtModal');
+            const cancelDoubt = document.getElementById('cancelDoubt');
+            const submitDoubt = document.getElementById('submitDoubt');
+            const studentNameInput = document.getElementById('studentName');
+            const correctAnswerSelect = document.getElementById('correctAnswerSelect');
+            const doubtReasonInput = document.getElementById('doubtReason');
+
+            // دوال مساعدة
+            function renderQuestion(index) {
+                if (index < 0 || index >= totalQuestions) return;
+                const q = questionsData[index];
+                const correctIdx = q.correct;
+                const optionLetters = ['أ', 'ب', 'ج', 'د'];
+                
+                let optionsHtml = '';
+                q.options.forEach((opt, i) => {
+                    const isCorrect = (i === correctIdx);
+                    const letter = optionLetters[i] || String.fromCharCode(65+i);
+                    optionsHtml += `
+                        <div class="option-item ${isCorrect ? 'correct-option' : ''}">
+                            <span class="option-letter">${letter}</span>
+                            <span>${opt}</span>
+                            ${isCorrect ? '<i class="fas fa-check-circle" style="color:#b8731a; margin-right:auto; font-size:1.2rem;"></i>' : ''}
+                        </div>
+                    `;
+                });
+
+                const noteHtml = `
+                    <div class="solution-note">
+                       
+                        <div>
+                            <p><strong> <i class="fas fa-lightbulb"></i> لماذا هذا الحل؟</strong><br>${q.note || 'الشرح غير متوفر'}</p>
+                        
+                        </div>
+                    </div>
+                `;
+
+                const fullHtml = `
+                    <div class="question-text">${q.quiz}</div>
+                    <div class="options-grid">${optionsHtml}</div>
+                    ${noteHtml}
+                    <div style="margin-top:1rem; display:flex; justify-content:space-between; align-items:center; font-size:0.9rem; color:#7f6e60;">
+                        <span><i class="fas fa-hashtag"></i> سؤال رقم ${q.id}</span>
+                        <span><i class="fas fa-check-double"></i> الإجابة الصحيحة: ${optionLetters[correctIdx]}</span>
+                    </div>
+                `;
+                quizArea.innerHTML = fullHtml;
+                updateCounter();
+            }
+
+            function updateCounter() {
+                counterDisplay.innerHTML = `<i class="fas fa-question-circle"></i> سؤال ${currentIndex + 1} من ${totalQuestions}`;
+            }
+
+            // التنقل
+            function goPrev() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    renderQuestion(currentIndex);
+                }
+            }
+
+            function goNext() {
+                if (currentIndex < totalQuestions - 1) {
+                    currentIndex++;
+                    renderQuestion(currentIndex);
+                }
+            }
+
+            // فتح وإغلاق المودال
+            function openModal() {
+                const currentQ = questionsData[currentIndex];
+                correctAnswerSelect.value = currentQ.correct.toString();
+                studentNameInput.value = '';
+                doubtReasonInput.value = '';
+                modalOverlay.classList.add('active');
+            }
+
+            function closeModal() {
+                modalOverlay.classList.remove('active');
+            }
+
+            // الحصول على رابط السؤال الحالي
+            function getQuestionUrl(questionId) {
+                const baseUrl = window.location.href.split('?')[0];
+                return `${baseUrl}?question=${questionId}`;
+            }
+
+            // مشاركة السؤال
+            function shareQuestion() {
+                const currentQ = questionsData[currentIndex];
+                const questionUrl = getQuestionUrl(currentQ.id);
+                const shareText = `ساعدني في حل هذا السؤال:\n\n${currentQ.quiz}\n\n${questionUrl}`;
+                
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'ساعدني في حل هذا السؤال',
+                        text: shareText,
+                    }).catch(err => {
+                        console.log('Error sharing:', err);
+                    });
+                } else {
+                    // Fallback للواتساب
+                    const encodedText = encodeURIComponent(shareText);
+                    const whatsappUrl = `https://wa.me/?text=${encodedText}`;
+                    window.open(whatsappUrl, '_blank');
+                }
+            }
+
+            // إرسال الشك عبر واتساب
+            function handleSubmitDoubt() {
+                const name = studentNameInput.value.trim();
+                const correctAnswer = correctAnswerSelect.value;
+                const reason = doubtReasonInput.value.trim();
+
+                if (!name) {
+                    alert('⚠️ يرجى إدخال اسمك للمشاركة في التصحيح');
+                    return;
+                }
+                if (!correctAnswer) {
+                    alert('⚠️ يرجى تحديد الإجابة الصحيحة من وجهة نظرك');
+                    return;
+                }
+                if (!reason) {
+                    alert('⚠️ يرجى كتابة سبب الاعتراض');
+                    return;
+                }
+
+                const currentQuestion = questionsData[currentIndex];
+                const optionLetters = ['أ', 'ب', 'ج', 'د'];
+                const selectedCorrectText = currentQuestion.options[parseInt(correctAnswer)];
+                const questionUrl = getQuestionUrl(currentQuestion.id);
+                
+                // بناء رسالة نصية منسقة
+                const message = 
+                    `📢 *تقرير مراجعة حل*\n\n` +
+                    `👤 *الاسم:* ${name}\n` +
+                    `📄 *السؤال رقم:* ${currentQuestion.id}\n` +
+                    `❓ *نص السؤال:* ${currentQuestion.quiz}\n` +
+                    `✅ *الإجابة الصحيحة المقترحة:* ${optionLetters[parseInt(correctAnswer)]} - ${selectedCorrectText}\n` +
+                    `💬 *سبب الاعتراض:* ${reason}\n\n` +
+                    `🔗 *رابط السؤال:* ${questionUrl}`;
+
+                // إنشاء رابط واتساب
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+                
+                // فتح الرابط في نافذة جديدة
+                window.open(whatsappUrl, '_blank');
+                
+                // إغلاق المودال بعد الإرسال
+                closeModal();
+                
+                // عرض رسالة تأكيد
+                alert('✓ تم فتح واتساب لإرسال التصحيح. إذا لم يفتح تلقائياً، تحقق من اتصالك بالإنترنت.');
+                
+                console.log('رسالة واتساب:', message);
+            }
+
+            // قراءة الـ query parameter عند تحميل الصفحة
+            function loadQuestionFromUrl() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const questionParam = urlParams.get('question');
+                
+                if (questionParam) {
+                    const questionId = parseInt(questionParam);
+                    const questionIndex = questionsData.findIndex(q => q.id === questionId);
+                    
+                    if (questionIndex !== -1) {
+                        currentIndex = questionIndex;
+                        renderQuestion(currentIndex);
+                        
+                        // تحديث الرابط بدون إعادة تحميل الصفحة
+                        const baseUrl = window.location.href.split('?')[0];
+                        window.history.replaceState({}, document.title, baseUrl);
+                        
+                        // إظهار تنبيه
+                        setTimeout(() => {
+                            alert(`✓ تم فتح السؤال رقم ${questionId} من الرابط المشترك`);
+                        }, 300);
+                    }
+                }
+            }
+
+            // ربط الأحداث
+            prevBtn.addEventListener('click', goPrev);
+            nextBtn.addEventListener('click', goNext);
+            doubtBtn.addEventListener('click', openModal);
+            shareBtn.addEventListener('click', shareQuestion);
+            cancelDoubt.addEventListener('click', closeModal);
+            submitDoubt.addEventListener('click', handleSubmitDoubt);
+            
+            // إغلاق المودال عند النقر خارج المحتوى
+            modalOverlay.addEventListener('click', function(e) {
+                if (e.target === modalOverlay) {
+                    closeModal();
+                }
+            });
+
+            // التهيئة
+            renderQuestion(currentIndex);
+            
+            // تحميل السؤال من الرابط إذا وجد
+            loadQuestionFromUrl();
+        })();
+    </script>
+</body>
+</html>
